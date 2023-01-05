@@ -7,6 +7,7 @@ import Workthree from '../Assets/Workthree.jpg';
 import Profileone from '../Assets/Profileone.jpg';
 import Profiletwo from '../Assets/Profiletwo.jpg';
 import Profilethree from '../Assets/Profilethree.jpg';
+import ProfileMain from '../Assets/ProfileMain.jpg'
 export {
     Resone,
     Restwo,
@@ -16,5 +17,6 @@ export {
     Workthree,
     Profileone,
     Profiletwo,
-    Profilethree
+    Profilethree,
+    ProfileMain
 };

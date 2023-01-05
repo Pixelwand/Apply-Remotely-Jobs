@@ -15,7 +15,7 @@ export default function Work() {
       <div class="basis-1/4">
         <div>
           <div class="h-14 w-14 absolute float-right bg-blue-600"></div>
-          <img src={Workone} alt="Image-1" class="w-76 h-80 top-6 left-6" />
+          <img src={Workone} alt="Im" class="w-76 h-80 top-6 left-6" />
         </div>
         <div class="w-76 h-43 pr-4.5 pl-0 pt-0 pb-0 mt-8">
         <h2 class="font-bold text-2xl mb-5">A high converting, high-performing template</h2>
@@ -26,7 +26,7 @@ export default function Work() {
       </div>
       <div class="basis-1/4">
       <div>
-          <img src={Worktwo} alt="Image-2"  class="w-76 h-80 top-6 left-6" />
+          <img src={Worktwo} alt="Ima"  class="w-76 h-80 top-6 left-6" />
         </div>
         <div class="w-76 h-43 pr-4.5 pl-0 pt-0 pb-0 mt-8">
         <h2  class="font-bold text-2xl mb-5">With a clean, minimal and professional look</h2>
@@ -37,7 +37,7 @@ export default function Work() {
       </div>
       <div class="basis-1/4">
       <div>
-          <img src={Workthree} alt="Image-3"  class="w-76 h-80 top-6 left-6" />
+          <img src={Workthree} alt="Imag"  class="w-76 h-80 top-6 left-6" />
         </div>
         <div  class="w-76 h-43 pr-4.5 pl-0 pt-0 pb-0 mt-8">
         <h2  class="font-bold text-2xl mb-5">Opus made our journey possible</h2>

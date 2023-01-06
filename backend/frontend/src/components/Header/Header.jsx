@@ -88,15 +88,16 @@ export default function Header() {
                 
                 />
               </label>
-              {errors.fullName && <p>please check your Full Name.</p>}
+              {errors.fullName && <p class="text-red-600 font-normal">please check your Full Name!</p>}
               </div>
               
               <div class="mb-8">
               <label>
                 <input class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"email"} placeholder='Email'
-                {...register("email", {required:true})}
+                {...register("email", {required:true, pattern:/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}
                 />
               </label>
+              {errors.email && <p class="text-red-600 font-normal">Please check your Email!</p>}
               </div>
               <div class="mb-8 ">
               <label>
@@ -104,13 +105,15 @@ export default function Header() {
                 {...register("phoneNumber", {required:true, minLength:10, maxLength:10})}
                 ></input>
               </label>
+              {errors.phoneNumber && <p class="text-red-600 font-normal">Please check your phone number!</p>}
               </div>
               <div class="mb-5">
                 <label>
                   <input class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"password"} placeholder="Create New Password"
-                  {...register("password", {required:true})}
+                  {...register("password", {required:true, pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/})}
                   />
                 </label>
+                {errors.password && <p class="text-red-600 font-normal">Please check your password!</p>}
               </div>
               <div class="mb-5">
                 <input type={"checkbox"} 

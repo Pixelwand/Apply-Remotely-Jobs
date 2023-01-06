@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import Select from 'react-select';
 import { useState, useMemo } from 'react';
 import countryList from 'react-select-country-list';
+import {Tabs, TabList, Tab, TabPanel} from 'react-tabs';
 
 const customStyles = {
   content: {
@@ -19,7 +20,7 @@ export default function Header() {
   
   const [value, setValue] = useState('');
 
-  const options = useMemo(() =>countryList().getData(), []);
+  const options = useMemo(() =>countryList().getValues(), []);
 
   const changeHandler = ()=>{
     setValue(value)
@@ -62,24 +63,85 @@ export default function Header() {
         onRequestClose={closeModal}
         style={customStyles}
         >
-          <div>
+          <Tabs>
+    <TabList class="flex flex-row gap-16 justify-center mb-10 font-semibold text-2xl">
+      <Tab class="bg-blue-600 hover:bg-blue-800  px-6 py-3 text-white rounded-2xl">Signup</Tab>
+      <Tab class="bg-blue-600 hover:bg-blue-800  px-6 py-3 text-white rounded-2xl">Login</Tab>
+    </TabList>
+
+    <TabPanel>
+    <div class="px-10 pb-10">
             <form>
-              <fieldset>Signup</fieldset>
+              <fieldset class="text-center font-semibold text-3xl mb-14">Signup</fieldset>
+              <div class="mb-8">
               <label>
                 Full Name:
-                <input />
+                <input type={"text"} class="ml-10" placeholder='Full Name'/>
               </label>
+              </div>
+              <div class="mb-8">
               <label>
                 Email:
-                <input />
+                <input type={"email"} class="ml-10" placeholder='Email'/>
               </label>
-              <div>
-              <Select class="w-1/3" options={options} value={value} onChange={changeHandler} />
               </div>
-              <input />
+              <div class="mb-8 ">
+                <label>
+              
+              <div class="flex flex-row gap-10 mb-4">
+                <div>Phone No:</div>
+                <div>
+              <Select options={options} value={value} onChange={changeHandler} />
+              </div>
+              </div>
+              </label>
+              <label class="ml-20">
+                <input placeholder='Phone Number' />
+              </label>
+              </div>
+              <div>
+                <label>
+                  Password:
+                  <input type={"password"} placeholder="Create New Password" />
+                </label>
+              </div>
+              <div>
+                <label>
+                 Confirm Password:
+                  <input type={"password"} placeholder="Confirm New Password" />
+                </label>
+              </div>
+              <div class="text-center">
+              <button class="bg-blue-600 hover:bg-blue-800 text-white font-semibold text-xl rounded-xl px-6 py-3" type='submit'>Signup</button>
+              </div>
             </form>
           </div>
 
+    </TabPanel>
+    <TabPanel>
+    <form>
+      <fieldset>Login</fieldset>
+      <div class="mb-8">
+              <label>
+                Email:
+                <input class="ml-10" type={"email"} placeholder='Email'/>
+              </label>
+              </div>
+              <div class="mb-8">
+              <label>
+                Password:
+                <input class="ml-10" type={"password"} placeholder='Enter Your Password'/>
+              </label>
+              </div>
+              <div class="text-center">
+              <button class="bg-blue-600 hover:bg-blue-800 text-white font-semibold text-xl rounded-xl px-6 py-3" type='submit'>Login</button>
+              </div>
+    </form>
+    </TabPanel>
+  </Tabs>
+
+
+          
         </Modal>
       </div>
     </div>

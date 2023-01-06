@@ -72,44 +72,31 @@ export default function Header() {
     <TabPanel>
     <div class="px-10 pb-10">
             <form>
-              <fieldset class="text-center font-semibold text-3xl mb-14">Signup</fieldset>
-              <div class="mb-8">
+              <fieldset class="text-center font-semibold text-base mb-14">Sign up with your email<hr class="mt-3 font-" /></fieldset>
+              
+              <div class="mb-8 font-xl">
               <label>
-                Full Name:
-                <input type={"text"} class="ml-10" placeholder='Full Name'/>
+                <input type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Enter Your Name'/>
               </label>
               </div>
               <div class="mb-8">
               <label>
-                Email:
-                <input type={"email"} class="ml-10" placeholder='Email'/>
+                <input class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"email"} placeholder='Email'/>
               </label>
               </div>
               <div class="mb-8 ">
-                <label>
-              
-              <div class="flex flex-row gap-10 mb-4">
-                <div>Phone No:</div>
-                <div>
-              <Select options={options} value={value} onChange={changeHandler} />
-              </div>
-              </div>
-              </label>
-              <label class="ml-20">
-                <input placeholder='Phone Number' />
+              <label>
+                <input class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" placeholder='Phone Number' ></input>
               </label>
               </div>
-              <div>
+              <div class="mb-5">
                 <label>
-                  Password:
-                  <input type={"password"} placeholder="Create New Password" />
+                  <input class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"password"} placeholder="Create New Password" />
                 </label>
               </div>
-              <div>
-                <label>
-                 Confirm Password:
-                  <input type={"password"} placeholder="Confirm New Password" />
-                </label>
+              <div class="mb-5">
+                <input type={"checkbox"} />
+                <label class="font-sans text-sm ml-5">I agree to the <a href="#/" class="text-blue-700 font-semibold">Terms of Service</a> and <a href='#/' class="font-semibold font-sans text-blue-700">Privacy Policy</a></label>
               </div>
               <div class="text-center">
               <button class="bg-blue-600 hover:bg-blue-800 text-white font-semibold text-xl rounded-xl px-6 py-3" type='submit'>Signup</button>
@@ -119,24 +106,24 @@ export default function Header() {
 
     </TabPanel>
     <TabPanel>
+      <div class="px-10 pb-10">
     <form>
-      <fieldset>Login</fieldset>
+      <fieldset  class="text-center font-semibold text-base mb-14">Login with email</fieldset>
       <div class="mb-8">
               <label>
-                Email:
-                <input class="ml-10" type={"email"} placeholder='Email'/>
+                <input class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans"  type={"email"} placeholder='Email'/>
               </label>
               </div>
               <div class="mb-8">
               <label>
-                Password:
-                <input class="ml-10" type={"password"} placeholder='Enter Your Password'/>
+                <input  class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" type={"password"} placeholder='Enter Your Password'/>
               </label>
               </div>
               <div class="text-center">
               <button class="bg-blue-600 hover:bg-blue-800 text-white font-semibold text-xl rounded-xl px-6 py-3" type='submit'>Login</button>
               </div>
     </form>
+    </div>
     </TabPanel>
   </Tabs>
 

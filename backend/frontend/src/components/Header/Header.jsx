@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import Select from 'react-select';
-import { useState, useMemo } from 'react';
+import { useState, useMemo} from 'react';
 import countryList from 'react-select-country-list';
 import {Tabs, TabList, Tab, TabPanel} from 'react-tabs';
 import {useForm} from 'react-hook-form';
@@ -18,12 +18,27 @@ const customStyles = {
 }
 
 export default function Header() {
+  
+  
 
-  const {register, handleSubmit, formState:{errors}} = useForm();
+  const {register, formState:{errors}} = useForm();
 
-  const formSubmit = (data) => {
-    console.log(data)
-  }
+  const formSubmit = async(data) => {
+   const response = await fetch("http://localhost:8080/api/user", {
+        method:'POST',
+        headers:{
+          'content-Type':'application/json'
+        },
+        body:JSON.stringify(data)
+  
+      }).then((res)=>{
+        console.log(res.data)
+      })
+    
+      return () => {
+        response.json()
+      }
+    }
   
   const [value, setValue] = useState('');
 
@@ -78,12 +93,12 @@ export default function Header() {
 
     <TabPanel>
     <div class="px-10 pb-10">
-            <form onSubmit={handleSubmit(formSubmit)}>
+            <form onSubmit={formSubmit}>
               <fieldset class="text-center font-semibold text-base mb-14">Sign up with your email<hr class="mt-3 font-" /></fieldset>
               
               <div class="mb-8 font-xl">
               <label>
-                <input type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Enter Your Name'
+                <input name='name' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Enter Your Name'
                 {...register("fullName", {required:true})}
                 
                 />
@@ -93,7 +108,7 @@ export default function Header() {
               
               <div class="mb-8">
               <label>
-                <input class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"email"} placeholder='Email'
+                <input name='email' class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"email"} placeholder='Email'
                 {...register("email", {required:true, pattern:/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}
                 />
               </label>
@@ -101,7 +116,7 @@ export default function Header() {
               </div>
               <div class="mb-8 ">
               <label>
-                <input class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" placeholder='Phone Number'
+                <input name='number' class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" placeholder='Phone Number'
                 {...register("phoneNumber", {required:true, minLength:10, maxLength:10})}
                 ></input>
               </label>
@@ -109,7 +124,7 @@ export default function Header() {
               </div>
               <div class="mb-5">
                 <label>
-                  <input class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"password"} placeholder="Create New Password"
+                  <input name='password' class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"password"} placeholder="Create New Password"
                   {...register("password", {required:true, pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/})}
                   />
                 </label>

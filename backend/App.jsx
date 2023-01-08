@@ -1,10 +1,11 @@
 const express = require('express');
 const mongoose  = require('mongoose');
 require('dotenv').config({path:'config.env'})
-const userRegistration = require('./routes/userRoutes.jsx')
+const userRoutes = require('./routes/userRoutes');
+const cors = require('cors');
 
 const app = express();
-const port = process.env.PORT || 8000
+const port = process.env.PORT || 8080
 
 //Connected to the MongoDB Database
 
@@ -18,7 +19,11 @@ mongoose.connect(DB, {
 })
 
 //Middleware
-app.use('/', userRegistration)
+
+app.use(express.json());
+app.use(cors());
+app.use('/name', userRoutes)
+
 
 app.listen(port, (req, res)=>{
     console.log(`Port is running on ${port}`)

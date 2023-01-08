@@ -9,3 +9,5 @@ const app = express.Router();
 app.post(urlEncodedParser, (req, res)=>{
     res.send('User account created successfully')
 })
+
+module.exports = app

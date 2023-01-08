@@ -14,8 +14,9 @@ const userSchema = new mongoose.Schema({
         require:true
     },
     password:{
-        require:true
-    }
+        tyep:String
+            }
 })
 
-const User = mongoose.model("User", userSchema)
+const User = mongoose.model("User", userSchema);
+module.exports = User

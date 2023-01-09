@@ -21,10 +21,10 @@ export default function Header() {
   
   
 
-  const {register, formState:{errors}} = useForm();
+  const {register, handleSubmit, formState:{errors}} = useForm();
 
   const formSubmit = async(data) => {
-   const response = await fetch("http://localhost:8080/api/user", {
+   const response = await fetch("http://localhost:8080/name", {
         method:'POST',
         headers:{
           'content-Type':'application/json'
@@ -32,7 +32,7 @@ export default function Header() {
         body:JSON.stringify(data)
   
       }).then((res)=>{
-        console.log(res.data)
+        console.log(data)
       })
     
       return () => {
@@ -93,22 +93,22 @@ export default function Header() {
 
     <TabPanel>
     <div class="px-10 pb-10">
-            <form onSubmit={formSubmit}>
+            <form onSubmit={handleSubmit(formSubmit)}>
               <fieldset class="text-center font-semibold text-base mb-14">Sign up with your email<hr class="mt-3 font-" /></fieldset>
               
               <div class="mb-8 font-xl">
               <label>
-                <input name='name' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Enter Your Name'
-                {...register("fullName", {required:true})}
+                <input onChange={changeHandler}  name='name' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Enter Your Name'
+                {...register("name", {required:true})}
                 
                 />
               </label>
-              {errors.fullName && <p class="text-red-600 font-normal">please check your Full Name!</p>}
+              {errors.name && <p class="text-red-600 font-normal">please check your Full Name!</p>}
               </div>
               
               <div class="mb-8">
               <label>
-                <input name='email' class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"email"} placeholder='Email'
+                <input onChange={changeHandler} name='email' class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"email"} placeholder='Email'
                 {...register("email", {required:true, pattern:/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}
                 />
               </label>
@@ -116,15 +116,15 @@ export default function Header() {
               </div>
               <div class="mb-8 ">
               <label>
-                <input name='number' class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" placeholder='Phone Number'
-                {...register("phoneNumber", {required:true, minLength:10, maxLength:10})}
+                <input name='number' onChange={changeHandler} class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" placeholder='Phone Number'
+                {...register("number", {required:true, minLength:10, maxLength:10})}
                 ></input>
               </label>
-              {errors.phoneNumber && <p class="text-red-600 font-normal">Please check your phone number!</p>}
+              {errors.number && <p class="text-red-600 font-normal">Please check your phone number!</p>}
               </div>
               <div class="mb-5">
                 <label>
-                  <input name='password' class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"password"} placeholder="Create New Password"
+                  <input name='password' onChange={changeHandler} class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"password"} placeholder="Create New Password"
                   {...register("password", {required:true, pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/})}
                   />
                 </label>

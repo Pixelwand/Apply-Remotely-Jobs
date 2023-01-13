@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import { useForm } from 'react-hook-form';
 
+
 export const Login = () => {
-    const {login, handleSubmit, formState:{errors}} = useForm();
+    const {register, handleSubmit, formState:{errors}} = useForm();
 
     const [value, setValue] = useState("");
 
@@ -10,8 +11,21 @@ export const Login = () => {
         setValue(value)
     }
 
-    const formSubmit = () => {
+    const formSubmit = async (data) => {
+    const response = await fetch("http://localhost:8080/user/login", {
+      method:'POST',
+      headers:{
+        'content-Type':'application/json'
+      },
+      body:JSON.stringify(data),
 
+    } ).then((result)=>{
+      console.log("User found Successfully")
+    }).then((error)=>{
+      console.log(`No user in the database ${error}`)
+    })
+
+    return response.json(data)
     }
   return (
     <>
@@ -21,7 +35,7 @@ export const Login = () => {
       <div class="mb-8">
               <label>
                 <input onChange={changeHandler} name='email' class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans"  type={"email"} placeholder='Email'
-                {...login("email",{required:true})}
+                {...register("email",{required:true})}
                 />
               </label>
               {errors.email && <p>Please user correct email</p>}
@@ -29,7 +43,7 @@ export const Login = () => {
               <div class="mb-8">
               <label>
                 <input onChange={changeHandler} name='password'  class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" type={"password"} placeholder='Enter Your Password'
-                {...login("password", {required:true})}
+                {...register("password", {required:true})}
                 />
               </label>
               {errors.password && <p>Please use correct password!</p>}

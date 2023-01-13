@@ -22,7 +22,8 @@ mongoose.connect(DB, {
 
 app.use(express.json());
 app.use(cors());
-app.use('/name', userRoutes)
+app.use('/user', userRoutes)
+
 
 
 app.listen(port, (req, res)=>{

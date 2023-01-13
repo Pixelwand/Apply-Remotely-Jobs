@@ -6,6 +6,7 @@ import countryList from 'react-select-country-list';
 import {Tabs, TabList, Tab, TabPanel} from 'react-tabs';
 import { Signup } from '../Authentication/Signup';
 import { Login } from '../Authentication/Login';
+import GoogleLogin from '../Authentication/googleLogin.jsx';
 
 const customStyles = {
   content: {
@@ -70,6 +71,7 @@ export default function Header() {
       <Login />
     </TabPanel>
   </Tabs>
+  <GoogleLogin />
         </Modal>
       </div>
     </div>

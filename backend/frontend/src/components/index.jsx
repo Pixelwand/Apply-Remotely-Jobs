@@ -5,6 +5,7 @@ import Work from "./Work/Work";
 import Content from "./Content/Content";
 import Details from "./Details/Details";
 import Main from "./Main/Main";
+import Dashboard from './Dashboard/Dashboard'
 
 export {
     Header,
@@ -13,5 +14,6 @@ export {
     Work,
     Content,
     Details,
-    Main
+    Main,
+    Dashboard
 }

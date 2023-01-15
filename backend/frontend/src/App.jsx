@@ -1,17 +1,17 @@
 import React from 'react';
-import { Header, Work, Resources, Footer, Details, Main, Content, Dashboard,  } from './components';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { Homepage } from './components/Homepage/Homepage';
+import Dashboard from './components/Dashboard/Dashboard'
 
 export default function App() {
   return (
   <>
-  <Header />
-  <Dashboard />
-  <Main />
-  <Details />
-  <Work />
-  <Content />
-  <Resources />
-  <Footer />
+  <BrowserRouter>
+  <Routes>
+    <Route path='/' element={<Homepage />} />
+    <Route path='/dashboard' element={<Dashboard />} />
+  </Routes>
+  </BrowserRouter>
   </>
   )
 }

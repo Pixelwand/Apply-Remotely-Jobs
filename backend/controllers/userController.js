@@ -1,10 +1,21 @@
-//const User = require('../models/userModel');
-const Users = require('../models/userModel')
+const {User, validate} = require('../models/userModel');
+const bcrypt = require("bcrypt");
 
 //User Registration through custom form
 
 exports.creatUser = async (req, res)=>{
-    const newUser = await Users.create(req.body);
+    try{
+        const {error} = validate(req.body);
+        if(error){
+            res.status(400).send({message:error})
+        } 
+        const user = await User.findOne({email:req.body.email});
+        if(user){
+            res.status(409).send({
+                message:"User with given email already exists"
+            })
+        }
+     await User.create(req.body);
     console.log(req.body)
 
     res.status(201).json({
@@ -18,6 +29,9 @@ exports.creatUser = async (req, res)=>{
             User:newUser
         }
     })
+} catch{
+
+}
 }
 
 exports.findUser = async (req, res) => {

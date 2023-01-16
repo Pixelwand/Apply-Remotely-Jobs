@@ -7,7 +7,7 @@ var urlEncodedParser = bodyParser.urlencoded({extended:false})
 const app = express.Router();
 
 
-app.post('register', urlEncodedParser, userControllers.creatUser);
+app.post('/register', urlEncodedParser, userControllers.creatUser);
 app.get('/login', userControllers.findUser);
 // app.get('/', (req, res)=>{
 //     res.status(200).json("User found Successfully")

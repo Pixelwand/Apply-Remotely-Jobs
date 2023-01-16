@@ -73,6 +73,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false
   }));
+
   app.use(passport.initialize());
   app.use(passport.session());
 
@@ -82,13 +83,16 @@ app.use('/user', userRoutes)
 // app.use('/api/sessions', sessionRouter);
 
 app.get("/auth/google",
-  passport.authenticate("google", { scope: ["profile"] })
+  passport.authenticate("google", { scope: ["email", "profile"] })
 );
+
+
 app.get("/auth/google/callback",
   passport.authenticate("google", { failureRedirect: "http://localhost:3000" }),
   function(req, res) {
     // Successful authentication, redirect secrets.
     res.redirect("http://localhost:3000/dashboard");
+    res.send(req.user.email)
   });
   app.get("/logout", function(req, res){
     res.redirect("http://localhost:3000/");

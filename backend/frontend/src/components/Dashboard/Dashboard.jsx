@@ -1,6 +1,11 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+
+// const handleLogout = () => {
+//   localStorage.removeItem("token");
+//   window.location.reload();
+// };
 
 const user = {
   name: 'Tom Cook',
@@ -18,7 +23,10 @@ const navigation = [
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
   { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
+  function handleLogout(){
+    localStorage.removeItem("token");
+    window.location.reload();
+  }
 ]
 
 function classNames(...classes) {

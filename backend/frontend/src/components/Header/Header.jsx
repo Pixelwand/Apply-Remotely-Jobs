@@ -6,7 +6,8 @@ import countryList from 'react-select-country-list';
 import {Tabs, TabList, Tab, TabPanel} from 'react-tabs';
 import { Signup } from '../Authentication/Signup';
 import { Login } from '../Authentication/Login';
-import googleButton from './googleButton.css'
+import googleButton from './googleButton.css';
+import Dashboard from '../Dashboard/Dashboard';
 
 const customStyles = {
   content: {
@@ -53,7 +54,9 @@ export default function Header() {
         <a href="#/" class="text-base font-medium text-gray-500 hover:text-gray-900">Freelancers</a>  
       </nav>
       <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
+        {/* //{()?<a href='http://localhost/3000/dashboard'>Dashboard</a>: */}
         <button onClick={openModal} class="ml-8 inline-flex items-center justify-center whitespace-nowrap border border-transparent bg-indigo-600 px-6 text-base py-2  font-medium text-white shadow-sm hover:bg-indigo-700">Signup</button>
+  
         <Modal class="z-20"
         isOpen={isModalOpen}
         onRequestClose={closeModal}

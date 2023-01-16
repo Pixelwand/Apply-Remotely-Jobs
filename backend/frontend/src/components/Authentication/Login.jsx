@@ -12,6 +12,7 @@ export const Login = () => {
     }
 
     const formSubmit = async (data) => {
+      
     const response = await fetch("http://localhost:8080/user/login", {
       method:'POST',
       headers:{
@@ -24,6 +25,7 @@ export const Login = () => {
     }).then((error)=>{
       console.log(`No user in the database ${error}`)
     })
+    localStorage.setItem("token", data);
 
     return response.json(data)
     }

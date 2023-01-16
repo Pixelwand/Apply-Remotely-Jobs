@@ -1,10 +1,10 @@
 import {useForm} from 'react-hook-form';
 import { useState } from 'react';
 
-
 export const Signup =  () =>{
     const {register, handleSubmit, formState:{errors}} = useForm();
     const formSubmit = async(data) => {
+     data.preventDefault()
         const response = await fetch("http://localhost:8080/user/register", {
              method:'POST',
              headers:{

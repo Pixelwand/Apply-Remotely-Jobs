@@ -9,6 +9,7 @@ import { Login } from '../Authentication/Login';
 import googleButton from './googleButton.css';
 import Dashboard from '../Dashboard/Dashboard';
 
+
 const customStyles = {
   content: {
     top: '50%',
@@ -33,29 +34,43 @@ export default function Header() {
   function closeModal(){
     setIsModalOpen(false)
   }
+  const openMenu = () =>{
+   
+  }
   return (
     <>
-        <div class="relative bg-white">
+        <div class="relative bg-white  ">
   <div class="mx-auto max-w-7xl px-4 sm:px-6">
     <div class="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
       <div class="flex justify-start lg:w-0 lg:flex-1">
-        <a href="#/">
-          <span class="font-bold text-2xl font-sans">Kriyax</span>
+        <a href="/">
+          <span class="font-bold text-2xl font-sans text-blue-800">Apply Remote Jobs</span>
         </a>
       </div>
       <div class="-my-2 -mr-2 md:hidden">
-        <button type="button" class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
-          <span class="sr-only">Open menu</span>
+        <button type="button" data-collapse-toggle="navbar-defaul" aria-controls="navbar-default" class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+          <span class="sr-only"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-black">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+</svg>
+</span>
         </button>
       </div>
-      <nav class="hidden space-x-10 md:flex">
-        <a href="#/" class="text-base font-medium text-gray-500 hover:text-gray-900">Home</a>
-        <a href="#/" class="text-base font-medium text-gray-500 hover:text-gray-900">Gigs</a>
-        <a href="#/" class="text-base font-medium text-gray-500 hover:text-gray-900">Freelancers</a>  
+      <nav class=" space-x-10 hidden w-full md:block md:w-auto " id='navbar-default'>
+        <ul  class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+        <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900 md:flex-col">Home</a>
+        </li>
+        <li>
+        <a href="http://localhost:3000/jobs" class="text-base font-medium text-gray-500 md:flex-col hover:text-gray-900">Jobs</a>
+        </li>
+        <li>
+        <a href="http://localhost:3000/" class="text-base font-medium text-gray-500 md:flex-col hover:text-gray-900">Candidates</a>  
+        </li>
+        </ul>
       </nav>
       <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
         {/* //{()?<a href='http://localhost/3000/dashboard'>Dashboard</a>: */}
-        <button onClick={openModal} class="ml-8 inline-flex items-center justify-center whitespace-nowrap border border-transparent bg-indigo-600 px-6 text-base py-2  font-medium text-white shadow-sm hover:bg-indigo-700">Signup</button>
+        <button onClick={openModal} class="ml-8 inline-flex md:flex-col items-center justify-center whitespace-nowrap border border-transparent bg-indigo-600 px-6 text-base py-2  font-medium text-white shadow-sm hover:bg-indigo-700">Signup</button>
   
         <Modal class="z-20"
         isOpen={isModalOpen}

@@ -1,7 +1,9 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { Homepage } from './components/Homepage/Homepage';
-import Dashboard from './components/Dashboard/Dashboard'
+import Dashboard from './components/Dashboard/Dashboard';
+import Jobs from './components/Jobs/Jobs';
+import Candidates from './components/Candidates/Candidates';
 
 export default function App() {
   return (
@@ -9,6 +11,8 @@ export default function App() {
   <BrowserRouter>
   <Routes>
     <Route path='/' element={<Homepage />} />
+    <Route path='/jobs' element={<Jobs />} />
+    <Route path='/candidates' element={<Candidates />} />
     <Route path='/dashboard' element={<Dashboard />} />
   </Routes>
   </BrowserRouter>

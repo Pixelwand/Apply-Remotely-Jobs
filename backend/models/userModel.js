@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+//require('dotenv').config({path:'config.env'})
 // const GoogleStrategy = require("passport-google-oauth20").Strategy;
 // const findOrCreate = require("mongoose-findorcreate");
 // const passportLocalMongoose = require("passport-local-mongoose");

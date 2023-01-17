@@ -33,7 +33,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function Dashboard() {
+  const handleLogout = () => {
+		localStorage.removeItem("token");
+		window.location.reload();
+	};
   return (
     <>
       {/*
@@ -119,6 +123,7 @@ export default function Example() {
                             ))}
                           </Menu.Items>
                         </Transition>
+                        <button onClick={handleLogout}>Logout</button>
                       </Menu>
                     </div>
                   </div>

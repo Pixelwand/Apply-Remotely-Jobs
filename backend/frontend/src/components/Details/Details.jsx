@@ -46,13 +46,12 @@ export default function Details() {
     
     </div>
     <div class="text-center">
-    <div class="text-left block ml-36 font-sans font-bold text-slate-600 mt-60">VIDEO TITLE</div>
-    <div class="text-5xl font-bold text-left ml-28 font-sans mt-12">Inform users with video sections</div>
+    <div class="text-3xl font-semibold text-center mb-10 font-sans mt-12">Are Remote Jobs secure? By Kunal Kushwaha</div>
     <div>
-      <video></video>
+<iframe className='w-full h-60 px-2' src="https://www.youtube.com/embed/asg9lBbxLHA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     <div class="max-w-lg">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget consectetur eros. Aliquam erat volutpat. Praesent pulvinar arcu non lectus dapibus, a pulvinar mauris aliquam.</p>
+      <p className='px-4 mt-12'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget consectetur eros. Aliquam erat volutpat. Praesent pulvinar arcu non lectus dapibus, a pulvinar mauris aliquam.</p>
     </div>
     </div>
     <div class="flex justify-center  max-w-7xl mx-auto gap-32 flex-row mt-20 pb-10">

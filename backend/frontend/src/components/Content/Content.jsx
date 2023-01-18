@@ -64,10 +64,7 @@ export default function Content() {
                 <img src={Profileone} alt="Profileone" class="h-154 w-126" />
             </div>
         </div>
-        <div class="flex flex-col gap-36 mt-40 px-20">
-        <div class=" basis-2/5">
-            <img src={Profiletwo} class="h-104 w-96 h-96" alt="Profiletwo"/>
-        </div>
+        <div class="flex flex-col gap-16 mt-24">
         <div class="basis-2/5">
         <div class="text-2xl mb-6 mt-14 leading-14 text-slate-400 font-semibold">OUR KNOWLEDGE</div>
         <div  class="text-5xl max-w-lg font-bold font-sans mb-16 " >
@@ -77,14 +74,17 @@ export default function Content() {
             <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget consectetur eros. Aliquam erat volutpat.</p>
         </div>
         </div>
+        <div class=" basis-2/5">
+            <img src={Profiletwo} class="h-104 w-96 h-96" alt="Profiletwo"/>
         </div>
-        <div class="flex flex-col mt-40 mb-80 gap-12 px-20">
-            <div class="basis-3/5 mt-16">
+        </div>
+        <div class="flex flex-col mt-16 gap-12">
+            <div class=" mt-16">
             <div class="font-sans font-bold text-2xl text-center">Stamps</div>
-            <div class="font-sans font-bold text-2xl text-center w-3/6 mt-5 text-slate-500 ml-36">The Opus UI Kit lets you showcase your work in style. It's helped take our business online</div>
+            <div class="font-sans font-bold text-2xl text-center mt-5 text-slate-500 ">The Opus UI Kit lets you showcase your work in style. It's helped take our business online</div>
             <div class="font-bold w-18 h-6 text-center mt-10">Alexa</div>
             </div>
-            <div class="h-20 w-20 basis-2/5">
+            <div class="">
                 <img src={Profilethree} alt="Profilethree" class="h-96 w-96 " />
             </div>
         </div>

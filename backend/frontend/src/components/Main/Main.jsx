@@ -6,10 +6,10 @@ export default function Main() {
     <>
     <div class="mt-16 mb-48 flex flex-wrap sm:bg-black">
       <div class="flex flex-row flex-wrap">
-        <div class="bg-indigo-900 text-white basis-7/12 py-10 px-20  ">
-          <div class="font-bold text-6xl w-64  text-center mx-auto my-auto">Build For Enterprise Businesses</div>
+        <div class="bg-indigo-900 text-white py-10   ">
+          <div class="font-bold text-4xl w-full  text-center mx-auto my-auto">Built For Enterprise Businesses</div>
         
-          <p class="w-6/12 text-left px-6 mt-10 mx-auto my-auto text-lg font-normal leading-9">Opus includes everything you need to build a beautiful website for your business. Built to perform and look good doing so.</p>
+          <p class="text-center mt-10 mx-4 my-auto text-lg font-normal leading-9">Opus includes everything you need to build a beautiful website for your business. Built to perform and look good doing so.</p>
           <div class="text-center mt-10">
             <span class="mr-10">
               <button class="bg-blue-600 hover:bg-blue-800 text-white px-6 py-3">Learn More</button>

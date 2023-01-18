@@ -31,9 +31,9 @@ export const Login = () => {
     }
   return (
     <>
-    <div class="px-10 pb-10">
+    <div class="p-2 pb-10">
     <form onSubmit={handleSubmit(formSubmit())}>
-      <fieldset  class="text-center font-semibold text-base mb-14">Login with email</fieldset>
+      <fieldset  class="text-center font-semibold text-base mb-8">Login with email</fieldset>
       <div class="mb-8">
               <label>
                 <input onChange={changeHandler} name='email' class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans"  type={"email"} placeholder='Email'

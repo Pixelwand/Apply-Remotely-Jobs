@@ -6,29 +6,29 @@ import { Profileone, Profiletwo, Profilethree } from '../../Assets';
 export default function Content() {
   return (
     <>
-    <div class="bg-white text-black mt-12 flex flex-row mx-auto py-14 max-w-7xl justify-center gap-24">
+    <div class="bg-white text-black mt-12 flex flex-col mx-auto py-14 w-full justify-center gap-24">
     <div class="basis-1/2">
-        <div class="flex flex-row">
-            <div class="w-16 h-16 bg-blue-600 basis-1/5 mr-8">
+        <div class="flex flex-col w-full px-10 text-center gap-6">
+            <div class="w-16 h-16 bg-blue-600 mx-auto mb-6">
                 <center>
-                <FaTelegramPlane class="text-white w-8 h-8 pt-6" />
+                <FaTelegramPlane class="text-white w-8 h-8 mt-4" />
                 </center>
             </div>
             <div class="basis-4/5">
-                <div class="font-bold font-sans text-3xl mb-5">Choose Your Sections</div>
+                <div class="font-bold font-sans text-2xl mb-5">Choose Your Sections</div>
                 <div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
                 </div>
             </div>
         </div>
-        <div class="flex flex-row mt-12">
-            <div  class="w-16 h-16 bg-blue-600 basis-1/5 mr-8">
+        <div class="flex flex-col mt-12 px-10 text-center">
+            <div  class="w-16 h-16 bg-blue-600 mx-auto mb-6">
                 <center>
-                <AiFillPicture  class="text-white w-8 h-8 pt-6"/>
+                <AiFillPicture  class="text-white w-8 h-8 mt-4"/>
                 </center>
             </div>
             <div class="basis-4/5">
-                <div class="font-bold font-sans text-3xl mb-5">Add the images and text you need</div>
+                <div class="font-bold font-sans text-2xl mb-5">Add the images and text you need</div>
                 <div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
                 </div>
@@ -36,7 +36,7 @@ export default function Content() {
         </div>
     </div>
     <div class="basis-1/2">
-        <div class="text-5xl font-bold mb-10">Create pages using beautiful components.</div>
+        <div class="text-3xl font-bold mb-6  ml-10">Create pages using beautiful components.</div>
         <div>
             <p class="ml-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
         </div>

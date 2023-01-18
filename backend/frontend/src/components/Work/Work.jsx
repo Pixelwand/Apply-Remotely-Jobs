@@ -40,7 +40,7 @@ export default function Work() {
           <img src={Workthree} alt="Imag"  class="w-76 h-80 top-6 left-6" />
         </div>
         <div  class="w-76 h-43 pr-4.5 pl-0 pt-0 pb-0 mt-8">
-        <h2  class="font-bold text-2xl mb-5">Opus made our journey possible</h2>
+        <h2  class="font-bold text-2xl mb-5">ARJ made our journey possible</h2>
         <div>
           <p>Turpis senectus amet tortor in sodates odio tettus. Pretium id amet, euismod sceteriscue vetit.</p>
         </div>

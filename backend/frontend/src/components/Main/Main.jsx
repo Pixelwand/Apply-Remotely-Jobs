@@ -4,8 +4,8 @@ import { ProfileMain } from '../../Assets';
 export default function Main() {
   return (
     <>
-    <div class="mt-16 mb-48">
-      <div class="flex flex-row">
+    <div class="mt-16 mb-48 flex flex-wrap sm:bg-black">
+      <div class="flex flex-row flex-wrap">
         <div class="bg-indigo-900 text-white basis-7/12 py-10 px-20  ">
           <div class="font-bold text-6xl w-64  text-center mx-auto my-auto">Build For Enterprise Businesses</div>
         

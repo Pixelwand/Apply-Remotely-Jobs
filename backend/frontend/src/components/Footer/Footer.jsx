@@ -53,9 +53,8 @@ export default function Footer() {
 </div>
 <div class="text-center">
     <button>
-    <input type={"email"} placeholder="Enter your email" class="outline-black p-3" >
+    <input type={"email"} placeholder="Enter your email" class="outline-black p-3" />
     <span class="bg-black text-white font-sans p-3">Get Started</span>
-    </input>
     </button>
   </div>
     </div>

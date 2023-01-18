@@ -7,33 +7,43 @@ export default function Details() {
     <>
     <div class="mt-20">
     <div class="font-bold text-3xl text-center">Trusted and loved by world's best team</div>
-    <div class="flex text-center font-bold text-slate-500 text-3xl flex-row mt-24">
-    <div class="basis-1/4">WeTransfer</div>
-    <div class="basis-1/4">Stamps</div>
-    <div class="basis-1/4">manter</div>
-    <div class="basis-1/4">Sugarcane</div>
-    </div>
-    <div class="flex text-center flex-row mt-40 ">
+    <div class="flex text-center font-bold text-slate-700 flex-col  mt-24 gap-12">
+    <div class="">
+      <div class="text-3xl">WeTransfer</div>
     <div class="basis-1/2">
     <div class="my-2 font-bold text-3xl">99.95%</div>
     <div class="my-2 font-semibold text-xl">Accuracy Rate</div>
     <div class="text-slate-600 font-sans">In fullfilling orders</div>
     </div>
-    <div class="basis-1/2">
+    </div>
+    <div class="">
+      <div>Stamps</div>
+      <div class="basis-1/2">
     <div class="my-2 font-bold text-3xl">5,000+</div>
     <div class="my-2 font-semibold text-xl">Ecommerce businesses</div>
     <div class="text-slate-600 font-sans">partner with Kriiyax</div>
     </div>
-    <div class="basis-1/2">
+    </div>
+    <div class="">
+      <div>Manter</div>
+      <div class="basis-1/2">
     <div class="my-2 font-bold text-3xl">99.96%</div>
     <div class="my-2 font-semibold text-xl">Of order ship on time</div>
     <div class="text-slate-600 font-sans">within SLA</div>
     </div>
-    <div class="basis-1/2">
+    </div>
+    <div class="">
+      <div>Sugarcane</div>
+      <div class="basis-1/2">
     <div class="my-2 font-bold text-3xl">#1</div>
     <div class="my-2 font-semibold text-xl">Best fullfillment Technology</div>
     <div class="font-sans text-slate-600 ">by Adweek's Retail award</div>
     </div>
+    </div>
+    
+    
+    
+    
     </div>
     <div class="text-center">
     <div class="text-left block ml-36 font-sans font-bold text-slate-600 mt-60">VIDEO TITLE</div>

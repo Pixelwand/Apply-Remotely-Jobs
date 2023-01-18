@@ -12,9 +12,8 @@ import Dashboard from '../Dashboard/Dashboard';
 
 const customStyles = {
   content: {
-    width:"65%",
-    top: '50%',
-    left: '33%',
+    top: '55%',
+    left: '50%',
     right: 'auto',
     bottom: 'auto',
     marginRight: '-50%',

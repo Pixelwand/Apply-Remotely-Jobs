@@ -63,10 +63,10 @@ export default function Details() {
           <button class="bg-blue-600 py-3 px-6 hover:bg-blue-800">Learn More</button>
         </div>
       </div>
-      <div class="basis-1/3 font-bold text-2xl font-sans">
-      <div class="mb-12 w-4/6"> <ImArrowUpLeft2 class="text-blue-600 mb-4 font-bold" /> Build or Customize a Website in Minutes
+      <div class="text-center font-bold text-2xl font-sans">
+      <div class="mb-12 w-5/6 text-center mx-auto "> <ImArrowUpLeft2 class="text-blue-600 font-bold mx-auto" /> Find or Apply for Remote Jobs in Seconds
 </div>
-      <div class="w-4/6"> <RiRocketFill class="text-blue-600 mb-4" />Our UI Kit was made for creativity.
+      <div class="w-5/6 mx-auto text-center"> <RiRocketFill class="text-blue-600 font-bold mx-auto" />Our UI Kit was made for creativity.
 </div>
       </div>
     </div>

@@ -54,12 +54,12 @@ export default function Details() {
       <p className='px-4 mt-12'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget consectetur eros. Aliquam erat volutpat. Praesent pulvinar arcu non lectus dapibus, a pulvinar mauris aliquam.</p>
     </div>
     </div>
-    <div class="flex justify-center  max-w-7xl mx-auto gap-32 flex-row mt-20 pb-10">
-      <div class="basis-2/3">
-        <div class="text-5xl mb-8 font-sans font-bold w-7/12">Make your site better with Kriyax</div>
-        <div class="ml-8 w-4/6 text-slate-600 font-sans font-normal mb-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget consectetur eros. Aliquam erat volutpat. Praesent pulvinar arcu non lectus dapibus, a pulvinar mauris aliquam.
+    <div class="flex justify-center flex-col  w-full mx-auto gap-32 mt-20 pb-10">
+      <div class="">
+        <div class="text-3xl mb-8 font-sans font-bold w-full px-4 text-center">Make your site better with Kriyax</div>
+        <div class="text-center w-full px-8 text-slate-600 font-sans font-normal mb-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget consectetur eros. Aliquam erat volutpat. Praesent pulvinar arcu non lectus dapibus, a pulvinar mauris aliquam.
 </div>
-        <div class="ml-8 text-white">
+        <div class="text-center text-white">
           <button class="bg-blue-600 py-3 px-6 hover:bg-blue-800">Learn More</button>
         </div>
       </div>

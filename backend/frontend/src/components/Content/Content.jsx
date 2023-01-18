@@ -35,20 +35,20 @@ export default function Content() {
             </div>
         </div>
     </div>
-    <div class="basis-1/2">
-        <div class="text-3xl font-bold mb-6  ml-10">Create pages using beautiful components.</div>
+    <div class="w-full text-center">
+        <div class="text-3xl font-bold mb-6  mx-auto px-6">Create pages using beautiful components.</div>
         <div>
-            <p class="ml-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
+            <p class="mx-auto px-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
         </div>
-        <div class="mt-8">
-            <button class="bg-slate-300 px-6 py-4 hover:bg-slate-600 ml-14">Learn More</button>
+        <div class="mt-8 ">
+            <button class="bg-slate-300 px-6 py-4 hover:bg-slate-600 ">Learn More</button>
         </div>
     </div>
     </div>
     <br/>
     <div  class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="flex justify-center flex-col">
-        <div class="flex justify-center flex-row mt-20 max-w-7xl mx-auto">
+    <div class=" justify-center flex-col">
+        <div class="flex justify-center flex-col mt-20 max-w-7xl mx-auto">
             <div class="basis-3/5 gap-12" >
                 <div class="text-2xl mb-6 mt-14 leading-14 text-slate-400 font-semibold" >FEATURES</div>
                 <div class="text-5xl max-w-lg font-bold font-sans mb-10">You’re not just doing business. You’re doing life.</div>
@@ -64,7 +64,7 @@ export default function Content() {
                 <img src={Profileone} alt="Profileone" class="h-154 w-126" />
             </div>
         </div>
-        <div class="flex flex-row gap-36 mt-40 px-20">
+        <div class="flex flex-col gap-36 mt-40 px-20">
         <div class=" basis-2/5">
             <img src={Profiletwo} class="h-104 w-96 h-96" alt="Profiletwo"/>
         </div>
@@ -78,7 +78,7 @@ export default function Content() {
         </div>
         </div>
         </div>
-        <div class="flex flex-row mt-40 mb-80 gap-12 px-20">
+        <div class="flex flex-col mt-40 mb-80 gap-12 px-20">
             <div class="basis-3/5 mt-16">
             <div class="font-sans font-bold text-2xl text-center">Stamps</div>
             <div class="font-sans font-bold text-2xl text-center w-3/6 mt-5 text-slate-500 ml-36">The Opus UI Kit lets you showcase your work in style. It's helped take our business online</div>

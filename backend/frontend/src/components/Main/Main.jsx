@@ -17,10 +17,10 @@ export default function Main() {
             <span>Explore Pages</span>
           </div>
           </div>
-          <div class="basis-5/12 ">
+          <div class="w-full mb-28">
           <img src={ProfileMain} class="object-fill" alt="ProfileMain" />
           
-        <div class="bg-white text-black w-80 absolute z-10 shadow-2xl rounded-3xl ml-48">
+        <div class="bg-white text-black  absolute mt-4  shadow-2xl rounded-3xl ">
           <div class="font-normal p-10 text-lg">I felt like I couldn’t grow until I moved to Kriyax. Now I am encouraged to work more with them.</div>
           <div class="font-bold text-base text-center">Frank Dublin</div>
           <div class="font-medium text-center py-3">CEO @STAMPS</div>

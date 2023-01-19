@@ -25,20 +25,20 @@ const customStyles = {
 export default function Header() {
     // const options = useMemo(() =>countryList().getValues(), []);
 
-    const $navbarsticky = document.getElementById("navbar-sticky");
+//     const $navbarsticky = document.getElementById("navbar-sticky");
 
-// optionally set a trigger element (eg. a button, hamburger icon)
-const $myDropdown = document.getElementById('myDropdown');
+// // optionally set a trigger element (eg. a button, hamburger icon)
+// const $myDropdown = document.getElementById('myDropdown');
 
-// optional options with default values and callback functions
-const options = {
-  onExpand: () => {
-    return true
-  }
-};
+// // optional options with default values and callback functions
+// const options = {
+//   onExpand: () => {
+//     return true
+//   }
+// };
 
-const collapse = new Collapse($navbarsticky, $myDropdown, options);
-//  collapse.expand()
+// let collapse = new Collapse($navbarsticky, $myDropdown, options);
+//   collapse.expand()
 
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -116,4 +116,19 @@ const collapse = new Collapse($navbarsticky, $myDropdown, options);
     </>
   )
 }
+
+const $navbarsticky = document.getElementById("navbar-sticky");
+
+// optionally set a trigger element (eg. a button, hamburger icon)
+const $myDropdown = document.getElementById('myDropdown');
+
+// optional options with default values and callback functions
+const options = {
+  onExpand: () => {
+    return true
+  }
+};
+
+let collapse = new Collapse($navbarsticky, $myDropdown, options);
+  collapse.expand()
 

@@ -25,26 +25,20 @@ const customStyles = {
 export default function Header() {
     // const options = useMemo(() =>countryList().getValues(), []);
 
-    const $navbarsticky = document.getElementById('navbar-sticky');
+    const $navbarsticky = document.getElementById("navbar-sticky");
 
 // optionally set a trigger element (eg. a button, hamburger icon)
 const $myDropdown = document.getElementById('myDropdown');
 
 // optional options with default values and callback functions
 const options = {
-  onCollapse: () => {
-      console.log('element has been collapsed')
-  },
   onExpand: () => {
-      console.log('element has been expanded')
-  },
-  onToggle: () => {
-      console.log('element has been toggled')
+    return true
   }
 };
 
 const collapse = new Collapse($navbarsticky, $myDropdown, options);
-collapse.expand();
+//  collapse.expand()
 
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -57,7 +51,6 @@ collapse.expand();
     setIsModalOpen(false)
   }
 
-  const [toggle, setToggle] = useState(false)
 
   return (
     <>

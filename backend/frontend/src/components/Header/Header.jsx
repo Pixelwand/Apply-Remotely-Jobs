@@ -36,15 +36,15 @@ const options = {
       console.log('element has been collapsed')
   },
   onExpand: () => {
-    return true
+      console.log('element has been expanded')
   },
   onToggle: () => {
       console.log('element has been toggled')
   }
 };
 
-// const collapse = new Collapse($navbarsticky, $myDropdown, options);
-
+const collapse = new Collapse($navbarsticky, $myDropdown, options);
+collapse.expand();
 
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -56,6 +56,8 @@ const options = {
   function closeModal(){
     setIsModalOpen(false)
   }
+
+  const [toggle, setToggle] = useState(false)
 
   return (
     <>

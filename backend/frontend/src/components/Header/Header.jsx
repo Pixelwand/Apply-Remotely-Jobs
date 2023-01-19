@@ -43,7 +43,7 @@ const options = {
   }
 };
 
-//const collapse = new Collapse($navbarsticky, $myDropdown, options);
+// const collapse = new Collapse($navbarsticky, $myDropdown, options);
 
 
 

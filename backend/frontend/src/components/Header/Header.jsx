@@ -36,7 +36,7 @@ export default function Header() {
   return (
     <>
     
-<nav class="bg-white  block px-2  py-2.5 dark:bg-gray-900 fixed z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+<nav class="bg-white w-full  py-2.5 dark:bg-gray-900 fixed z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
   <div class="container flex flex-wrap items-center justify-between mx-auto">
   <a href="http://localhost:3000" class="flex items-center">
       <span class="self-center text-2xl font-bold whitespace-nowrap ml-4 dark:text-white">ARJ</span>

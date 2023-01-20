@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { Homepage } from './components/Homepage/Homepage';
 import Dashboard from './components/Dashboard/Dashboard';
@@ -7,7 +7,6 @@ import Candidates from './components/Candidates/Candidates';
 import About from './components/About/About';
 
 export default function App() {
-  const [user, setLoginUser] = useState({})
   return (
   <>
   <BrowserRouter>
@@ -16,7 +15,7 @@ export default function App() {
     <Route path='/jobs' element={<Jobs />} />
     <Route path='/candidates' element={<Candidates />} />
     <Route path='/about' element={<About />} />
-    <Route path='/dashboard' element={<Dashboard />} setLoginUser={setLoginUser} />
+    <Route path='/dashboard' element={<Dashboard />} />
   </Routes>
   </BrowserRouter>
   </>

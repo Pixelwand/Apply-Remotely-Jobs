@@ -11,7 +11,6 @@ import Dashboard from '../Dashboard/Dashboard';
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
-
 const navigation = [
   { name: 'Home', href: 'http://localhost:3000/', current: false },
   { name: 'Jobs', href: 'http://localhost:3000/jobs', current: false },
@@ -32,7 +31,7 @@ const customStyles = {
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
-export default function Header({setLoginUser}) {
+export default function Header() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
   function openModal(){
@@ -71,17 +70,13 @@ export default function Header({setLoginUser}) {
                             {item.name}
                           </a>
                         ))}
-                        {{setLoginUser}?<a href='http://localhost:3000/dashboard'>Dashboard</a>
-                         :<button type="button" onClick={openModal} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Get started</button>
-                    }
+                        <button type="button" onClick={openModal} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Get started</button>
                       </div>
                     </div>
                   </div>
                   
                   <div className="mr-2 flex md:hidden">
-                    {{setLoginUser}?<a href='http://localhost:3000/dashboard'>Dashboard</a>
-                         :<button type="button" onClick={openModal} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Get started</button>
-                    }
+                          <button type="button" onClick={openModal} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Get started</button>
                     {/* Mobile menu button */}
                     <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-blue-800 font-bolder hover:text-blue focus:outline-none  ">
                       <span className="sr-only">Open main menu</span>

@@ -29,7 +29,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Dashboard({setLogoutUser}) {
+export default function Dashboard({setLoginUser}) {
   return (
     <>
       {/*
@@ -115,7 +115,7 @@ export default function Dashboard({setLogoutUser}) {
                             ))}
                           </Menu.Items>
                         </Transition>
-                        <button onClick={()=>setLogoutUser({})}>Logout</button>
+                        <button onClick={()=>setLoginUser({})}>Logout</button>
                       </Menu>
                     </div>
                   </div>

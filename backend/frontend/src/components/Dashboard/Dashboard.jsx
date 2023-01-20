@@ -22,22 +22,14 @@ const navigation = [
 ]
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  function handleLogout(){
-    localStorage.removeItem("token");
-    window.location.reload();
-  }
+  { name: 'Settings', href: '#' }
 ]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Dashboard() {
-  const handleLogout = () => {
-		localStorage.removeItem("token");
-		window.location.reload();
-	};
+export default function Dashboard({setLogoutUser}) {
   return (
     <>
       {/*
@@ -123,7 +115,7 @@ export default function Dashboard() {
                             ))}
                           </Menu.Items>
                         </Transition>
-                        <button onClick={handleLogout}>Logout</button>
+                        <button onClick={()=>setLogoutUser({})}>Logout</button>
                       </Menu>
                     </div>
                   </div>

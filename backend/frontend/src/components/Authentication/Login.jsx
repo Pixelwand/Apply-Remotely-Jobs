@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import axios from "axios"
-import { useNavigate } from "react-router-dom"
+// import { useNavigate } from "react-router-dom"
 // import { useForm } from 'react-hook-form';
 
 
-export const Login = ({setLoginUser}) => {
+export const Login = () => {
     // const {register, handleSubmit, formState:{errors}} = useForm();
 
     // const [value, setValue] = useState("");
@@ -29,7 +29,7 @@ export const Login = ({setLoginUser}) => {
     // }
 
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     
 
     const [ user, setUser] = useState({
@@ -48,9 +48,9 @@ export const Login = ({setLoginUser}) => {
     const formSubmit = () => {
         axios.post("http://localhost:8080/user/login", user)
         .then(res => {
-            alert(res.data.message)
-            setLoginUser(res.data.user)
-            navigate.push("/dashboard")
+            // alert(res.data.message)
+            // setLoginUser(res.data.user)
+            // navigate.push("/dashboard")
         })
     }
 

@@ -51,7 +51,7 @@ export default function Content() {
         <div class="flex justify-center flex-col mt-20 max-w-7xl mx-auto">
             <div class="basis-3/5 gap-12" >
                 <div class="text-2xl mb-6 mt-14 leading-14 text-slate-400 font-semibold" >FEATURES</div>
-                <div class="text-5xl max-w-lg font-bold font-sans mb-10">You’re not just doing business. You’re doing life.</div>
+                <div class="text-5xl max-w-lg font-bold font-sans mb-10">You’re not just finding remote jobs. You’re finding life.</div>
                 <div>
                     <ul class="mb-10 mt-20 font-semibold text-base">
                         <li class="mb-8"><span class="mr-8 font-bold text-blue-600 px-3 py-2 rounded-full bg-blue-100 hover:bg-blue-200">&#x2713;</span>Responsive Components</li>

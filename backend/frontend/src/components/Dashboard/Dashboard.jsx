@@ -2,12 +2,10 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
-// const handleLogout = () => {
-//   localStorage.removeItem("token");
-//   window.location.reload();
-// };
 
-const user = {
+
+
+const users = {
   name: 'Tom Cook',
   email: 'tom@example.com',
   imageUrl:
@@ -22,11 +20,7 @@ const navigation = [
 ]
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  // function handleLogout(){
-  //   localStorage.removeItem("token");
-  //   window.location.reload();
-  // }
+  { name: 'Settings', href: '#' }
 ]
 
 function classNames(...classes) {
@@ -34,20 +28,9 @@ function classNames(...classes) {
 }
 
 export default function Dashboard() {
-  const handleLogout = () => {
-		localStorage.removeItem("token");
-		window.location.reload();
-	};
+  
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-100">
-        <body class="h-full">
-        ```
-      */}
       <div className="min-h-full">
         <Disclosure as="nav" className="bg-gray-800">
           {({ open }) => (
@@ -93,7 +76,7 @@ export default function Dashboard() {
                         <div>
                           <Menu.Button className="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                             <span className="sr-only">Open user menu</span>
-                            <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
+                            <img className="h-8 w-8 rounded-full" src={users.imageUrl} alt="" />
                           </Menu.Button>
                         </div>
                         <Transition
@@ -123,7 +106,6 @@ export default function Dashboard() {
                             ))}
                           </Menu.Items>
                         </Transition>
-                        <button onClick={handleLogout}>Logout</button>
                       </Menu>
                     </div>
                   </div>
@@ -161,11 +143,11 @@ export default function Dashboard() {
                 <div className="border-t border-gray-700 pt-4 pb-3">
                   <div className="flex items-center px-5">
                     <div className="flex-shrink-0">
-                      <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
+                      <img className="h-10 w-10 rounded-full" src={users.imageUrl} alt="" />
                     </div>
                     <div className="ml-3">
-                      <div className="text-base font-medium leading-none text-white">{user.name}</div>
-                      <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
+                      <div className="text-base font-medium leading-none text-white">{users.name}</div>
+                      <div className="text-sm font-medium leading-none text-gray-400">{users.email}</div>
                     </div>
                     <button
                       type="button"
@@ -200,11 +182,6 @@ export default function Dashboard() {
         </header>
         <main>
           <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-            {/* Replace with your content */}
-            <div className="px-4 py-6 sm:px-0">
-              <div className="h-96 rounded-lg border-4 border-dashed border-gray-200" />
-            </div>
-            {/* /End replace */}
           </div>
         </main>
       </div>

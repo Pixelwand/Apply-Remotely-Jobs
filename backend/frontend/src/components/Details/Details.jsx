@@ -56,7 +56,7 @@ export default function Details() {
     </div>
     <div class="flex justify-center flex-col  w-full mx-auto gap-32 mt-20 pb-10">
       <div class="">
-        <div class="text-3xl mb-8 font-sans font-bold w-full px-4 text-center">Make your site better with Kriyax</div>
+        <div class="text-3xl mb-8 font-sans font-bold w-full px-4 text-center">Make your career better with Remote Jobs</div>
         <div class="text-center w-full px-8 text-slate-600 font-sans font-normal mb-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget consectetur eros. Aliquam erat volutpat. Praesent pulvinar arcu non lectus dapibus, a pulvinar mauris aliquam.
 </div>
         <div class="text-center text-white">
@@ -66,7 +66,7 @@ export default function Details() {
       <div class="text-center font-bold text-2xl font-sans">
       <div class="mb-12 w-5/6 text-center mx-auto "> <ImArrowUpLeft2 class="text-blue-600 font-bold mx-auto" /> Find or Apply for Remote Jobs in Seconds
 </div>
-      <div class="w-5/6 mx-auto text-center"> <RiRocketFill class="text-blue-600 font-bold mx-auto" />Our UI Kit was made for creativity.
+      <div class="w-5/6 mx-auto text-center"> <RiRocketFill class="text-blue-600 font-bold mx-auto" />Our search section is made for creativity.
 </div>
       </div>
     </div>

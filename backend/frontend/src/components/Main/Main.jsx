@@ -7,14 +7,14 @@ export default function Main() {
     <div class="mt-16 mb-48 flex flex-wrap sm:bg-black">
       <div class="flex flex-row flex-wrap">
         <div class="bg-indigo-900 text-white py-10   ">
-          <div class="font-bold text-4xl w-full  text-center mx-auto my-auto">Built For Enterprise Businesses</div>
+          <div class="font-bold text-4xl w-full  text-center mx-auto my-auto">Find High Paying Remote Jobs</div>
         
           <p class="text-center mt-10 mx-4 my-auto text-lg font-normal leading-9">Opus includes everything you need to build a beautiful website for your business. Built to perform and look good doing so.</p>
           <div class="text-center mt-10">
             <span class="mr-10">
-              <button class="bg-blue-600 hover:bg-blue-800 text-white px-6 py-3">Learn More</button>
+              <button class="bg-blue-600 hover:bg-blue-800 text-white px-6 py-3">Post Jobs</button>
             </span>
-            <span>Explore Pages</span>
+            <button>Explore Pages</button>
           </div>
           </div>
           <div class="w-full mb-28">

@@ -1,15 +1,12 @@
 import React, {Fragment} from 'react';
-import Modal from 'react-modal';
-import Select from 'react-select';
-import { useState, useMemo} from 'react';
-import countryList from 'react-select-country-list';
-import {Tabs, TabList, Tab, TabPanel} from 'react-tabs';
-import { Signup } from '../Authentication/Signup';
-import { Login } from '../Authentication/Login';
-import googleButton from './googleButton.css';
-import Dashboard from '../Dashboard/Dashboard';
+import { useState, useEffect} from 'react';
+import {Tabs, Tab, TabPanel, TabList} from 'react-tabs';
+import Modal from 'react-modal'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import {Signup} from '../Authentication/Signup';
+import {Login} from '../Authentication/Login';
+
 
 const navigation = [
   { name: 'Home', href: 'http://localhost:3000/', current: false },
@@ -32,6 +29,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 export default function Header() {
+  
     const [isModalOpen, setIsModalOpen] = useState(false);
 
   function openModal(){
@@ -70,14 +68,16 @@ export default function Header() {
                             {item.name}
                           </a>
                         ))}
-                        <button type="button" onClick={openModal} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Get started</button>
+                        <button type="button" onClick={openModal} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Get started</button>:
+                        
                       </div>
                     </div>
                   </div>
                   
                   <div className="mr-2 flex md:hidden">
-                          <button type="button" onClick={openModal} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Get started</button>
                     {/* Mobile menu button */}
+                        <button type="button" onClick={openModal} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Get started</button>:
+                        
                     <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-blue-800 font-bolder hover:text-blue focus:outline-none  ">
                       <span className="sr-only">Open main menu</span>
                       {open ? (
@@ -136,6 +136,7 @@ export default function Header() {
             <span className="google-button__text">sign in with Google</span>
           </button>
         </form>
+
         </Modal>
       </div>
     </>

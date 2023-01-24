@@ -1,4 +1,5 @@
 import React from 'react';
+import {PostJobs} from '../Jobs/PostJobs';
 import { ProfileMain } from '../../Assets';
 
 export default function Main() {
@@ -12,7 +13,7 @@ export default function Main() {
           <p class="text-center mt-10 mx-4 my-auto text-lg font-normal leading-9">Opus includes everything you need to build a beautiful website for your business. Built to perform and look good doing so.</p>
           <div class="text-center mt-10">
             <span class="mr-10">
-              <button class="bg-blue-600 hover:bg-blue-800 text-white px-6 py-3">Post Jobs</button>
+             <a href='http://localhost:3000/postjobs'>Post Jobs </a>
             </span>
             <button>Explore Pages</button>
           </div>

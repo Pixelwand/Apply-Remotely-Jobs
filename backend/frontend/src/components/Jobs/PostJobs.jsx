@@ -25,6 +25,46 @@ const primaryfield = [
   {value:"Quality Assurance", label:"Quality Assurance"}
 ]
 
+const salary = [
+  {value:"100,00$", label:"USD 100,00$ PER YEAR"},
+  {value:"200,00$", label:"USD 200,00$ PER YEAR"},
+  {value:"300,00$", label:"USD 300,00$ PER YEAR"},
+  {value:"400,00$", label:"USD 400,00$ PER YEAR"},
+  {value:"500,00$", label:"USD 500,00$ PER YEAR"},
+  {value:"600,00$", label:"USD 600,00$ PER YEAR"},
+  {value:"700,00$", label:"USD 700,00$ PER YEAR"},
+  {value:"800,00$", label:"USD 800,00$ PER YEAR"},
+  {value:"900,00$", label:"USD 900,00$ PER YEAR"},
+  {value:"1000,00$", label:"USD 1000,00$ PER YEAR"},
+  {value:"1100,00$", label:"USD 1100,00$ PER YEAR"},
+  {value:"1200,00$", label:"USD 1200,00$ PER YEAR"},
+  {value:"130,00$", label:"USD 1300,00$ PER YEAR"},
+  {value:"1400,00$", label:"USD 1400,00$ PER YEAR"},
+  {value:"1500,00$", label:"USD 1500,00$ PER YEAR"},
+  {value:"1600,00$", label:"USD 1600,00$ PER YEAR"},
+  {value:"1700,00$", label:"USD 1700,00$ PER YEAR"},
+  {value:"1800,00$", label:"USD 1800,00$ PER YEAR"},
+  {value:"1900,00$", label:"USD 1900,00$ PER YEAR"},
+  {value:"2000,00$", label:"USD 2000,00$ PER YEAR"},
+  {value:"2200,00$", label:"USD 2200,00$ PER YEAR"},
+  {value:"2400,00$", label:"USD 2400,00$ PER YEAR"},
+  {value:"2600,00$", label:"USD 2600,00$ PER YEAR"},
+  {value:"2800,00$", label:"USD 2800,00$ PER YEAR"},
+  {value:"3000,00$", label:"USD 3000,00$ PER YEAR"},
+  {value:"3200,00$", label:"USD 3200,00$ PER YEAR"},
+  {value:"3400,00$", label:"USD 3400,00$ PER YEAR"},
+  {value:"3600,00$", label:"USD 3600,00$ PER YEAR"},
+  {value:"3800,00$", label:"USD 3800,00$ PER YEAR"},
+  {value:"4000,00$", label:"USD 4000,00$ PER YEAR"},
+  {value:"4400,00$", label:"USD 4400,00$ PER YEAR"},
+  {value:"4800,00$", label:"USD 4800,00$ PER YEAR"},
+  {value:"5000,00$", label:"USD 5000,00$ PER YEAR"},
+  {value:"5250,00$", label:"USD 5250,00$ PER YEAR"},
+  {value:"5500,00$", label:"USD 5500,00$ PER YEAR"},
+  {value:"6000,00$", label:"USD 6000,00$ PER YEAR"},
+  {value:"6500,00$", label:"USD 650,00$ PER YEAR"}
+]
+
 const Stack = [
 "Engineers",
 "Developers",
@@ -247,6 +287,30 @@ export const PostJobs = () => {
           placeholder='Type a location to this job is restricted like Worldwide, Asia or USA'
           className="w-84"
         />
+      </div>
+      <div>
+        <div>
+          Job Details
+        </div>
+        <div className='my-10'>
+          <div className='my-5'>Company Logo</div>
+          <input type={"file"} placeholder="Upload" className='rounder-sm' onChange={changeHandler} />
+        </div>
+        <div>ANNUAL SALARY OR COMPENSATION IN USD (GROSS, ANNUALIZED, FULL-TIME-EQUIVALENT (FTE) IN USD EQUIVALENT)*</div>
+        <div>
+        <label>
+                <Select onChange={setSelected} defaultValue={selected} options={salary}  name='name' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Primary Field'
+                {...register("name", {required:true})}
+                
+                />
+              </label>
+              <label>
+                <Select onChange={setSelected} defaultValue={selected} options={primaryfield}  name='name' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Primary Field'
+                {...register("name", {required:true})}
+                
+                />
+              </label>
+        </div>
       </div>
 
               <div class="mb-8 ">

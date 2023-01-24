@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {useForm} from 'react-hook-form';
 import Select from 'react-select'
 import {WithContext as ReactTags} from 'react-tag-input';
-import { render } from 'react-dom';
 
 const jobtype = [
   {value:"Full Time", label:"Full Time"},
@@ -21,14 +20,63 @@ const primaryfield = [
   {value:"Design", label:"Design"},
   {value:"Frontend", label:"Frontend"},
   {value:"Backend", label:"Backend"},
-  {value:"Legal", label:"Legal"}
+  {value:"Legal", label:"Legal"},
+  {value:"Testing", label:"Testing"},
+  {value:"Quality Assurance", label:"Quality Assurance"}
 ]
 
 const Stack = [
-  { id: 'Thailand', text: 'Thailand' },
-    { id: 'India', text: 'India' },
-    { id: 'Vietnam', text: 'Vietnam' },
-    { id: 'Turkey', text: 'Turkey' }
+"Engineers",
+"Developers",
+'Engineer',
+'Executive',
+'Senior',
+'Developer',
+'Finance',
+'Sys Admin',
+'Javascript',
+'Backend',
+'Golang', 
+'Cloud', 
+'Medical',
+'Frontend', 
+'Full Stack',
+'Ops',
+'Design',
+'React', 
+'InfoSec', 
+'Markeing', 
+'Mobile', 
+'Content Writing', 
+'SaaS', 
+'Recruiter', 
+'Full Time', 
+'API', 
+'Sales', 
+'Ruby',
+'Education',
+'Devops',
+'Stats',
+'Python',
+'Node',
+'Non Tech',
+'Video',
+'Travel',
+'Quality Assurance',
+'E-commerce',
+'Teaching',
+'Linux',
+'Java',
+'Crypt',
+'Junior',
+'Git',
+'Legal',
+'Android',
+'Accounting',
+'Admin',
+'Microsoft',
+'Excel',
+'PHP'
 ]
 
 const suggestions = Stack.map(stack => {
@@ -48,10 +96,7 @@ const delimiters = [KeyCodes.comma, KeyCodes.enter];
 
 export const PostJobs = () => {
   const [tags, setTags] = React.useState([
-    { id: 'Thailand', text: 'Thailand' },
-    { id: 'India', text: 'India' },
-    { id: 'Vietnam', text: 'Vietnam' },
-    { id: 'Turkey', text: 'Turkey' }
+    
   ]);
 
   const handleDelete = i => {
@@ -146,7 +191,7 @@ export const PostJobs = () => {
 
               <div class="mb-8 font-xl">
               <label>
-                <Select onChange={setSelected} defaultValue={selected} options={primaryfield}  name='name' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Job Type'
+                <Select onChange={setSelected} defaultValue={selected} options={primaryfield}  name='name' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Primary Field'
                 {...register("name", {required:true})}
                 
                 />
@@ -158,7 +203,7 @@ export const PostJobs = () => {
               <div className='my-10'>
         <ReactTags
           tags={tags}
-          // suggestions={suggestions}
+           suggestions={suggestions}
           delimiters={delimiters}
           handleDelete={handleDelete}
           handleAddition={handleAddition}

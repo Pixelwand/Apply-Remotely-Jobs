@@ -79,7 +79,25 @@ const Stack = [
 'PHP'
 ]
 
-const suggestions = Stack.map(stack => {
+const Location = [
+  "Worldwide",
+  "USA",
+  "UK",
+  "Europe",
+  "Australia",
+  "Asia",
+  "India"
+]
+
+const locations = Location.map(location => {
+  return{
+    id:location,
+    text:location
+  }
+})
+
+
+const stacks = Stack.map(stack => {
   return {
     id: stack,
     text: stack
@@ -200,10 +218,10 @@ export const PostJobs = () => {
               </div>
 
               
-              <div className='my-10'>
+              <div className='my-10 w-full'>Tags, Keywords or Stack
         <ReactTags
           tags={tags}
-           suggestions={suggestions}
+           suggestions={stacks}
           delimiters={delimiters}
           handleDelete={handleDelete}
           handleAddition={handleAddition}
@@ -211,6 +229,23 @@ export const PostJobs = () => {
           handleTagClick={handleTagClick}
           inputFieldPosition="bottom"
           autocomplete
+          placeholder='Type a tag or search by keywords'
+          className="w-84"
+        />
+      </div>
+      <div className='my-10 w-full'>Restricted Job Locations
+        <ReactTags
+          tags={tags}
+           suggestions={locations}
+          delimiters={delimiters}
+          handleDelete={handleDelete}
+          handleAddition={handleAddition}
+          handleDrag={handleDrag}
+          handleTagClick={handleTagClick}
+          inputFieldPosition="bottom"
+          autocomplete
+          placeholder='Type a location to this job is restricted like Worldwide, Asia or USA'
+          className="w-84"
         />
       </div>
 

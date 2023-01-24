@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import {useForm} from 'react-hook-form';
 import Select from 'react-select'
+import {WithContext as ReactTags} from 'react-tag-input';
+import { render } from 'react-dom';
 
 const jobtype = [
   {value:"Full Time", label:"Full Time"},
@@ -22,7 +24,57 @@ const primaryfield = [
   {value:"Legal", label:"Legal"}
 ]
 
+const Stack = [
+  { id: 'Thailand', text: 'Thailand' },
+    { id: 'India', text: 'India' },
+    { id: 'Vietnam', text: 'Vietnam' },
+    { id: 'Turkey', text: 'Turkey' }
+]
+
+const suggestions = Stack.map(stack => {
+  return {
+    id: stack,
+    text: stack
+  };
+});
+
+const KeyCodes = {
+  comma: 188,
+  enter: 13
+};
+
+const delimiters = [KeyCodes.comma, KeyCodes.enter];
+
+
 export const PostJobs = () => {
+  const [tags, setTags] = React.useState([
+    { id: 'Thailand', text: 'Thailand' },
+    { id: 'India', text: 'India' },
+    { id: 'Vietnam', text: 'Vietnam' },
+    { id: 'Turkey', text: 'Turkey' }
+  ]);
+
+  const handleDelete = i => {
+    setTags(tags.filter((tag, index) => index !== i));
+  };
+
+  const handleAddition = tag => {
+    setTags([...tags, tag]);
+  };
+
+  const handleDrag = (tag, currPos, newPos) => {
+    const newTags = tags.slice();
+
+    newTags.splice(currPos, 1);
+    newTags.splice(newPos, 0, tag);
+
+    // re-render
+    setTags(newTags);
+  };
+
+  const handleTagClick = index => {
+    console.log('The tag at index ' + index + ' was clicked');
+  };
   const {register, handleSubmit, formState:{errors}} = useForm();
   const [selected, setSelected] = useState(null)
   const formSubmit = async(data) => {
@@ -103,7 +155,19 @@ export const PostJobs = () => {
               </div>
 
               
-              
+              <div className='my-10'>
+        <ReactTags
+          tags={tags}
+          // suggestions={suggestions}
+          delimiters={delimiters}
+          handleDelete={handleDelete}
+          handleAddition={handleAddition}
+          handleDrag={handleDrag}
+          handleTagClick={handleTagClick}
+          inputFieldPosition="bottom"
+          autocomplete
+        />
+      </div>
 
               <div class="mb-8 ">
               <label>

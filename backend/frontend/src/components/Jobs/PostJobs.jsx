@@ -1,3 +1,4 @@
+
 import React, {useState} from 'react';
 import {useForm} from 'react-hook-form';
 import Select from 'react-select'
@@ -11,6 +12,11 @@ const jobtype = [
   {value:"Internship", label:"Internship"},
   {value:"Volunteer", label:"Volunteer"},
 ]
+
+// const jobbenefits = [
+  // {value:"Distributed Team", label:"Distributed Team"},
+  // {value:"Async", label:"Async"}
+// ]
 
 const primaryfield = [
   {value:"Software Development", label:"Software Development"},
@@ -137,6 +143,7 @@ const locations = Location.map(location => {
 })
 
 
+
 const stacks = Stack.map(stack => {
   return {
     id: stack,
@@ -180,6 +187,12 @@ export const PostJobs = () => {
   };
   const {register, handleSubmit, formState:{errors}} = useForm();
   const [selected, setSelected] = useState(null)
+  const [benefits, setBenefits] = useState(
+    {id:1, label:"Distributed Team"},
+    {id:2, label:"Async"}
+  )
+
+   const {id, label} = benefits;
   const formSubmit = async(data) => {
       const response = await fetch("http://localhost:8080/user/register", {
            method:'POST',
@@ -204,7 +217,7 @@ export const PostJobs = () => {
     }
   return (
     <>
-    <div class="px-4 pb-auto mb-auto">
+    <div class="px-4 pb-60 mb-auto">
             <form onSubmit={handleSubmit(formSubmit)}>
               <fieldset class="text-center font-semibold text-base mb-8 mt-10">Post Remote Jobs <span className='line-through'>99$</span> 19$<hr class="mt-3 font-" /></fieldset>
               
@@ -296,23 +309,39 @@ export const PostJobs = () => {
           <div className='my-5'>Company Logo</div>
           <input type={"file"} placeholder="Upload" className='rounder-sm' onChange={changeHandler} />
         </div>
-        <div>ANNUAL SALARY OR COMPENSATION IN USD (GROSS, ANNUALIZED, FULL-TIME-EQUIVALENT (FTE) IN USD EQUIVALENT)*</div>
-        <div>
-        <label>
-                <Select onChange={setSelected} defaultValue={selected} options={salary}  name='name' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Primary Field'
+        <div className='text-xs'>ANNUAL SALARY OR COMPENSATION IN USD (GROSS, ANNUALIZED, FULL-TIME-EQUIVALENT (FTE) IN USD EQUIVALENT)*</div>
+        <div className='flex flex-row gap-8 justify-center my-10'>
+        <label className=''>
+                <Select onChange={setSelected} defaultValue={selected} options={salary}  name='name' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Min Salary'
                 {...register("name", {required:true})}
                 
                 />
               </label>
-              <label>
-                <Select onChange={setSelected} defaultValue={selected} options={primaryfield}  name='name' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Primary Field'
+              <label className=''>
+                <Select onChange={setSelected} defaultValue={selected} options={salary}  name='name' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Max Salary'
                 {...register("name", {required:true})}
                 
                 />
               </label>
         </div>
+        <div className='mb-5'>
+                <p className='text-xs'>It's illegal to not share salary range on job posts since 2021. Posts without salary will automatically show an estimate of salary based on similar jobs. Remote job postings are legally required to show a salary compensation range in many U.S. states and countries. Google does NOT index jobs without salary data. If it's a short-term gig, use the annual full-time equivalent. For example, if it's a 2-week project for $2,000, the annual equivalent would be $2,000 / 2 weeks * 52 weeks = $52,000. Please use USD equivalent. We don't have currency built-in yet and we'd like to use this salary data to show salary trends in remote work. Remote OK is a supporter of #OpenSalaries.</p>
+              </div>
       </div>
 
+      <div class="mb-8 font-xl">Job Description*:
+              <label>
+                <textarea onChange={changeHandler}  name='name' type={"textarea"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg block w-full h-72 mt-5 pl-5 placeholder:font-sans" placeholder='Mention All the details about job'
+                {...register("name", {required:true})}
+                
+                />
+              </label>
+              <div>
+                <div className='font-bold text-xl mt-8 mb-1'>Benefits</div>
+                <div className='bg-blue-600 text-white w-1/3'>{label}</div>
+              </div>
+              </div>
+     
               <div class="mb-8 ">
               <label>
                 <input name='number' onChange={changeHandler} class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" placeholder='Phone Number'

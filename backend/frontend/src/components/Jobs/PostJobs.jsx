@@ -73,7 +73,29 @@ const salary = [
 
 const Benefits = [
 "Distributed work",
-"Async"
+"Async",
+"401(k)",
+"Vision Insurance",
+"Dental Insurance",
+"Medical Insurance",
+"Unlimited Vacation",
+"Paid Time Off",
+"4 day workweek",
+"401k matching",
+"company retreats",
+"Coworkig budget",
+"Learning budget",
+"Free gym membership",
+"Mental Wellness budget",
+"Home Office budget",
+"Pay in crypto",
+"Psedonymous",
+"Profit sharing",
+"Equity Compensation",
+"No Whiteboard Interview",
+"No monitoring system",
+"No politics at work"
+
 ]
 
 const Stack = [
@@ -342,30 +364,40 @@ export const PostJobs = () => {
                 <div className='font-bold text-xl mt-8 mb-1'>Benefits</div>
                 <div>
                 {Benefits.map((item, index) => (
-            <div key={index}>
-              <input value={item} type="checkbox"  />
+            <div key={index} className="">
+              <input value={item} type="checkbox" className='mr-3' />
               <span className="">{item}</span>
             </div>
           ))}
                 </div>
               </div>
               </div>
+              <div>
+                <div className='font-bold text-xl'>How to Apply?</div>
+                <div>
+                  <textarea type={"textarea"} onChange={changeHandler} className="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg block w-full mb-10 h-72 mt-5 pl-5 placeholder:font-sans" />
+                </div>
+                <div>
+                  <div className='font-bold text-xl'>Apply URL:</div>
+                  <input onChange={changeHandler} type={"text"} placeholder="Enter Link to Application" className="outline outline-2 mb-10 outline-offset-1 outline-slate-500 rounded-lg block w-full h-10 mt-5 pl-5 placeholder:font-sans"/>
+                </div>
+              </div>
      
               <div class="mb-8 ">
+                <div className='text-center font-bold text-2xl my-10'>Company</div>
               <label>
-                <input name='number' onChange={changeHandler} class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" placeholder='Phone Number'
-                {...register("number", {required:true, minLength:10, maxLength:10})}
+                <input name='Company Twitter' onChange={changeHandler} class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" placeholder='Twitter Username' type={"text"}
                 ></input>
               </label>
-              {errors.number && <p class="text-red-600 font-normal">Please check your phone number!</p>}
+              <p className='text-xs mt-2'>Twitter username without @. Not required, but used to tag your company when we tweet out your job post.</p>
               </div>
               <div class="mb-5">
                 <label>
-                  <input name='password' onChange={changeHandler} class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"password"} placeholder="Create New Password"
-                  {...register("password", {required:true, pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/})}
+                  <input name='Company Email' onChange={changeHandler} class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"email"} placeholder="Company Email"
+                  
                   />
                 </label>
-                {errors.password && <p class="text-red-600 font-normal">Please check your password!</p>}
+                <p className='text-xs mt-2'>Make sure this email is accessible by you! We use this to send the invoice and edit link. We can not and do not manually resend it! If you use your company domain (same as company name), we will show a [ Verified ] tag on your job post.</p>
               </div>
               <div class="mb-5">
                 <input type={"checkbox"} 

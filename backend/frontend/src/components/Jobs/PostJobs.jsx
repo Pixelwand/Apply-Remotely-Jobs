@@ -218,7 +218,7 @@ export const PostJobs = () => {
 
    
   const formSubmit = async(data) => {
-      const response = await fetch("http://localhost:8080/user/register", {
+      const response = await fetch("http://localhost:8080/user/postjob", {
            method:'POST',
            headers:{
              'content-Type':'application/json'

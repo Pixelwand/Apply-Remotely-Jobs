@@ -1,3 +1,4 @@
+const { url } = require('inspector');
 const mongoose = require('mongoose');
 const jobSchema = new mongoose.Schema({
     companyName:{
@@ -11,5 +12,57 @@ const jobSchema = new mongoose.Schema({
     position:{
         type:String,
         require:true
+    },
+    jobtype:{
+        type:String
+    },
+    primaryField:{
+        type:String
+    },
+    techStack:{
+        type:String
+    },
+    location:{
+        type:String,
+        require:true
+    },
+    companyLogo:{
+        type:Image
+    },
+    minSalary:{
+        type:String,
+        require:true
+    },
+    maxSalary:{
+        type:String,
+        require:true
+    },
+    jobDescription:{
+        type:String,
+        require:true
+    },
+    benefits:{
+        type:String
+    },
+    howtoapply:{
+        type:String
+    },
+    applyUrl:{
+        type:url,
+        require:true
+    },
+    twitterUsername:{
+        type:String
+    },
+    secondEmail:{
+        type:String
+    },
+    terms:{
+        type:String,
+        require:true
     }
+
 })
+
+const Jobpost = mongoose.model("Jobpost", jobSchema)
+module.exports = Jobpost;

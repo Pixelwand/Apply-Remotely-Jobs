@@ -71,6 +71,11 @@ const salary = [
   {value:"6500,00$", label:"USD 650,00$ PER YEAR"}
 ]
 
+const Benefits = [
+"Distributed work",
+"Async"
+]
+
 const Stack = [
 "Engineers",
 "Developers",
@@ -187,12 +192,9 @@ export const PostJobs = () => {
   };
   const {register, handleSubmit, formState:{errors}} = useForm();
   const [selected, setSelected] = useState(null)
-  const [benefits, setBenefits] = useState(
-    {id:1, label:"Distributed Team"},
-    {id:2, label:"Async"}
-  )
+  
 
-   const {id, label} = benefits;
+   
   const formSubmit = async(data) => {
       const response = await fetch("http://localhost:8080/user/register", {
            method:'POST',
@@ -338,7 +340,14 @@ export const PostJobs = () => {
               </label>
               <div>
                 <div className='font-bold text-xl mt-8 mb-1'>Benefits</div>
-                <div className='bg-blue-600 text-white w-1/3'>{label}</div>
+                <div>
+                {Benefits.map((item, index) => (
+            <div key={index}>
+              <input value={item} type="checkbox"  />
+              <span className="">{item}</span>
+            </div>
+          ))}
+                </div>
               </div>
               </div>
      

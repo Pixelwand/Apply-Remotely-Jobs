@@ -247,12 +247,10 @@ export const PostJobs = () => {
               
               <div class="mb-8 font-xl">
               <label>
-                <input onChange={changeHandler}  name='name' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Company Name'
-                {...register("name", {required:true})}
-                
+                <input onChange={changeHandler}  name='companyName' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Company Name'
                 />
               </label>
-              {errors.name && <p class="text-red-600 font-normal">please check your Full Name!</p>}
+             
               </div>
               
               <div class="mb-8">
@@ -276,22 +274,19 @@ export const PostJobs = () => {
               
               <div class="mb-8 font-xl">
               <label>
-                <Select onChange={setSelected} defaultValue={selected} options={jobtype}  name='name' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Job Type'
-                {...register("name", {required:true})}
+                <Select onChange={setSelected} defaultValue={selected} options={jobtype}  name='jobType' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Job Type'
                 
                 />
               </label>
-              {errors.name && <p class="text-red-600 font-normal">please check your Full Name!</p>}
+           
               </div>
 
               <div class="mb-8 font-xl">
               <label>
-                <Select onChange={setSelected} defaultValue={selected} options={primaryfield}  name='name' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Primary Field'
-                {...register("name", {required:true})}
+                <Select onChange={setSelected} defaultValue={selected} options={primaryfield}  name='primaryField' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Primary Field'
                 
                 />
               </label>
-              {errors.name && <p class="text-red-600 font-normal">please check your Full Name!</p>}
               </div>
 
               
@@ -336,14 +331,12 @@ export const PostJobs = () => {
         <div className='text-xs'>ANNUAL SALARY OR COMPENSATION IN USD (GROSS, ANNUALIZED, FULL-TIME-EQUIVALENT (FTE) IN USD EQUIVALENT)*</div>
         <div className='flex flex-row gap-8 justify-center my-10'>
         <label className=''>
-                <Select onChange={setSelected} defaultValue={selected} options={salary}  name='name' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Min Salary'
-                {...register("name", {required:true})}
+                <Select onChange={setSelected} defaultValue={selected} options={salary}  name='minSalary' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Min Salary'
                 
                 />
               </label>
               <label className=''>
-                <Select onChange={setSelected} defaultValue={selected} options={salary}  name='name' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Max Salary'
-                {...register("name", {required:true})}
+                <Select onChange={setSelected} defaultValue={selected} options={salary}  name='maxSalary' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Max Salary'
                 
                 />
               </label>
@@ -356,7 +349,6 @@ export const PostJobs = () => {
       <div class="mb-8 font-xl">Job Description*:
               <label>
                 <textarea onChange={changeHandler}  name='name' type={"textarea"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg block w-full h-72 mt-5 pl-5 placeholder:font-sans" placeholder='Mention All the details about job'
-                {...register("name", {required:true})}
                 
                 />
               </label>
@@ -386,8 +378,8 @@ export const PostJobs = () => {
               <div class="mb-8 ">
                 <div className='text-center font-bold text-2xl my-10'>Company</div>
               <label>
-                <input name='Company Twitter' onChange={changeHandler} class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" placeholder='Twitter Username' type={"text"}
-                ></input>
+                <input name='companyTwitter' onChange={changeHandler} class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" placeholder='Twitter Username' type={"text"}
+                />
               </label>
               <p className='text-xs mt-2'>Twitter username without @. Not required, but used to tag your company when we tweet out your job post.</p>
               </div>
@@ -400,8 +392,7 @@ export const PostJobs = () => {
                 <p className='text-xs mt-2'>Make sure this email is accessible by you! We use this to send the invoice and edit link. We can not and do not manually resend it! If you use your company domain (same as company name), we will show a [ Verified ] tag on your job post.</p>
               </div>
               <div class="mb-5">
-                <input type={"checkbox"} 
-                {...register("checkbox", {required:true})}
+                <input type={"checkbox"}
                 />
                 <label class="font-sans text-sm ml-5">I agree to the <a href="#/" class="text-blue-700 font-semibold">Terms of Service</a> and <a href='#/' class="font-semibold font-sans text-blue-700">Privacy Policy</a></label>
               </div>

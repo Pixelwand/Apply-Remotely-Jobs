@@ -13,9 +13,9 @@ export default function Main() {
           <p class="text-center mt-10 mx-4 my-auto text-lg font-normal leading-9">Opus includes everything you need to build a beautiful website for your business. Built to perform and look good doing so.</p>
           <div class="text-center mt-10">
             <span class="mr-10">
-             <a href='http://localhost:3000/postjobs'>Post Remote Jobs </a>
+             <a href='http://localhost:3000/postjobs' className='bg-green-600 p-4 rounded-xl font-bold font-sans'>Post Remote Jobs </a>
             </span>
-            <button>Explore Pages</button>
+            <a href='http://localhost:3000/jobs' className='bg-green-600 p-4 rounded-xl font-bold font-sans'>Explore Jobs</a>
           </div>
           </div>
           <div class="w-full mb-28">

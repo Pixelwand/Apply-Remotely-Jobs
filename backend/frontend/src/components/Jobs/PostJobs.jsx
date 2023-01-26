@@ -249,7 +249,7 @@ export const PostJobs = () => {
               <div class="mb-8 font-xl">
               <label>
                 <input onChange={changeHandler}  name='companyName' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Company Name'
-                // {...register("companyName", {required:true})}
+                 {...register("companyName", {required:true})}
                 />
               </label>
              
@@ -258,7 +258,7 @@ export const PostJobs = () => {
               <div class="mb-8">
               <label>
                 <input onChange={changeHandler} name='companyEmail' class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"text"} placeholder='Company Email Address'
-                // {...register("companyEmail", {required:true, pattern:/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}
+                 {...register("companyEmail", {required:true, pattern:/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}
                 />
               </label>
               {errors.email && <p class="text-red-600 font-normal">Please check your Email!</p>}

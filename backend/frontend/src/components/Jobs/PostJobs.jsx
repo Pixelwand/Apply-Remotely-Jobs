@@ -1,5 +1,3 @@
-
-import { required } from 'joi';
 import React, {useState} from 'react';
 import {useForm} from 'react-hook-form';
 import Select from 'react-select'
@@ -278,9 +276,9 @@ export const PostJobs = () => {
               
               <div class="mb-8 font-xl">
               <label>
-                <Select onChange={setSelectedOption} defaultValue={selectedOption}  options={jobtype} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans"
-                   name="jobtypes"
-                   {...register("jobtypes", {required:true})}
+                <Select onChange={changeHandler} defaultValue={selectedOption}  options={jobtype} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans"
+                   value={setSelectedOption}
+                  //  {...value("jobtypes", {required:true})}
                 />
                 </label>
            

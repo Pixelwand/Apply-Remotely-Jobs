@@ -248,6 +248,7 @@ export const PostJobs = () => {
               <div class="mb-8 font-xl">
               <label>
                 <input onChange={changeHandler}  name='companyName' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Company Name'
+                {...register("companyName", {required:true})}
                 />
               </label>
              
@@ -255,8 +256,8 @@ export const PostJobs = () => {
               
               <div class="mb-8">
               <label>
-                <input onChange={changeHandler} name='email' class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"text"} placeholder='Company Email Address'
-                {...register("email", {required:true, pattern:/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}
+                <input onChange={changeHandler} name='companyEmail' class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"text"} placeholder='Company Email Address'
+                {...register("companyEmail", {required:true, pattern:/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}
                 />
               </label>
               {errors.email && <p class="text-red-600 font-normal">Please check your Email!</p>}
@@ -265,7 +266,7 @@ export const PostJobs = () => {
               <div class="mb-8 font-xl">
               <label>
                 <input onChange={changeHandler}  name='position' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Position'
-                
+                {...register("position", {required:true})}
                 
                 />
               </label>
@@ -274,8 +275,8 @@ export const PostJobs = () => {
               
               <div class="mb-8 font-xl">
               <label>
-                <Select onChange={setSelected} defaultValue={selected} options={jobtype}  name='jobType' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Job Type'
-                
+                <Select onChange={setSelected} defaultValue={selected} options={jobtype}  name='jobtype' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Job Type'
+                {...register("jobtype", {required:true})}
                 />
               </label>
            
@@ -284,7 +285,7 @@ export const PostJobs = () => {
               <div class="mb-8 font-xl">
               <label>
                 <Select onChange={setSelected} defaultValue={selected} options={primaryfield}  name='primaryField' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Primary Field'
-                
+                {...register("primaryField", {required:true})}
                 />
               </label>
               </div>
@@ -303,6 +304,8 @@ export const PostJobs = () => {
           autocomplete
           placeholder='Type a tag or search by keywords'
           className="w-84"
+          name='techStack'
+          {...register("techStack", {required:true})}
         />
       </div>
       <div className='my-10 w-full'>Restricted Job Locations
@@ -318,6 +321,8 @@ export const PostJobs = () => {
           autocomplete
           placeholder='Type a location to this job is restricted like Worldwide, Asia or USA'
           className="w-84"
+          name='location'
+          {...register("location", {required:true})}
         />
       </div>
       <div>
@@ -326,18 +331,21 @@ export const PostJobs = () => {
         </div>
         <div className='my-10'>
           <div className='my-5'>Company Logo</div>
-          <input type={"file"} placeholder="Upload" className='rounder-sm' onChange={changeHandler} />
+          <input type={"file"} placeholder="Upload" className='rounder-sm' onChange={changeHandler} 
+          name="companyLogo"
+          {...register("comapnyLogo", {required:true})}
+          />
         </div>
         <div className='text-xs'>ANNUAL SALARY OR COMPENSATION IN USD (GROSS, ANNUALIZED, FULL-TIME-EQUIVALENT (FTE) IN USD EQUIVALENT)*</div>
         <div className='flex flex-row gap-8 justify-center my-10'>
         <label className=''>
                 <Select onChange={setSelected} defaultValue={selected} options={salary}  name='minSalary' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Min Salary'
-                
+                {...register("minSalary", {required:true})}
                 />
               </label>
               <label className=''>
                 <Select onChange={setSelected} defaultValue={selected} options={salary}  name='maxSalary' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Max Salary'
-                
+                {...register("maxSalary", {required:true})}
                 />
               </label>
         </div>
@@ -348,8 +356,8 @@ export const PostJobs = () => {
 
       <div class="mb-8 font-xl">Job Description*:
               <label>
-                <textarea onChange={changeHandler}  name='name' type={"textarea"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg block w-full h-72 mt-5 pl-5 placeholder:font-sans" placeholder='Mention All the details about job'
-                
+                <textarea onChange={changeHandler}  name='JobDescription' type={"textarea"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg block w-full h-72 mt-5 pl-5 placeholder:font-sans" placeholder='Mention All the details about job'
+                {...register("jobDescription", {required:true})}
                 />
               </label>
               <div>
@@ -357,7 +365,9 @@ export const PostJobs = () => {
                 <div>
                 {Benefits.map((item, index) => (
             <div key={index} className="">
-              <input value={item} type="checkbox" className='mr-3' />
+              <input value={item} type="checkbox" name='benefits' className='mr-3' 
+              {...register("benefits", {required:true})}
+              />
               <span className="">{item}</span>
             </div>
           ))}
@@ -367,11 +377,17 @@ export const PostJobs = () => {
               <div>
                 <div className='font-bold text-xl'>How to Apply?</div>
                 <div>
-                  <textarea type={"textarea"} onChange={changeHandler} className="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg block w-full mb-10 h-72 mt-5 pl-5 placeholder:font-sans" />
+                  <textarea type={"textarea"} onChange={changeHandler} className="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg block w-full mb-10 h-72 mt-5 pl-5 placeholder:font-sans" 
+                  name='howtoapply'
+                  {...register("howtoapply", {required:true})}
+                  />
                 </div>
                 <div>
                   <div className='font-bold text-xl'>Apply URL:</div>
-                  <input onChange={changeHandler} type={"text"} placeholder="Enter Link to Application" className="outline outline-2 mb-10 outline-offset-1 outline-slate-500 rounded-lg block w-full h-10 mt-5 pl-5 placeholder:font-sans"/>
+                  <input onChange={changeHandler} type={"text"} placeholder="Enter Link to Application" className="outline outline-2 mb-10 outline-offset-1 outline-slate-500 rounded-lg block w-full h-10 mt-5 pl-5 placeholder:font-sans"
+                  name='applyUrl'
+                  {...register("applyUrl", {required:true})}
+                  />
                 </div>
               </div>
      

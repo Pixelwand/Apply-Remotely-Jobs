@@ -212,6 +212,7 @@ export const PostJobs = () => {
   const handleTagClick = index => {
     console.log('The tag at index ' + index + ' was clicked');
   };
+  const [value, setValue] = useState('');
   const {register, handleSubmit, formState:{errors}} = useForm();
   const [selected, setSelected] = useState(null)
   
@@ -234,7 +235,7 @@ export const PostJobs = () => {
          }
        }
      
-     const [value, setValue] = useState('');
+    
 
      const changeHandler = ()=>{
       setValue(value)
@@ -248,7 +249,7 @@ export const PostJobs = () => {
               <div class="mb-8 font-xl">
               <label>
                 <input onChange={changeHandler}  name='companyName' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Company Name'
-                {...register("companyName", {required:true})}
+                // {...register("companyName", {required:true})}
                 />
               </label>
              
@@ -257,7 +258,7 @@ export const PostJobs = () => {
               <div class="mb-8">
               <label>
                 <input onChange={changeHandler} name='companyEmail' class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"text"} placeholder='Company Email Address'
-                {...register("companyEmail", {required:true, pattern:/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}
+                // {...register("companyEmail", {required:true, pattern:/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}
                 />
               </label>
               {errors.email && <p class="text-red-600 font-normal">Please check your Email!</p>}
@@ -266,7 +267,7 @@ export const PostJobs = () => {
               <div class="mb-8 font-xl">
               <label>
                 <input onChange={changeHandler}  name='position' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Position'
-                {...register("position", {required:true})}
+                // {...register("position", {required:true})}
                 
                 />
               </label>
@@ -275,8 +276,8 @@ export const PostJobs = () => {
               
               <div class="mb-8 font-xl">
               <label>
-                <Select onChange={setSelected} defaultValue={selected} options={jobtype}  name='jobtype' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Job Type'
-                {...register("jobtype", {required:true})}
+                <Select onChange={setSelected} defaultValue={selected} options={jobtype}  name='jobtypes' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans"
+                // {...register("jobtypes")}
                 />
               </label>
            
@@ -285,7 +286,7 @@ export const PostJobs = () => {
               <div class="mb-8 font-xl">
               <label>
                 <Select onChange={setSelected} defaultValue={selected} options={primaryfield}  name='primaryField' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Primary Field'
-                {...register("primaryField", {required:true})}
+                // {...register("primaryField", {required:true})}
                 />
               </label>
               </div>
@@ -305,7 +306,7 @@ export const PostJobs = () => {
           placeholder='Type a tag or search by keywords'
           className="w-84"
           name='techStack'
-          {...register("techStack", {required:true})}
+          // {...register("techStack", {required:true})}
         />
       </div>
       <div className='my-10 w-full'>Restricted Job Locations
@@ -322,7 +323,7 @@ export const PostJobs = () => {
           placeholder='Type a location to this job is restricted like Worldwide, Asia or USA'
           className="w-84"
           name='location'
-          {...register("location", {required:true})}
+          // {...register("location", {required:true})}
         />
       </div>
       <div>
@@ -333,19 +334,19 @@ export const PostJobs = () => {
           <div className='my-5'>Company Logo</div>
           <input type={"file"} placeholder="Upload" className='rounder-sm' onChange={changeHandler} 
           name="companyLogo"
-          {...register("comapnyLogo", {required:true})}
+          // {...register("comapnyLogo", {required:true})}
           />
         </div>
         <div className='text-xs'>ANNUAL SALARY OR COMPENSATION IN USD (GROSS, ANNUALIZED, FULL-TIME-EQUIVALENT (FTE) IN USD EQUIVALENT)*</div>
         <div className='flex flex-row gap-8 justify-center my-10'>
         <label className=''>
                 <Select onChange={setSelected} defaultValue={selected} options={salary}  name='minSalary' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Min Salary'
-                {...register("minSalary", {required:true})}
+                // {...register("minSalary", {required:true})}
                 />
               </label>
               <label className=''>
                 <Select onChange={setSelected} defaultValue={selected} options={salary}  name='maxSalary' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Max Salary'
-                {...register("maxSalary", {required:true})}
+                // {...register("maxSalary", {required:true})}
                 />
               </label>
         </div>
@@ -357,7 +358,7 @@ export const PostJobs = () => {
       <div class="mb-8 font-xl">Job Description*:
               <label>
                 <textarea onChange={changeHandler}  name='JobDescription' type={"textarea"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg block w-full h-72 mt-5 pl-5 placeholder:font-sans" placeholder='Mention All the details about job'
-                {...register("jobDescription", {required:true})}
+                // {...register("jobDescription", {required:true})}
                 />
               </label>
               <div>
@@ -366,7 +367,7 @@ export const PostJobs = () => {
                 {Benefits.map((item, index) => (
             <div key={index} className="">
               <input value={item} type="checkbox" name='benefits' className='mr-3' 
-              {...register("benefits", {required:true})}
+              // {...register("benefits", {required:true})}
               />
               <span className="">{item}</span>
             </div>
@@ -379,14 +380,14 @@ export const PostJobs = () => {
                 <div>
                   <textarea type={"textarea"} onChange={changeHandler} className="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg block w-full mb-10 h-72 mt-5 pl-5 placeholder:font-sans" 
                   name='howtoapply'
-                  {...register("howtoapply", {required:true})}
+                  // {...register("howtoapply", {required:true})}
                   />
                 </div>
                 <div>
                   <div className='font-bold text-xl'>Apply URL:</div>
                   <input onChange={changeHandler} type={"text"} placeholder="Enter Link to Application" className="outline outline-2 mb-10 outline-offset-1 outline-slate-500 rounded-lg block w-full h-10 mt-5 pl-5 placeholder:font-sans"
                   name='applyUrl'
-                  {...register("applyUrl", {required:true})}
+                  // {...register("applyUrl", {required:true})}
                   />
                 </div>
               </div>
@@ -395,7 +396,7 @@ export const PostJobs = () => {
                 <div className='text-center font-bold text-2xl my-10'>Company</div>
               <label>
                 <input name='twitterUsername' onChange={changeHandler} class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" placeholder='Twitter Username' type={"text"}
-                {...register("twitterUsername", {required:true})}
+                // {...register("twitterUsername", {required:true})}
                 />
               </label>
               <p className='text-xs mt-2'>Twitter username without @. Not required, but used to tag your company when we tweet out your job post.</p>
@@ -403,7 +404,7 @@ export const PostJobs = () => {
               <div class="mb-5">
                 <label>
                   <input name='secondEmail' onChange={changeHandler} class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"email"} placeholder="Company Email"
-                  {...register("secondEmail", {required:true})}
+                  // {...register("secondEmail", {required:true})}
                   />
                 </label>
                 <p className='text-xs mt-2'>Make sure this email is accessible by you! We use this to send the invoice and edit link. We can not and do not manually resend it! If you use your company domain (same as company name), we will show a [ Verified ] tag on your job post.</p>
@@ -411,7 +412,7 @@ export const PostJobs = () => {
               <div class="mb-5">
                 <input type={"checkbox"}
                 name="terms"
-                {...register("terms", {required:true})}
+                // {...register("terms", {required:true})}
                 />
                 <label class="font-sans text-sm ml-5">I agree to the <a href="#/" class="text-blue-700 font-semibold">Terms of Service</a> and <a href='#/' class="font-semibold font-sans text-blue-700">Privacy Policy</a></label>
               </div>

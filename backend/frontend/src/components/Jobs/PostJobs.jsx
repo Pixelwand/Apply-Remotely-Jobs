@@ -1,4 +1,5 @@
 
+import { required } from 'joi';
 import React, {useState} from 'react';
 import {useForm} from 'react-hook-form';
 import Select from 'react-select'
@@ -214,7 +215,7 @@ export const PostJobs = () => {
   };
   const [value, setValue] = useState('');
   const {register, handleSubmit, formState:{errors}} = useForm();
-  const [selected, setSelected] = useState(null)
+  const [selectedOption, setSelectedOption] = useState(null)
   
 
    
@@ -277,8 +278,9 @@ export const PostJobs = () => {
               
               <div class="mb-8 font-xl">
               <label>
-                <Select onChange={setSelected} defaultValue={selected}  options={jobtype} name="jobtypes" class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans"
-                  {...register}
+                <Select onChange={setSelectedOption} defaultValue={selectedOption}  options={jobtype} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans"
+                   name="jobtypes"
+                   {...register("jobtypes", {required:true})}
                 />
                 </label>
            
@@ -286,7 +288,7 @@ export const PostJobs = () => {
 
               <div class="mb-8 font-xl">
               <label>
-                <Select onChange={setSelected} defaultValue={selected} options={primaryfield}  name='primaryField' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Primary Field'
+                <Select onChange={setSelectedOption} defaultValue={selectedOption} options={primaryfield}  name='primaryField' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Primary Field'
                 // {...register("primaryField", {required:true})}
                 />
               </label>
@@ -307,7 +309,7 @@ export const PostJobs = () => {
           placeholder='Type a tag or search by keywords'
           className="w-84"
           name='techStack'
-          // {...register("techStack", {required:true})}
+          //  {...register("techStack", {required:true})}
         />
       </div>
       <div className='my-10 w-full'>Restricted Job Locations
@@ -324,7 +326,7 @@ export const PostJobs = () => {
           placeholder='Type a location to this job is restricted like Worldwide, Asia or USA'
           className="w-84"
           name='location'
-          // {...register("location", {required:true})}
+            // {...register("location", {required:true})}
         />
       </div>
       <div>
@@ -341,12 +343,12 @@ export const PostJobs = () => {
         <div className='text-xs'>ANNUAL SALARY OR COMPENSATION IN USD (GROSS, ANNUALIZED, FULL-TIME-EQUIVALENT (FTE) IN USD EQUIVALENT)*</div>
         <div className='flex flex-row gap-8 justify-center my-10'>
         <label className=''>
-                <Select onChange={setSelected} defaultValue={selected} options={salary}  name='minSalary' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Min Salary'
+                <Select onChange={setSelectedOption} defaultValue={selectedOption} options={salary}  class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Min Salary'
                 // {...register("minSalary", {required:true})}
                 />
               </label>
               <label className=''>
-                <Select onChange={setSelected} defaultValue={selected} options={salary}  name='maxSalary' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Max Salary'
+                <Select onChange={setSelectedOption} defaultValue={selectedOption} options={salary}  class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Max Salary'
                 // {...register("maxSalary", {required:true})}
                 />
               </label>
@@ -368,7 +370,7 @@ export const PostJobs = () => {
                 {Benefits.map((item, index) => (
             <div key={index} className="">
               <input value={item} type="checkbox" name='benefits' className='mr-3' 
-              //  {...register("benefits", {required:true})}
+                 {...register("benefits", {required:true})}
               />
               <span className="">{item}</span>
             </div>

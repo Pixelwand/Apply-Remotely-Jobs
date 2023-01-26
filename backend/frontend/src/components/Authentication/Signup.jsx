@@ -34,7 +34,7 @@ export const Signup =  () =>{
               
               <div class="mb-8 font-xl">
               <label>
-                <input onChange={changeHandler}  name='name' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Enter Your Name'
+                <input onChange={changeHandler}  name='name' type={"text"} class="outline outline-2 outline-offset-1 focus:outline-4 outline-blue-400 placeholder:text-black placeholder:text-base rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Enter Your Name'
                 {...register("name", {required:true})}
                 
                 />
@@ -73,7 +73,7 @@ export const Signup =  () =>{
                 <label class="font-sans text-sm ml-5">I agree to the <a href="#/" class="text-blue-700 font-semibold">Terms of Service</a> and <a href='#/' class="font-semibold font-sans text-blue-700">Privacy Policy</a></label>
               </div>
               <div class="text-center">
-              <button class="bg-blue-600 hover:bg-blue-800 text-white font-semibold text-xl rounded px-6 py-3" type='submit'>Create account</button>
+              <button class="bg-blue-600 hover:bg-blue-800 text-white font-semibold text-xl rounded-3xl w-full px-6 py-3" type='submit'>Create account</button>
               </div>
             </form>
           </div>

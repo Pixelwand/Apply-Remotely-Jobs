@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
-import { useState, useEffect} from 'react';
-import {Tabs, Tab, TabPanel, TabList} from 'react-tabs';
+import { useState} from 'react';
+import {Tab} from '@headlessui/react'
 import Modal from 'react-modal'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
@@ -49,7 +49,7 @@ export default function Header() {
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <a href='http://localhost:3000' className='text-black font-sans font-bold text-xl mr-10'>ARJ</a>
+                      <a href='http://localhost:3000' className='text-black font-sans font-extrabold text-2xl ml-5 font-mono'>ARJ</a>
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
@@ -75,7 +75,7 @@ export default function Header() {
                   
                   <div className="mr-2 flex md:hidden">
                     {/* Mobile menu button */}
-                        <button type="button" onClick={openModal} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Get started</button>:
+                        <button type="button" onClick={openModal} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Get started</button>
                         
                     <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-blue-800 font-bolder hover:text-blue focus:outline-none  ">
                       <span className="sr-only">Open main menu</span>
@@ -113,20 +113,24 @@ export default function Header() {
          <Modal class="z-2 w-1/2"
         isOpen={isModalOpen}
         onRequestClose={closeModal}
-        style={customStyles}
+        // style={customStyles}
+        className="w-11/12 h-84 mx-auto mt-5 rounded-xl shadow-xl bg-white z-2 p-5"
         >
-          <Tabs>
-    <TabList className="flex flex-row gap-4 justify-center mb-5 font-semibold text-2xl !important">
+          <button onClick={closeModal}><XMarkIcon className="block h-6 w-6 bg-white text-blue-800 text-end" aria-hidden="true" /></button>
+          <Tab.Group>
+    <Tab.List className="flex flex-row gap-4 justify-center mb-5 font-semibold text-2xl !important">
       <Tab className="rounded-2xl">Signup</Tab>
       <Tab className="rounded-2xl">Login</Tab>
-    </TabList>
-    <TabPanel>
+    </Tab.List>
+    <Tab.Panels>
+    <Tab.Panel>
       <Signup />
-    </TabPanel>
-    <TabPanel>
+    </Tab.Panel>
+    <Tab.Panel>
       <Login />
-    </TabPanel>
-  </Tabs>
+    </Tab.Panel>
+    </Tab.Panels>
+  </Tab.Group>
   <form className='' p-10 action="http://localhost:8080/auth/google">
           <button type="submit" className="google-button flex flex-row gap-5 mx-auto">
             <span className="google-button__icon">

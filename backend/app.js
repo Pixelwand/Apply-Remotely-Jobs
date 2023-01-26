@@ -7,6 +7,7 @@ const cors = require('cors');
 const session = require("express-session");
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
+const postjobRoutes = require('./routes/postJob')
 
 const User = require('./models/userModel');
 const Profile = require('./models/googleModel');
@@ -73,6 +74,7 @@ app.use(session({
 app.use(express.json());
 app.use(cors());
 app.use('/user', userRoutes)
+app.use('/user', postjobRoutes)
 app.use('', googleRoutes)
 
 

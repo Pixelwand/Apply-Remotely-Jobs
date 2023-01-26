@@ -1,4 +1,3 @@
-const { url } = require('inspector');
 const mongoose = require('mongoose');
 const jobSchema = new mongoose.Schema({
     companyName:{
@@ -27,7 +26,7 @@ const jobSchema = new mongoose.Schema({
         require:true
     },
     companyLogo:{
-        type:Image
+        type:String
     },
     minSalary:{
         type:String,
@@ -48,7 +47,7 @@ const jobSchema = new mongoose.Schema({
         type:String
     },
     applyUrl:{
-        type:url,
+        type:String,
         require:true
     },
     twitterUsername:{

@@ -394,21 +394,24 @@ export const PostJobs = () => {
               <div class="mb-8 ">
                 <div className='text-center font-bold text-2xl my-10'>Company</div>
               <label>
-                <input name='companyTwitter' onChange={changeHandler} class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" placeholder='Twitter Username' type={"text"}
+                <input name='twitterUsername' onChange={changeHandler} class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" placeholder='Twitter Username' type={"text"}
+                {...register("twitterUsername", {required:true})}
                 />
               </label>
               <p className='text-xs mt-2'>Twitter username without @. Not required, but used to tag your company when we tweet out your job post.</p>
               </div>
               <div class="mb-5">
                 <label>
-                  <input name='Company Email' onChange={changeHandler} class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"email"} placeholder="Company Email"
-                  
+                  <input name='secondEmail' onChange={changeHandler} class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"email"} placeholder="Company Email"
+                  {...register("secondEmail", {required:true})}
                   />
                 </label>
                 <p className='text-xs mt-2'>Make sure this email is accessible by you! We use this to send the invoice and edit link. We can not and do not manually resend it! If you use your company domain (same as company name), we will show a [ Verified ] tag on your job post.</p>
               </div>
               <div class="mb-5">
                 <input type={"checkbox"}
+                name="terms"
+                {...register("terms", {required:true})}
                 />
                 <label class="font-sans text-sm ml-5">I agree to the <a href="#/" class="text-blue-700 font-semibold">Terms of Service</a> and <a href='#/' class="font-semibold font-sans text-blue-700">Privacy Policy</a></label>
               </div>

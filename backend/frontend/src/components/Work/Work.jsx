@@ -7,7 +7,7 @@ export default function Work() {
         <div class="flex flex-row px-6 gap-6 py-12">
             <div class=" basis-1/2 font-bold text-2xl ">Ways to post Remote Jobs</div>
               <div className='basis-1/2'>
-            <button class=" bg-green-600 relative top-3 px-8 py-3 rounded-3xl font-bold hover:bg-blue-500">Get Started</button>
+            <button class=" bg-green-600 relative top-3 px-6 py-3 rounded-3xl font-bold hover:bg-blue-500">Get Started</button>
             </div>
         </div>
         <div class="pb-10">
@@ -42,7 +42,7 @@ export default function Work() {
         <div  class="w-76 h-43 pr-4.5 pl-0 pt-0 pb-0 mt-8">
         <h2  class="font-bold text-2xl mb-5">ARJ made hiring managers life easy</h2>
         <div>
-          <p className='font-sans leading-6 font-normal'>Crete a strong employer brand that resonates with top talent and sets your company apart as  a greate place to work.</p>
+          <p className='font-sans leading-6 font-normal'>Crete a strong employer brand that resonates with top talent and sets your company apart as a greate place to work.</p>
         </div>
         </div>
       </div>

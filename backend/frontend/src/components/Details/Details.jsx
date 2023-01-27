@@ -46,12 +46,12 @@ export default function Details() {
     
     </div>
     <div class="text-center">
-    <div class="text-3xl font-semibold text-center mb-10 font-sans mt-12">Are Remote Jobs secure? By Kunal Kushwaha</div>
+    <div class="text-3xl font-semibold text-center px-4 mb-10 font-sans mt-12">Are Remote Jobs secure? By Kunal Kushwaha</div>
     <div>
 <iframe className='w-full h-60 px-2' src="https://www.youtube.com/embed/asg9lBbxLHA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     <div class="max-w-lg">
-      <p className='px-4 mt-12'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget consectetur eros. Aliquam erat volutpat. Praesent pulvinar arcu non lectus dapibus, a pulvinar mauris aliquam.</p>
+      <p className='px-6 font-medium leading-5 mt-12'>Are remote jobs secure? Should you be worried about layoffs if you are working remotely from India? Is FAANG India safer? How to prepare? Let's answer these questions!</p>
     </div>
     </div>
     <div class="flex justify-center flex-col  w-full mx-auto gap-32 mt-20 pb-10">

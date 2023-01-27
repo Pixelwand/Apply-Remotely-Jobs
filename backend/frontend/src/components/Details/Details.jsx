@@ -57,10 +57,10 @@ export default function Details() {
     <div class="flex justify-center flex-col  w-full mx-auto gap-32 mt-20 pb-10">
       <div class="">
         <div class="text-3xl mb-8 font-sans font-bold w-full px-4 text-center">Make your career better with Remote Jobs</div>
-        <div class="text-center w-full px-8 text-slate-600 font-sans font-normal mb-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget consectetur eros. Aliquam erat volutpat. Praesent pulvinar arcu non lectus dapibus, a pulvinar mauris aliquam.
+        <div class="text-center w-full px-8 text-black font-sans font-normal mb-20">Working remotely can offer many benefits for your career, such as increased flexibility and the ability to work from anywhere. It can also open up job opportunities that may not have been available otherwise.
 </div>
         <div class="text-center text-white">
-          <button class="bg-blue-600 py-3 px-6 hover:bg-blue-800">Learn More</button>
+          <a href="http://localhost:3000/about" class="bg-blue-600 py-3 px-6 font-medium hover:bg-blue-800">Learn More </a>
         </div>
       </div>
       <div class="text-center font-bold text-2xl font-sans">

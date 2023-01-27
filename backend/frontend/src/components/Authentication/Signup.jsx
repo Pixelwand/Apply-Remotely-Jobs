@@ -28,9 +28,9 @@ export const Signup =  () =>{
     
     return(
         <>
-        <div class="px-4 pb-10">
+        <div class="px-4 pb-2">
             <form onSubmit={handleSubmit(formSubmit)}>
-              <fieldset class="text-center font-semibold text-base mb-8 font-sans ">Sign up with your email<hr class="mt-3 font-" /></fieldset>
+              <fieldset class="text-center font-semibold text-base mb-8 font-sans">Sign up with your email<hr class="mt-3 font-" /></fieldset>
               
               <div class="mb-8 font-xl">
               <label>

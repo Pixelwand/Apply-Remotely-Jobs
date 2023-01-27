@@ -56,7 +56,7 @@ export const Login = () => {
 
   return (
     <>
-    <div class="p-2 pb-10">
+    <div class="p-2 pb-2">
     <form onSubmit={formSubmit}>
       <fieldset  class="text-center font-semibold text-base mb-8">Login with email</fieldset>
       <div class="mb-8">

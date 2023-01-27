@@ -1,21 +1,24 @@
-import React from 'react'
+import React from 'react';
+import {SiDiscord} from 'react-icons/si';
+import {FaTwitter} from 'react-icons/fa';
+import {FiMail} from 'react-icons/fi';
 
 export default function Footer() {
   return (
     <>
-    <div class=" mt-20 pb-36  flex-col">
+    <div class=" mt-20 pb-36  flex-col bg-black text-white pt-1">
         <div class="flex flex-row mx-auto gap-10 px-4 mt-10 mb-12">
   <div class="basis-1/4 ">
-    <label class="mb-24 font-sans text-lg font-semibold">Overview</label>
+    <label class="mb-24 font-sans text-lg font-semibold">Socials</label>
     <ul class="space-y-3.5 mt-4">
     <li>
-        Overview
+        <a href='https://www.twitter.com/applyremotely'><FaTwitter className='text-3xl text-white' /></a>
     </li>
     <li>
-        Landings
+        <a href='https://discord.gg/w5wj5yD8'><SiDiscord className='text-3xl text-white' /></a>
     </li>
     <li>
-        Company
+        <a href='mailto:applyremotelyjobs@gmail.com'><FiMail className='text-3xl text-white' /></a>
     </li>
     </ul>
   </div>

@@ -247,7 +247,7 @@ export const PostJobs = () => {
             <form onSubmit={handleSubmit(formSubmit)}>
               <fieldset class="text-center font-semibold text-base mb-8 mt-10">Post Remote Jobs <span className='line-through'>99$</span> 19$<hr class="mt-3 font-" /></fieldset>
               
-              {/* <div class="mb-8 font-xl">
+              <div class="mb-8 font-xl">
               <label>
                 <input onChange={changeHandler}  name='companyName' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Company Name'
                  {...register("companyName", {required:true})}
@@ -274,7 +274,7 @@ export const PostJobs = () => {
               </label>
               { <p class="text-xs mt-2">Please specify as single job position like "Marketing Manager" or "Node JS Developer", not a sentence like "Looking for PM / Biz Dev / Manager". We know your job is important but please DO NOT WRITE IN FULL CAPS. If posting multiple roles, please create multiple job posts. A job post is limited to a single job. We only allow real jobs, absolutely no MLM-type courses "learn how to work online" please.</p>}
               </div>
-               */}
+              
               <div class="mb-8 font-xl">
               <label>
                 <Select onChange={e=>setSelectedOption(e.target.value)}  options={jobtype} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans"

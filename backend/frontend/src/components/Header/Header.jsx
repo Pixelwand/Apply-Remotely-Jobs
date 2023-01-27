@@ -119,7 +119,7 @@ export default function Header() {
           <button onClick={closeModal}><XMarkIcon className="block h-6 w-6 bg-white text-blue-800 text-end" aria-hidden="true" /></button>
           <Tab.Group>
     <Tab.List className="flex flex-row gap-4 justify-center mb-5 font-semibold text-2xl !important">
-      <Tab className="rounded-2xl">Signup</Tab>
+      <Tab className="rounded-2xl focus:bg-blue-600 focus:text-white">Signup</Tab>
       <Tab className="rounded-2xl">Login</Tab>
     </Tab.List>
     <Tab.Panels>

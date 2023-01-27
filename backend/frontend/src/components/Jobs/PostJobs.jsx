@@ -245,7 +245,7 @@ export const PostJobs = () => {
     <>
     <div class="px-4 pb-60 mb-auto">
             <form onSubmit={handleSubmit(formSubmit)}>
-              <fieldset class="text-center font-semibold text-base mb-8 mt-10">Post Remote Jobs <span className='line-through'>99$</span> 19$<hr class="mt-3 font-" /></fieldset>
+              <fieldset class="text-center font-semibold text-base mb-8 mt-10">Post Remote Jobs <span className='line-through'>99$</span> 19$<hr class="mt-3 bg-blue-500" /></fieldset>
               
               <div class="mb-8 font-xl">
               <label>

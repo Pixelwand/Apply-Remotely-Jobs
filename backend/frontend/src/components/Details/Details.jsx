@@ -9,35 +9,35 @@ export default function Details() {
     <div class="font-bold text-3xl text-center">Trusted and loved by world's best team</div>
     <div class="flex text-center font-bold text-slate-700 flex-col  mt-24 gap-12">
     <div class="">
-      <div class="text-3xl">WeTransfer</div>
+      <div class="text-3xl">Applicants</div>
     <div class="basis-1/2">
     <div class="my-2 font-bold text-3xl">99.95%</div>
     <div class="my-2 font-semibold text-xl">Accuracy Rate</div>
-    <div class="text-slate-600 font-sans">In fullfilling orders</div>
+    <div class="text-slate-600 font-sans">In getting qualified applicants</div>
     </div>
     </div>
     <div class="">
-      <div>Stamps</div>
-      <div class="basis-1/2">
-    <div class="my-2 font-bold text-3xl">5,000+</div>
-    <div class="my-2 font-semibold text-xl">Ecommerce businesses</div>
-    <div class="text-slate-600 font-sans">partner with Kriiyax</div>
+      <div className='text-3xl'>Candidates</div>
+      <div className="basis-1/2">
+    <div className="my-2 font-bold text-3xl">5,000+</div>
+    <div className="my-2 font-semibold text-xl">Qualified candidates</div>
+    <div className="text-slate-600 font-sans">choose best candidates</div>
     </div>
     </div>
     <div class="">
-      <div>Manter</div>
+      <div className='text-3xl'>Hiring Rate</div>
       <div class="basis-1/2">
     <div class="my-2 font-bold text-3xl">99.96%</div>
-    <div class="my-2 font-semibold text-xl">Of order ship on time</div>
-    <div class="text-slate-600 font-sans">within SLA</div>
+    <div class="my-2 font-semibold text-xl">Of hiring reate on time</div>
+    <div class="text-slate-600 font-sans">within three weeks</div>
     </div>
     </div>
     <div class="">
-      <div>Sugarcane</div>
+      <div className='text-3xl'>Remote Jobs</div>
       <div class="basis-1/2">
     <div class="my-2 font-bold text-3xl">#1</div>
-    <div class="my-2 font-semibold text-xl">Best fullfillment Technology</div>
-    <div class="font-sans text-slate-600 ">by Adweek's Retail award</div>
+    <div class="my-2 font-semibold text-xl">for finding Remote Jobs</div>
+    <div class="font-sans text-slate-600 ">around the world</div>
     </div>
     </div>
     

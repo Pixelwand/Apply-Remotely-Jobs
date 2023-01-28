@@ -6,6 +6,8 @@
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.13",
     "@reduxjs/toolkit": "^1.9.1",
+    "@stripe/react-stripe-js": "^1.16.4",
+    "@stripe/stripe-js": "^1.46.0",
     "@supabase/auth-ui-react": "^0.2.6",
     "@supabase/supabase-js": "^2.4.1",
     "@testing-library/jest-dom": "^5.16.5",

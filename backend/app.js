@@ -7,7 +7,8 @@ const cors = require('cors');
 const session = require("express-session");
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
-const postjobRoutes = require('./routes/postJob')
+const postjobRoutes = require('./routes/postJob');
+const stripe = require("stripe")("sk_test_51KhUdsSEgFbXr4KRvfZmGhTMqJxdu7SZYdg0R3gSxNmItsm8gHkuGN87QxgorWXrEUanrQahFkDQ55pNHwnbs79P00dG3NhLPW");
 
 const User = require('./models/userModel');
 const Profile = require('./models/googleModel');
@@ -71,12 +72,31 @@ app.use(session({
   app.use(passport.initialize());
   app.use(passport.session());
 
+app.use(express.static("public"))
 app.use(express.json());
 app.use(cors());
 app.use('/user', userRoutes)
 app.use('/user', postjobRoutes)
 app.use('', googleRoutes)
 
+const YOUR_DOMAIN = 'http://localhost:8080';
+
+app.post('/create-checkout-session', async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    line_items: [
+      {
+        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+        price: 'price_1MVBVFSEgFbXr4KRssEqURcV',
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: `${YOUR_DOMAIN}?success=true`,
+    cancel_url: `${YOUR_DOMAIN}?canceled=true`,
+  });
+
+  res.redirect(303, session.url);
+});
 
 app.listen(port, (req, res)=>{
     console.log(`Port is running on ${port}`)

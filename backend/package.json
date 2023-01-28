@@ -1,5 +1,6 @@
 {
   "name": "backend",
+  "proxy": "<http://localhost:8080>",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -33,7 +34,8 @@
     "passport-google-oidc": "^0.1.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^7.1.2",
-    "qs": "^6.11.0"
+    "qs": "^6.11.0",
+    "stripe": "^11.8.0"
   },
   "devDependencies": {
     "@types/node": "^18.11.18"

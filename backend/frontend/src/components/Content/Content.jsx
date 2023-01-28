@@ -57,7 +57,7 @@ export default function Content() {
               </Disclosure.Button>
               <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
                 If you're unhappy with your purchase for any reason, email us
-                within 90 days and we'll refund you in full, no questions asked.
+                within 7 days and we'll refund you in full, no questions asked.
               </Disclosure.Panel>
             </>
           )}
@@ -74,7 +74,7 @@ export default function Content() {
                 />
               </Disclosure.Button>
               <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                No.
+                Yes.
               </Disclosure.Panel>
             </>
           )}
@@ -102,31 +102,31 @@ export default function Content() {
                 </div>
             </div>
             <div class="basis-2/5">
-                <img src={Profileone} alt="Profileone" class="h-154 w-126" />
+                <img src={Profileone} alt="Profileone" className="w-full rounded-xl" />
             </div>
         </div>
         <div class="flex flex-col gap-16 mt-24">
         <div class="basis-2/5">
         <div class="text-2xl mb-6 mt-14 leading-14 text-slate-400 font-semibold">OUR KNOWLEDGE</div>
-        <div  class="text-5xl max-w-lg font-bold font-sans mb-16 " >
-        A UI Kit that's Modern & Elegant
+        <div  class="text-3xl max-w-lg font-bold font-sans mb-16 " >
+        A Hiring process that's Modern & Elegant
         </div>
         <div class="max-w-sm">
             <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget consectetur eros. Aliquam erat volutpat.</p>
         </div>
         </div>
         <div class=" basis-2/5">
-            <img src={Profiletwo} class="h-104 w-96 h-96" alt="Profiletwo"/>
+            <img src={Profiletwo} class="w-full rounded-xl" alt="Profiletwo"/>
         </div>
         </div>
         <div class="flex flex-col mt-16 gap-12">
             <div class=" mt-16">
-            <div class="font-sans font-bold text-2xl text-center">Stamps</div>
-            <div class="font-sans font-bold text-2xl text-center mt-5 text-slate-500 ">The Opus UI Kit lets you showcase your work in style. It's helped take our business online</div>
-            <div class="font-bold w-18 h-6 text-center mt-10">Alexa</div>
+            <div class="font-sans font-bold text-2xl text-center">Kriyax</div>
+            <div class="font-sans font-bold text-2xl text-center mt-5 text-slate-500 ">Apply Remotely lets you showcase your hiring post in style. It's helped take best people in our team.</div>
+            <div class="font-bold w-18 h-6 text-center mt-10">Deep</div>
             </div>
             <div class="">
-                <img src={Profilethree} alt="Profilethree" class="h-96 w-96 " />
+                <img src={Profilethree} alt="Profilethree" class="w-full rounded-xl " />
             </div>
         </div>
     </div>

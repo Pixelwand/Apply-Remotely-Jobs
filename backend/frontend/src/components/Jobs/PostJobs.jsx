@@ -184,8 +184,6 @@ const KeyCodes = {
 
 const delimiters = [KeyCodes.comma, KeyCodes.enter];
 
-const stripePromise = loadStripe("pk_test_51KhUdsSEgFbXr4KROqEo6Oqi5jRroSZ7zaFlaqbmRh2eUHjq8G9I5Sez0DBkU6iZU5o5lZVYHj75cEXI7hc9eipf00IpQmxSd3");
-
 
 export const PostJobs = () => {
   const [tags, setTags] = React.useState([

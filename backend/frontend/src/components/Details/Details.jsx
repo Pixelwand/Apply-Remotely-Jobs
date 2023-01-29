@@ -5,9 +5,9 @@ import {RiRocketFill} from 'react-icons/ri'
 export default function Details() {
   return (
     <>
-    <div class="mt-20">
+    <div class="mt-10">
     <div class="font-bold text-3xl text-center">Trusted and loved by world's best team</div>
-    <div class="flex text-center font-bold text-slate-700 flex-col  mt-24 gap-12">
+    <div class="flex text-center font-bold text-slate-700 flex-col xl:flex-row xl:gap-20 justify-center mt-24 gap-12">
     <div class="">
       <div class="text-3xl">Applicants</div>
     <div class="basis-1/2">
@@ -46,24 +46,28 @@ export default function Details() {
     
     </div>
     <div class="text-center">
-    <div class="text-3xl font-semibold text-center px-4 mb-10 font-sans mt-12">Are Remote Jobs secure? By Kunal Kushwaha</div>
-    <div>
+    <div class="text-3xl font-semibold text-center px-4 mb-10 font-sans mt-12 xl:mt-28">Are Remote Jobs secure? By Kunal Kushwaha</div>
+    <div className='xl:flex-row xl:flex xl:mt-20'>
+    <div className='xl:basis-1/2'>
 <iframe className='w-5/6 h-60 mx-auto sm:h-96' src="https://www.youtube.com/embed/asg9lBbxLHA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
-    <div class="w-full px-5">
-      <p className='px-6 sm:text-2xl  font-medium leading-5 mt-12'>Are remote jobs secure? Should you be worried about layoffs if you are working remotely from India? Is FAANG India safer? How to prepare? Let's answer these questions!</p>
+    <div className="w-full px-5 xl:basis-1/2">
+      <p className='px-6 sm:text-2xl  font-medium leading-5 mt-12 xl:w-2/3 xl:ml-20'>Are remote jobs secure? Should you be worried about layoffs if you are working remotely from India? Is FAANG India safer? How to prepare? Let's answer these questions!</p>
     </div>
     </div>
-    <div class="flex justify-center flex-col  w-full mx-auto gap-32 mt-20 pb-10">
-      <div class="">
+    </div>
+    <div className="flex justify-center flex-col  w-full mx-auto gap-32 mt-20 pb-10">
+      <div className="xl:flex-row xl:flex">
+        <div className='basis-2/3'>
         <div class="text-3xl sm:text-4xl mb-8 font-sans font-bold w-full px-4 text-center">Make your career better with Remote Jobs</div>
         <div class="text-center w-full sm:text-xl sm:font-medium px-8 text-black font-sans font-normal mb-20">Working remotely can offer many benefits for your career, such as increased flexibility and the ability to work from anywhere. It can also open up job opportunities that may not have been available otherwise.
 </div>
-        <div class="text-center text-white">
+</div>
+        <div className=" basis-1/3 text-center text-white xl:mt-10">
           <a href="http://localhost:3000/about" class="bg-blue-600 py-3 px-6 font-medium hover:bg-blue-800 sm:py-6 sm:text-xl sm:px-10">Learn More </a>
         </div>
       </div>
-      <div class="text-center font-bold text-2xl font-sans sm:text-3xl">
+      <div class="text-center font-bold text-2xl font-sans sm:text-3xl xl:flex-row xl:flex">
       <div class="mb-12 w-5/6 text-center mx-auto "> <ImArrowUpLeft2 class="text-blue-600 font-bold mx-auto" /> Find or Apply for Remote Jobs in Seconds
 </div>
       <div class="w-5/6 mx-auto text-center"> <RiRocketFill class="text-blue-600 font-bold mx-auto" />Our search section is made for creativity.

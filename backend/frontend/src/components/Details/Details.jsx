@@ -48,7 +48,7 @@ export default function Details() {
     <div class="text-center">
     <div class="text-3xl font-semibold text-center px-4 mb-10 font-sans mt-12">Are Remote Jobs secure? By Kunal Kushwaha</div>
     <div>
-<iframe className='w-full h-60 px-2' src="https://www.youtube.com/embed/asg9lBbxLHA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe className='w-5/6 h-60 mx-auto sm:h-96' src="https://www.youtube.com/embed/asg9lBbxLHA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     <div class="max-w-lg">
       <p className='px-6 font-medium leading-5 mt-12'>Are remote jobs secure? Should you be worried about layoffs if you are working remotely from India? Is FAANG India safer? How to prepare? Let's answer these questions!</p>

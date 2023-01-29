@@ -21,10 +21,10 @@ export default function Main() {
           <div className="w-full mb-28">
           <img src={ProfileMain} class="object-fill" alt="ProfileMain" />
           
-        <div className="bg-white text-black  absolute mt-4  shadow-2xl rounded-3xl ">
-          <div className="font-normal p-10 text-lg text-center">I felt like I couldn’t find qualified candidates until I moved to Kriyax. Now I am encouraged to find more qualified candidates with Apply Remotely Jobs.</div>
-          <div className="font-bold text-base text-center">Deependra Kumar</div>
-          <div className="font-medium text-center py-3">CEO @KRIYAX</div>
+        <div className="bg-white text-black  absolute mt-4  shadow-2xl rounded-3xl pb-5">
+          <div className="font-normal p-10 text-lg text-center sm:text-2xl">I felt like I couldn’t find qualified candidates until I moved to Kriyax. Now I am encouraged to find more qualified candidates with Apply Remotely Jobs.</div>
+          <div className="font-bold text-base text-center sm:text-2xl">Deependra Kumar</div>
+          <div className="font-medium text-center py-3 sm:text-2xl">CEO @KRIYAX</div>
         </div>
         </div>
       </div>

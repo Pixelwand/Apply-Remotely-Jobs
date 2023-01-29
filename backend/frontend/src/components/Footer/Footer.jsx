@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <>
     <div className=" mt-20 pb-36  flex-col bg-black text-white pt-1">
-        <div className="flex flex-row mx-auto gap-10 px-4 mt-10 mb-12">
+        <div className="flex flex-row mx-auto gap-10 px-4 mt-10 mb-12 xl:justify-center">
   <div className="basis-1/4 ">
     <label className="mb-24 font-sans text-lg font-semibold">Socials</label>
     <ul className="space-y-3.5 mt-4 pl-3">
@@ -54,7 +54,7 @@ export default function Footer() {
   </div>
   
 </div>
-<div class="text-center">
+<div class="text-center xl:mt-20">
     <button>
     <input type={"email"} placeholder="Enter your email" class="outline-none border-2 placeholder:text-black text-black font-sans font-semibold border-blue-600 p-3" />
     <span class="bg-blue-600 text-white font-sans p-3.5 border-2 border-blue-600">Get Started</span>

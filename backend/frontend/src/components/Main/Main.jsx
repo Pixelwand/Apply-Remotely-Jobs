@@ -5,7 +5,7 @@ import { ProfileMain } from '../../Assets';
 export default function Main() {
   return (
     <>
-    <div className="mt-3 mb-72 flex w-full">
+    <div className="mt-3 mb-8 flex w-full">
       <div className="flex flex-col">
         <div className="bg-indigo-900 text-white pt-10 pb-20">
           <div className="font-bold text-4xl w-full text-center mx-auto my-auto">Find High Paying Remote Jobs</div>
@@ -20,9 +20,9 @@ export default function Main() {
           </div>
           <div className="w-full mb-28 xl:flex-row xl:flex">
             <div className='xl:basis-1/2'>
-          <img src={ProfileMain} class="object-fill" alt="ProfileMain" />
+          <img src={ProfileMain} className="object-fill xl:rounded-b-3xl" alt="ProfileMain" />
           </div>
-        <div className="bg-white text-black xl:basis-1/2 xl:w-1/2 absolute mt-4  shadow-2xl rounded-3xl pb-5">
+        <div className="bg-white text-black xl:basis-1/2 xl:w-1/2 mt-4  shadow-2xl rounded-3xl xl:rounded-b-3xl pb-5">
           <div className="font-normal p-10 text-lg text-center sm:text-2xl">I felt like I couldn’t find qualified candidates until I moved to Kriyax. Now I am encouraged to find more qualified candidates with Apply Remotely Jobs.</div>
           <div className="font-bold text-base text-center sm:text-2xl">Deependra Kumar</div>
           <div className="font-medium text-center py-3 sm:text-2xl">CEO @KRIYAX</div>
@@ -32,7 +32,6 @@ export default function Main() {
       <div>
         </div>
       </div>
-    
     </>
   )
 }

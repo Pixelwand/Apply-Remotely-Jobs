@@ -111,11 +111,11 @@ export default function Header() {
             </>
           )}
         </Disclosure>
-         <Modal class="z-2 w-1/2"
+         <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
         // style={customStyles}
-        className="w-11/12 h-84 mx-auto mt-5 rounded-xl shadow-xl bg-white z-2 p-5"
+        className="w-11/12 xl:w-1/3 h-84 mx-auto mt-5 rounded-xl shadow-xl bg-white z-2 p-5"
         >
           <button onClick={closeModal} className="float-right relative left-4 bottom-4"><XMarkIcon className="block h-6 w-6 bg-white text-blue-800 text-end" aria-hidden="true" /></button>
           <Tab.Group>
@@ -124,10 +124,10 @@ export default function Header() {
       <Tab className="text-blue-700 w-full focus:bg-white py-2.5 focus:shadow rounded-lg leading-5 font-medium ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2">Login</Tab>
     </Tab.List>
     <Tab.Panels>
-    <Tab.Panel>
+    <Tab.Panel className="xl:text-center">
       <Signup />
     </Tab.Panel>
-    <Tab.Panel>
+    <Tab.Panel className="xl:text-center">
       <Login />
     </Tab.Panel>
     </Tab.Panels>

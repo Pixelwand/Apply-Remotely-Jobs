@@ -5,10 +5,10 @@ import { ProfileMain } from '../../Assets';
 export default function Main() {
   return (
     <>
-    <div className="mt-3 mb-72 flex flex-wrap">
-      <div className="flex flex-row flex-wrap">
-        <div className="bg-indigo-900 text-white pt-10 pb-20  ">
-          <div className="font-bold text-4xl w-full  text-center mx-auto my-auto">Find High Paying Remote Jobs</div>
+    <div className="mt-3 mb-72 flex w-full">
+      <div className="flex flex-col">
+        <div className="bg-indigo-900 text-white pt-10 pb-20">
+          <div className="font-bold text-4xl w-full text-center mx-auto my-auto">Find High Paying Remote Jobs</div>
         
           <p className="text-center mt-10 mx-4 sm:mx-auto sm: sm:w-4/6 sm:justify-center sm:text-2xl  my-auto text-lg font-normal leading-9">Find 100+ Remote Jobs for more than 20+ category from Entry level to Senior level and work from anywhere.</p>
           <div className="text-center mt-10">
@@ -18,10 +18,11 @@ export default function Main() {
             <a href='http://localhost:3000/jobs' className='bg-green-600 p-4 rounded-xl font-bold font-sans sm:text-2xl'>Find Remote Jobs</a>
           </div>
           </div>
-          <div className="w-full mb-28">
+          <div className="w-full mb-28 xl:flex-row xl:flex">
+            <div className='xl:basis-1/2'>
           <img src={ProfileMain} class="object-fill" alt="ProfileMain" />
-          
-        <div className="bg-white text-black  absolute mt-4  shadow-2xl rounded-3xl pb-5">
+          </div>
+        <div className="bg-white text-black xl:basis-1/2 xl:w-1/2 absolute mt-4  shadow-2xl rounded-3xl pb-5">
           <div className="font-normal p-10 text-lg text-center sm:text-2xl">I felt like I couldn’t find qualified candidates until I moved to Kriyax. Now I am encouraged to find more qualified candidates with Apply Remotely Jobs.</div>
           <div className="font-bold text-base text-center sm:text-2xl">Deependra Kumar</div>
           <div className="font-medium text-center py-3 sm:text-2xl">CEO @KRIYAX</div>

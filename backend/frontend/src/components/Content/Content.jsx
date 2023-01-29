@@ -17,9 +17,9 @@ export default function Content() {
                 </center>
             </div>
             <div class="basis-4/5">
-                <div class="font-bold font-sans text-2xl mb-5">Choose Your Sections</div>
+                <div class="font-bold font-sans text-2xl mb-5 sm:text-3xl">Choose Your Sections</div>
                 <div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                    <p className='sm:text-xl sm:font-medium sm:w-2/3 sm:mx-auto'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
                 </div>
             </div>
         </div>
@@ -30,9 +30,9 @@ export default function Content() {
                 </center>
             </div>
             <div class="basis-4/5">
-                <div class="font-bold font-sans text-2xl mb-5">Add the Logo and information for remote jobs</div>
+                <div class="font-bold font-sans text-2xl mb-5 sm:text-3xl sm:w-2/3 sm:mx-auto">Add the Logo and information for remote jobs</div>
                 <div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                    <p className='sm:text-xl sm:font-medium sm:w-2/3 sm:mx-auto'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
                 </div>
             </div>
         </div>

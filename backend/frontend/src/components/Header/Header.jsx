@@ -45,14 +45,14 @@ export default function Header() {
         <Disclosure as="nav" className="bg-white text-blue">
           {({ open }) => (
             <>
-              <div className="mx-auto max-w-7xl px-4 ">
+              <div className="mx-auto max-w-7xl sm:w-full px-4  ">
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
                       <a href='http://localhost:3000' className='text-black font-sans font-extrabold text-2xl ml-5 font-mono sm:text-3xl'>ARJ</a>
                     </div>
                     <div className="hidden md:block">
-                      <div className="ml-10 sm:text-center  flex items-baseline space-x-4">
+                      <div className="ml-10 sm:text-center lg:ml-96  flex items-baseline space-x-4">
                         {navigation.map((item) => (
                           <a
                           

@@ -41,34 +41,35 @@ export default function Header() {
   }
   return (
     <>
-      <div className="min-h-full">
+      <div className="min-h-full sm:h-24 sm:pt-5 sm:text-3xl">
         <Disclosure as="nav" className="bg-white text-blue">
           {({ open }) => (
             <>
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="mx-auto max-w-7xl px-4 ">
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <a href='http://localhost:3000' className='text-black font-sans font-extrabold text-2xl ml-5 font-mono'>ARJ</a>
+                      <a href='http://localhost:3000' className='text-black font-sans font-extrabold text-2xl ml-5 font-mono sm:text-3xl'>ARJ</a>
                     </div>
                     <div className="hidden md:block">
-                      <div className="ml-10 flex items-baseline space-x-4">
+                      <div className="ml-10 sm:text-center  flex items-baseline space-x-4">
                         {navigation.map((item) => (
                           <a
+                          
                             key={item.name}
                             href={item.href}
                             className={classNames(
                               item.current
                                 ? 'bg-gray-900 text-white'
                                 : 'text-black hover:bg-gray-900 hover:text-white',
-                              'px-3 py-2 rounded-md text-sm font-medium'
+                              'px-3 py-2 rounded-md text-sm font-medium sm:text-xl sm:ml-5'
                             )}
                             aria-current={item.current ? 'page' : undefined}
                           >
                             {item.name}
                           </a>
                         ))}
-                        <button type="button" onClick={openModal} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Get started</button>
+                        <button type="button" onClick={openModal} className="text-white bg-blue-700 hover:bg-blue-800 sm:text-xl sm:relative sm:left-10 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Get started</button>
                       </div>
                     </div>
                   </div>

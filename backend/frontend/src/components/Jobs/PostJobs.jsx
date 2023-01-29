@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import {useForm} from 'react-hook-form';
 import Select from 'react-select'
+import axios from 'axios';
 import {WithContext as ReactTags} from 'react-tag-input';
 
 const jobtype = [
@@ -186,10 +187,31 @@ const delimiters = [KeyCodes.comma, KeyCodes.enter];
 
 
 export const PostJobs = () => {
+  const CLIENT_ID = "AWigkJSRzUKSZxY-oEaPGne4V0hJDVY7PNirDVKVmeky4ZtSQpiuUsD3oEx8o2-jS2CtM8kVtBpkmI34"
   const [tags, setTags] = React.useState([
     
   ]);
   const [clientSecret, setClientSecret] = useState("");
+  const [sdkReady, setSdkReady] = useState(false)
+
+  useEffect(() => {
+    const addPaypalScript = async()=>{
+      const{data:clientId} = await axios.get("/api/config/paypal")
+      const script = document.createElement('script')
+      script.type = 'text/javascript'
+      script.src  = `https://www.paypal.com/sdk/js?client-id=${CLIENT_ID}`
+      script.async = true
+      script.onload=()=>{
+        setSdkReady(true)
+      }
+      document.body.appendChild(script);
+    }
+  
+    return () => {
+      
+    }
+  }, [])
+  
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads

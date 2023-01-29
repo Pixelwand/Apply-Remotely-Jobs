@@ -78,25 +78,9 @@ app.use('/user', userRoutes)
 app.use('/user', postjobRoutes)
 app.use('', googleRoutes)
 
-const YOUR_DOMAIN = 'http://localhost:8080';
-
-app.post('/create-checkout-session', async (req, res) => {
-  const session = await stripe.checkout.sessions.create({
-    line_items: [
-      {
-        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-        price: 'price_1MVBVFSEgFbXr4KRssEqURcV',
-        quantity: 1,
-      },
-    ],
-    mode: 'payment',
-    success_url: `${YOUR_DOMAIN}?success=true`,
-    cancel_url: `${YOUR_DOMAIN}?canceled=true`,
-  });
-
-  res.redirect(303, session.url);
-});
-
+app.get('/api/cofig/paypal', (req, res)=>{
+  res.send(process.env.PAYPAL_CLIENT_ID)
+})
 app.listen(port, (req, res)=>{
     console.log(`Port is running on ${port}`)
 } )

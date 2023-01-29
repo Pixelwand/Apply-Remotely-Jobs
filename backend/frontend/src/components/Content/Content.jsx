@@ -90,14 +90,14 @@ export default function Content() {
     </div>
         
     </div>
-    <div class="mt-8 xl:text-center xl:mt-0">
+    <div class="mt-8 xl:text-center xl:mt-0 text-center">
             <button class="bg-slate-300 px-6 py-4 hover:bg-slate-600">Learn More</button>
         </div>
     </div>
     <br/>
-    <div  class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class=" justify-center flex-col">
-        <div class="flex justify-center flex-col mt-20 max-w-7xl mx-auto">
+    <div  class="mx-auto px-4 sm:px-6">
+    <div class=" justify-center">
+        <div class="flex justify-center flex-col xl:flex-row mt-20 mx-auto xl:px-20">
             <div class="basis-3/5 gap-12" >
                 <div class="text-2xl mb-6 mt-14 leading-14 text-slate-400 font-semibold" >FEATURES</div>
                 <div class="text-5xl max-w-lg font-bold font-sans mb-10">You’re not just finding remote jobs. You’re finding life.</div>
@@ -113,28 +113,28 @@ export default function Content() {
                 <img src={Profileone} alt="Profileone" className="w-full rounded-xl" />
             </div>
         </div>
-        <div class="flex flex-col gap-16 mt-24">
+        <div class="flex flex-col xl:flex-row-reverse gap-16 mt-24 xl:mx-auto xl:px-20 xl:mt-40">
         <div class="basis-2/5">
         <div class="text-2xl mb-6 mt-14 leading-14 text-slate-400 font-semibold">OUR KNOWLEDGE</div>
-        <div  class="text-3xl max-w-lg font-bold font-sans mb-16 " >
+        <div  class="text-3xl font-bold font-sans mb-16 " >
         A Hiring process that's Modern & Elegant
         </div>
         <div class="max-w-sm">
             <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget consectetur eros. Aliquam erat volutpat.</p>
         </div>
         </div>
-        <div class=" basis-2/5">
-            <img src={Profiletwo} class="w-full rounded-xl" alt="Profiletwo"/>
+        <div class=" basis-3/5">
+            <img src={Profiletwo} class="w-full rounded-xl xl:w-2/3" alt="Profiletwo"/>
         </div>
         </div>
-        <div class="flex flex-col mt-16 gap-12">
-            <div class=" mt-16">
+        <div class="flex flex-col xl:flex-row mt-16 gap-12 xl:gap-40 xl:mt-40">
+            <div class=" mt-16 xl:basis-1/2 xl:mt-40">
             <div class="font-sans font-bold text-2xl text-center">Kriyax</div>
-            <div class="font-sans font-bold text-2xl text-center mt-5 text-slate-500 ">Apply Remotely lets you showcase your hiring post in style. It's helped take best people in our team.</div>
+            <div class="font-sans font-bold text-2xl text-center mt-5 text-slate-500 xl:w-2/3 xl:mx-auto">Apply Remotely lets you showcase your hiring post in style. It's helped take best people in our team.</div>
             <div class="font-bold w-18 h-6 text-center mt-10">Deep</div>
             </div>
-            <div class="">
-                <img src={Profilethree} alt="Profilethree" class="w-full rounded-xl " />
+            <div class="xl:basis-1/2">
+                <img src={Profilethree} alt="Profilethree" className="w-full xl:w-5/6 rounded-xl " />
             </div>
         </div>
     </div>

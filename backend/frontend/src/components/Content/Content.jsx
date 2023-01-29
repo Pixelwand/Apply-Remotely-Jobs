@@ -8,41 +8,48 @@ import { Profileone, Profiletwo, Profilethree } from '../../Assets';
 export default function Content() {
   return (
     <>
-    <div class="bg-white text-black mt-12 flex flex-col mx-auto py-14 w-full justify-center gap-24">
-    <div class="basis-1/2">
-        <div class="flex flex-col w-full px-10 text-center gap-6">
-            <div class="w-16 h-16 bg-blue-600 mx-auto mb-6">
+    <div className="bg-white text-black mt-12 flex flex-col mx-auto py-14 w-full justify-center gap-24">
+    <div className="basis-1/2 xl:flex-row xl:flex">
+      <div>
+        <div className="flex flex-col w-full px-10 text-center gap-6">
+            <div className="w-16 h-16 bg-blue-600 mx-auto mb-6">
                 <center>
                 <FaTelegramPlane class="text-white w-8 h-8 mt-4" />
                 </center>
             </div>
-            <div class="basis-4/5">
-                <div class="font-bold font-sans text-2xl mb-5 sm:text-3xl">Choose Your Sections</div>
+            <div className="basis-4/5">
+                <div className="font-bold font-sans text-2xl mb-5 sm:text-3xl">Choose Your Sections</div>
                 <div>
                     <p className='sm:text-xl sm:font-medium sm:w-2/3 sm:mx-auto'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
                 </div>
             </div>
         </div>
-        <div class="flex flex-col mt-12 px-10 text-center">
-            <div  class="w-16 h-16 bg-blue-600 mx-auto mb-6">
+        </div>
+        <div>
+        <div className="flex flex-col mt-12 xl:m-0 px-10 text-center">
+            <div  className="w-16 h-16 bg-blue-600 mx-auto mb-6">
                 <center>
                 <AiFillPicture  class="text-white w-8 h-8 mt-4"/>
                 </center>
             </div>
-            <div class="basis-4/5">
+            <div className="basis-4/5">
                 <div class="font-bold font-sans text-2xl mb-5 sm:text-3xl sm:w-2/3 sm:mx-auto">Add the Logo and information for remote jobs</div>
                 <div>
-                    <p className='sm:text-xl sm:font-medium sm:w-2/3 sm:mx-auto'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
+                    <p  className='sm:text-xl sm:font-medium sm:w-2/3 sm:mx-auto'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="w-full text-center">
+    </div>
+  
+    <div class="w-full text-center xl:flex-row xl:flex">
+      <div>
         <div class="text-3xl font-bold mb-6  mx-auto px-6">Post jobs using our Job Posting section.</div>
         <div>
             <p class="mx-auto px-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
         </div>
-        <div className="w-full px-4 pt-16">
+        </div>
+        <div className="w-full px-4 pt-16 xl:pt-0">
       <div className="mx-auto w-full max-w-md rounded-2xl bg-white p-2">
         <Disclosure>
           {({ open }) => (
@@ -81,10 +88,11 @@ export default function Content() {
         </Disclosure>
       </div>
     </div>
-        <div class="mt-8 ">
-            <button class="bg-slate-300 px-6 py-4 hover:bg-slate-600 ">Learn More</button>
-        </div>
+        
     </div>
+    <div class="mt-8 xl:text-center xl:mt-0">
+            <button class="bg-slate-300 px-6 py-4 hover:bg-slate-600">Learn More</button>
+        </div>
     </div>
     <br/>
     <div  class="max-w-7xl mx-auto px-4 sm:px-6">

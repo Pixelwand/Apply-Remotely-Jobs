@@ -4,7 +4,7 @@ export default function Resources() {
   return (
     <>
   
-    <div class="flex justify-center flex-row mx-auto w-full px-4c mt-32 ">
+    <div class="flex justify-center flex-row mx-auto w-full mt-32 ">
     <div class="basis-1/2 text-xl">
         <div class="text-3xl font-sans font-bold">Resources</div>
     </div>
@@ -14,7 +14,7 @@ export default function Resources() {
     </div>
     <br/>
     <br/>
-    <div class="flex flex-col justify-center gap-20 mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="flex flex-col xl:flex-row justify-center gap-20 mx-auto px-4 sm:px-6 xl:mt-12">
       <div class="basis-1/4">
         <div>
           <img src={Resone}  className="w-76 h-80 top-6 left-6 rounded-xl" alt="Resource one" />

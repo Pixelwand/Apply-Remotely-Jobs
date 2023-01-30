@@ -290,13 +290,13 @@ export const PostJobs = () => {
     
   return (
     <>
-    <div class="mb-auto text-center">
+    <div className="w-full">
             <form onSubmit={handleSubmit(formSubmit)}>
-              <fieldset class="text-center  text-2xl text-black pt-3 mb-8 w-full font-sans font-bold">Post Remote Jobs <span className='line-through'>399$</span> 39$
-              <div className='text-base text-white bg-red-500 leading-10 mt-2'>90% Discount</div>
-              </fieldset>
+              <div className="text-black pt-3 mb-8 w-full font-sans "><div className='text-2xl font-bold text-center'>Post Remote Jobs <span className='line-through'>399$</span> 39$</div>
+              <div className='text-xl text-white bg-red-500 leading-10 mt-2 text-center'>90% Discount</div>
+              </div>
               
-              <div class="mb-8 font-xl w-full">
+              <div className="mb-8 font-xl w-full text-center">
               <label>
                 <input onChange={changeHandler}  name='companyName' type={"text"} className="outline outline-2 outline-offset-1 outline-blue-500 focus:outline-4 w-5/6 h-12 placeholder:text-black placeholder:text-lg text-lg rounded-lg pl-5 placeholder:font-sans" placeholder='Company Name'
                  {...register("companyName", {required:true})}
@@ -305,18 +305,18 @@ export const PostJobs = () => {
              
               </div>
               
-              <div class="mb-8">
+              <div class="mb-8 text-center" >
               <label>
-                <input onChange={changeHandler} name='companyEmail' className="w-5/6 h-10 pl-5 outline outline-2 outline-offset-1  outline-blue-500 focus:outline-4 placeholder:text-black placeholder:text-lg text-lg rounded-lg" type={"text"} placeholder='Company Email Address'
+                <input onChange={changeHandler} name='companyEmail' className="w-5/6 h-12 pl-5 outline outline-2 outline-offset-1  outline-blue-500 focus:outline-4 placeholder:text-black placeholder:text-lg text-lg rounded-lg" type={"text"} placeholder='Company Email Address'
                  {...register("companyEmail", {required:true, pattern:/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}
                 />
               </label>
               {errors.email && <p class="text-red-600 font-normal">Please check your Email!</p>}
               </div>
 
-              <div class="mb-8 font-xl">
+              <div class="mb-8 font-xl text-center">
               <label>
-                <input onChange={changeHandler}  name='position' type={"text"} className="outline w-5/6 h-10 pl-6 outline-2 outline-offset-1 outline-blue-500 focus:outline-4 placeholder:text-black placeholder:text-lg text-lg rounded-lg placeholder:font-sans" placeholder='Position'
+                <input onChange={changeHandler}  name='position' type={"text"} className="outline w-5/6 h-12 pl-6 outline-2 outline-offset-1 outline-blue-500 focus:outline-4 placeholder:text-black placeholder:text-lg text-lg rounded-lg placeholder:font-sans" placeholder='Position'
                  {...register("position", {required:true})}
                 
                 />
@@ -328,7 +328,7 @@ export const PostJobs = () => {
               
               <div class="mb-8 font-xl">
               <label>
-                <Select onChange={e=>setSelectedOption(e.target.value)}  options={jobtype} className="outline w-5/6 outline-none text-black placeholder:text-black rounded-lg mx-auto  placeholder:font-sans"
+                <Select onChange={e=>setSelectedOption(e.target.value)}  options={jobtype} className="outline w-5/6 font-bold outline-none text-black placeholder:text-black rounded-lg mx-auto  placeholder:font-sans"
                     // value={setSelectedOption}
                     isClearable={false}
                     value={value}
@@ -341,7 +341,7 @@ export const PostJobs = () => {
 
               <div class="mb-8 font-xl">
               <label className=''>
-                <Select onChange={setSelectedOption} defaultValue={selectedOption} options={primaryfield}  name='primaryField' type={"text"} className=" mx-auto outline:none rounded-lg w-5/6 placeholder:font-sans" placeholder='Primary Field'
+                <Select onChange={setSelectedOption} defaultValue={selectedOption} options={primaryfield}  name='primaryField' type={"text"} className=" mx-auto font-bold outline:none rounded-lg w-5/6 placeholder:font-sans" placeholder='Primary Field'
                 // {...register("primaryField", {required:true})}
                 />
               </label>
@@ -420,7 +420,7 @@ export const PostJobs = () => {
               </label>
               <div>
                 <div className='font-bold text-xl mt-8 mb-1'>Benefits</div>
-                <div>
+                <div className='grid grid-rows-12 gap-2 grid-col-2'>
                 {Benefits.map((item, index) => (
             <div key={index} className="">
               <input value={item} type="checkbox" name='benefits' className='mr-3' 
@@ -433,26 +433,27 @@ export const PostJobs = () => {
               </div>
               </div>
               <div>
-                <div className='font-bold text-xl'>How to Apply?</div>
+                <div className='font-bold text-xl bg-red-500 text-white py-3'>How to Apply?</div>
                 <div>
-                  <textarea type={"textarea"} onChange={changeHandler} className="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg block w-full mb-10 h-72 mt-5 pl-5 placeholder:font-sans" 
+                  <textarea type={"textarea"} onChange={changeHandler} className="outline outline-2 outline-offset-1 outline-blue-500 placeholder:text-black  mx-auto focus:outline-4 rounded-lg block w-5/6 mb-10 h-72 mt-10 pl-5 placeholder:font-sans" 
                   name='howtoapply'
                    {...register("howtoapply", {required:true})}
+                   placeholder="How To Apply"
                   />
                 </div>
                 <div>
                   <div className='font-bold text-xl'>Apply URL:</div>
-                  <input onChange={changeHandler} type={"text"} placeholder="Enter Link to Application" className="outline outline-2 mb-10 outline-offset-1 outline-slate-500 rounded-lg block w-full h-10 mt-5 pl-5 placeholder:font-sans"
+                  <input onChange={changeHandler} type={"text"} placeholder="Enter Link to Application" className="outline outline-2 mb-10 outline-offset-1 outline-blue-500 focus:outline-4 rounded-lg block w-4/6 mx-auto h-10 mt-5 pl-3 placeholder:font-sans"
                   name='applyUrl'
                    {...register("applyUrl", {required:true})}
                   />
                 </div>
               </div>
      
-              <div class="mb-8 ">
+              <div className="mb-8 ">
                 <div className='text-center font-bold text-2xl my-10'>Company</div>
               <label>
-                <input name='twitterUsername' onChange={changeHandler} class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" placeholder='Twitter Username' type={"text"}
+                <input name='twitterUsername' onChange={changeHandler} class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-blue-500 focus:outline-4 placeholder:text-black rounded-lg" placeholder='Twitter Username' type={"text"}
                  {...register("twitterUsername", {required:true})}
                 />
               </label>
@@ -473,8 +474,8 @@ export const PostJobs = () => {
                 />
                 <label class="font-sans text-sm ml-5">I agree to the <a href="#/" class="text-blue-700 font-semibold">Terms of Service</a> and <a href='#/' class="font-semibold font-sans text-blue-700">Privacy Policy</a></label>
               </div>
-              <div class="text-center">
-              <button class="bg-blue-600 hover:bg-blue-800 text-white font-semibold text-xl rounded px-6 py-3" type='submit'>Start Hiring at 19$</button>
+              <div class="text-center w-full">
+              <button class="bg-blue-600 hover:bg-blue-800 text-white font-semibold text-xl rounded px-6 py-3" type='submit'>Start Hiring at 39$</button>
               </div>
             </form>
           </div>

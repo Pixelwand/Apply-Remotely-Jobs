@@ -290,7 +290,7 @@ export const PostJobs = () => {
     
   return (
     <>
-    <div className="w-full">
+    <div className="w-full pb-20">
             <form onSubmit={handleSubmit(formSubmit)}>
               <div className="text-black pt-3 mb-8 w-full font-sans "><div className='text-2xl font-bold text-center'>Post Remote Jobs <span className='line-through'>399$</span> 39$</div>
               <div className='text-xl text-white bg-red-500 leading-10 mt-2 text-center'>90% Discount</div>
@@ -348,7 +348,7 @@ export const PostJobs = () => {
               </div>
 
               
-              <div className='my-10 w-full text-xl font-bold border-blue-500'>Tags, Keywords or Stack
+              <div className='my-10 w-full text-xl text-center font-bold border-blue-500'>Tags, Keywords or Stack
         <ReactTags
           tags={tags}
            suggestions={stacks}
@@ -365,7 +365,7 @@ export const PostJobs = () => {
           //  {...register("techStack", {required:true})}
         />
       </div>
-      <div className='my-10 w-full text-xl font-bold'>stricted Job Locations
+      <div className='my-10 w-full text-xl text-center font-bold'>stricted Job Locations
         <ReactTags
           tags={tags}
            suggestions={locations}
@@ -382,11 +382,11 @@ export const PostJobs = () => {
         />
       </div>
       <div>
-        <div className='font-bold text-2xl bg-red-500 text-white py-4'>
+        <div className='font-bold text-2xl text-center bg-red-500 text-white py-4'>
           Job Details
         </div>
         <div className='my-10 flex flex-row px-10 text-xl'>
-          <div className='basis-1/2'>Logo:</div>
+          <div className='basis-1/2 font-bold'>Logo:</div>
           <div className='basis-1/2'>
           <input type={"file"} placeholder="Upload" className='ml-10' onChange={changeHandler} 
           name="companyLogo"
@@ -394,10 +394,10 @@ export const PostJobs = () => {
           />
           </div>
         </div>
-        <div className='text-xs'>ANNUAL SALARY OR COMPENSATION IN USD (GROSS, ANNUALIZED, FULL-TIME-EQUIVALENT (FTE) IN USD EQUIVALENT)*</div>
-        <div className='flex flex-row gap-8 justify-center my-10'>
+        <div className='text-xs text-center px-10'>ANNUAL SALARY OR COMPENSATION IN USD (GROSS, ANNUALIZED, FULL-TIME-EQUIVALENT (FTE) IN USD EQUIVALENT)*</div>
+        <div className='flex flex-row gap-8 text-xl justify-center my-10'>
         <label className=''>
-                <Select onChange={setSelectedOption} defaultValue={selectedOption} options={salary}  class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg h-10 pl-5 placeholder:font-sans" placeholder='Min Salary'
+                <Select onChange={setSelectedOption} defaultValue={selectedOption} options={salary}  class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg  h-10 pl-5 placeholder:font-sans" placeholder='Min Salary'
                 // {...register("minSalary", {required:true})}
                 />
               </label>
@@ -412,15 +412,16 @@ export const PostJobs = () => {
               </div>
       </div>
 
-      <div class="mb-8 font-2xl font-bold">Job Description*:
+      <div class="mb-8 font-2xl font-bold ml-10">Job Description*:</div>
+      <div>
               <label>
                 <textarea onChange={changeHandler}  name='JobDescription' type={"textarea"} class="outline outline-2 outline-offset-1 outline-blue-500 focus:outline-4 placeholder:text-black rounded-lg block w-5/6 mx-10 pt-3 h-72 mt-5 pl-5 placeholder:font-sans" placeholder='Mention All the details about job'
                  {...register("jobDescription", {required:true})}
                 />
               </label>
               <div>
-                <div className='font-bold text-xl mt-8 mb-1'>Benefits</div>
-                <div className='grid grid-rows-12 gap-2 grid-col-2'>
+                <div className='font-bold text-xl mt-8 mb-1 ml-10'>Benefits:</div>
+                <div className='grid grid-rows-12 gap-2 grid-col-2 ml-12 mb-12'>
                 {Benefits.map((item, index) => (
             <div key={index} className="">
               <input value={item} type="checkbox" name='benefits' className='mr-3' 
@@ -433,16 +434,16 @@ export const PostJobs = () => {
               </div>
               </div>
               <div>
-                <div className='font-bold text-xl bg-red-500 text-white py-3'>How to Apply?</div>
+                <div className='font-bold text-xl bg-red-500 text-white py-3 text-center'>How to Apply?</div>
                 <div>
-                  <textarea type={"textarea"} onChange={changeHandler} className="outline outline-2 outline-offset-1 outline-blue-500 placeholder:text-black  mx-auto focus:outline-4 rounded-lg block w-5/6 mb-10 h-72 mt-10 pl-5 placeholder:font-sans" 
+                  <textarea type={"textarea"} onChange={changeHandler} className="outline outline-2 outline-offset-1 outline-blue-500 placeholder:text-black pt-2 mx-auto focus:outline-4 rounded-lg block w-5/6 mb-10 h-72 mt-10 pl-5 placeholder:font-sans" 
                   name='howtoapply'
                    {...register("howtoapply", {required:true})}
-                   placeholder="How To Apply"
+                   placeholder="How To Apply?"
                   />
                 </div>
                 <div>
-                  <div className='font-bold text-xl'>Apply URL:</div>
+                  <div className='font-bold text-xl text-center'>Apply URL:</div>
                   <input onChange={changeHandler} type={"text"} placeholder="Enter Link to Application" className="outline outline-2 mb-10 outline-offset-1 outline-blue-500 focus:outline-4 rounded-lg block w-4/6 mx-auto h-10 mt-5 pl-3 placeholder:font-sans"
                   name='applyUrl'
                    {...register("applyUrl", {required:true})}
@@ -450,24 +451,24 @@ export const PostJobs = () => {
                 </div>
               </div>
      
-              <div className="mb-8 ">
+              <div className="mb-8">
                 <div className='text-center font-bold text-2xl my-10'>Company</div>
-              <label>
-                <input name='twitterUsername' onChange={changeHandler} class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-blue-500 focus:outline-4 placeholder:text-black rounded-lg" placeholder='Twitter Username' type={"text"}
+              <div className='text-center'>
+                <input name='twitterUsername' onChange={changeHandler} class="w-4/6 h-10 pl-5 outline outline-2 outline-offset-1 mx-auto outline-blue-500 focus:outline-4 placeholder:text-black rounded-lg" placeholder='Twitter Username' type={"text"}
                  {...register("twitterUsername", {required:true})}
                 />
-              </label>
-              <p className='text-xs mt-2'>Twitter username without @. Not required, but used to tag your company when we tweet out your job post.</p>
               </div>
-              <div class="mb-5">
-                <label>
-                  <input name='secondEmail' onChange={changeHandler} class="w-72 h-10 pl-5 outline outline-2 outline-offset-1 outline-slate-500 rounded-lg" type={"email"} placeholder="Company Email"
+              <p className='text-xs mt-2 px-10 text-center'>Twitter username without @. Not required, but used to tag your company when we tweet out your job post.</p>
+              </div>
+              <div className="mb-5">
+                <div className='text-center'>
+                  <input name='secondEmail' onChange={changeHandler} class="w-4/6 h-10 pl-5 outline outline-2 outline-offset-1 mx-auto outline-blue-500 rounded-lg" type={"email"} placeholder="Company Email"
                    {...register("secondEmail", {required:true})}
                   />
-                </label>
-                <p className='text-xs mt-2'>Make sure this email is accessible by you! We use this to send the invoice and edit link. We can not and do not manually resend it! If you use your company domain (same as company name), we will show a [ Verified ] tag on your job post.</p>
+                </div >
+                <p className='text-xs mt-2 text-center px-10'>Make sure this email is accessible by you! We use this to send the invoice and edit link. We can not and do not manually resend it! If you use your company domain (same as company name), we will show a [ Verified ] tag on your job post.</p>
               </div>
-              <div class="mb-5">
+              <div class="mb-5 text-center">
                 <input type={"checkbox"}
                 name="terms"
                  {...register("terms", {required:true})}

@@ -9,10 +9,10 @@ import {Login} from '../Authentication/Login';
 
 
 const navigation = [
-  { name: 'Home', href: 'http://localhost:3000/', current: false },
-  { name: 'Jobs', href: 'http://localhost:3000/jobs', current: false },
-  { name: 'Candidates', href: 'http://localhost:3000/candidates', current: false },
-  { name: 'About', href: 'http://localhost:3000/about', current: false }
+  { name: 'Home', href: 'https://kriyax.vercel.app/', current: false },
+  { name: 'Jobs', href: 'https://kriyax.vercel.app/jobs', current: false },
+  { name: 'Candidates', href: 'https://kriyax.vercel.app/candidates', current: false },
+  { name: 'About', href: 'https://kriyax.vercel.app/about', current: false }
 ]
 
 const customStyles = {
@@ -49,7 +49,7 @@ export default function Header() {
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <a href='http://localhost:3000' className='text-black font-sans font-extrabold text-2xl ml-5 font-mono sm:text-3xl'>ARJ</a>
+                      <a href='https://kriyax.vercel.app/' className='text-black font-sans font-extrabold text-2xl ml-5 font-mono sm:text-3xl'>ARJ</a>
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 sm:text-center lg:ml-96  flex items-baseline space-x-4">

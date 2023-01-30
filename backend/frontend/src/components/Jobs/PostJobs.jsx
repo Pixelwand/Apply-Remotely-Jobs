@@ -4,6 +4,12 @@ import Select from 'react-select'
 import axios from 'axios';
 import {WithContext as ReactTags} from 'react-tag-input';
 
+const customStyles = {
+  content:{
+    background:"blue"
+  }
+}
+
 const jobtype = [
   {value:"Full Time", label:"Full Time"},
   {value:"Part Time", label:"Part Time"},
@@ -342,7 +348,7 @@ export const PostJobs = () => {
               </div>
 
               
-              <div className='my-10 w-full'>Tags, Keywords or Stack
+              <div className='my-10 w-full text-xl font-bold border-blue-500'>Tags, Keywords or Stack
         <ReactTags
           tags={tags}
            suggestions={stacks}
@@ -354,12 +360,12 @@ export const PostJobs = () => {
           inputFieldPosition="bottom"
           autocomplete
           placeholder='Type a tag or search by keywords'
-          className="w-96"
+          style={customStyles}
           name='techStack'
           //  {...register("techStack", {required:true})}
         />
       </div>
-      <div className='my-10 w-full'>Restricted Job Locations
+      <div className='my-10 w-full text-xl font-bold'>stricted Job Locations
         <ReactTags
           tags={tags}
            suggestions={locations}
@@ -371,26 +377,27 @@ export const PostJobs = () => {
           inputFieldPosition="bottom"
           autocomplete
           placeholder='Type a location to this job is restricted like Worldwide, Asia or USA'
-          className="w-84"
           name='location'
             // {...register("location", {required:true})}
         />
       </div>
       <div>
-        <div>
+        <div className='font-bold text-2xl bg-red-500 text-white py-4'>
           Job Details
         </div>
-        <div className='my-10'>
-          <div className='my-5'>Company Logo</div>
-          <input type={"file"} placeholder="Upload" className='rounder-sm' onChange={changeHandler} 
+        <div className='my-10 flex flex-row px-10 text-xl'>
+          <div className='basis-1/2'>Logo:</div>
+          <div className='basis-1/2'>
+          <input type={"file"} placeholder="Upload" className='ml-10' onChange={changeHandler} 
           name="companyLogo"
            {...register("comapnyLogo", {required:true})}
           />
+          </div>
         </div>
         <div className='text-xs'>ANNUAL SALARY OR COMPENSATION IN USD (GROSS, ANNUALIZED, FULL-TIME-EQUIVALENT (FTE) IN USD EQUIVALENT)*</div>
         <div className='flex flex-row gap-8 justify-center my-10'>
         <label className=''>
-                <Select onChange={setSelectedOption} defaultValue={selectedOption} options={salary}  class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Min Salary'
+                <Select onChange={setSelectedOption} defaultValue={selectedOption} options={salary}  class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg h-10 pl-5 placeholder:font-sans" placeholder='Min Salary'
                 // {...register("minSalary", {required:true})}
                 />
               </label>
@@ -401,13 +408,13 @@ export const PostJobs = () => {
               </label>
         </div>
         <div className='mb-5'>
-                <p className='text-xs'>It's illegal to not share salary range on job posts since 2021. Posts without salary will automatically show an estimate of salary based on similar jobs. Remote job postings are legally required to show a salary compensation range in many U.S. states and countries. Google does NOT index jobs without salary data. If it's a short-term gig, use the annual full-time equivalent. For example, if it's a 2-week project for $2,000, the annual equivalent would be $2,000 / 2 weeks * 52 weeks = $52,000. Please use USD equivalent. We don't have currency built-in yet and we'd like to use this salary data to show salary trends in remote work. Remote OK is a supporter of #OpenSalaries.</p>
+                <p className='text-xs px-10'>It's illegal to not share salary range on job posts since 2021. Posts without salary will automatically show an estimate of salary based on similar jobs. Remote job postings are legally required to show a salary compensation range in many U.S. states and countries. Google does NOT index jobs without salary data. If it's a short-term gig, use the annual full-time equivalent. For example, if it's a 2-week project for $2,000, the annual equivalent would be $2,000 / 2 weeks * 52 weeks = $52,000. Please use USD equivalent. We don't have currency built-in yet and we'd like to use this salary data to show salary trends in remote work. Remote OK is a supporter of #OpenSalaries.</p>
               </div>
       </div>
 
-      <div class="mb-8 font-xl">Job Description*:
+      <div class="mb-8 font-2xl font-bold">Job Description*:
               <label>
-                <textarea onChange={changeHandler}  name='JobDescription' type={"textarea"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg block w-full h-72 mt-5 pl-5 placeholder:font-sans" placeholder='Mention All the details about job'
+                <textarea onChange={changeHandler}  name='JobDescription' type={"textarea"} class="outline outline-2 outline-offset-1 outline-blue-500 focus:outline-4 placeholder:text-black rounded-lg block w-5/6 mx-10 pt-3 h-72 mt-5 pl-5 placeholder:font-sans" placeholder='Mention All the details about job'
                  {...register("jobDescription", {required:true})}
                 />
               </label>

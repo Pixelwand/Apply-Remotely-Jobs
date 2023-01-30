@@ -290,9 +290,9 @@ export const PostJobs = () => {
               <div className='text-base text-white bg-red-500 leading-10 mt-2'>90% Discount</div>
               </fieldset>
               
-              <div class="mb-8 font-xl">
+              <div class="mb-8 font-xl w-full">
               <label>
-                <input onChange={changeHandler}  name='companyName' type={"text"} className="outline outline-2 outline-offset-1 outline-blue-500 focus:outline-4 placeholder:text-black placeholder:text-lg text-lg rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Company Name'
+                <input onChange={changeHandler}  name='companyName' type={"text"} className="outline outline-2 outline-offset-1 outline-blue-500 focus:outline-4 w-5/6 h-12 placeholder:text-black placeholder:text-lg text-lg rounded-lg pl-5 placeholder:font-sans" placeholder='Company Name'
                  {...register("companyName", {required:true})}
                 />
               </label>
@@ -301,7 +301,7 @@ export const PostJobs = () => {
               
               <div class="mb-8">
               <label>
-                <input onChange={changeHandler} name='companyEmail' className="w-72 h-10 pl-5 outline outline-2 outline-offset-1  outline-blue-500 focus:outline-4 placeholder:text-black placeholder:text-lg text-lg rounded-lg" type={"text"} placeholder='Company Email Address'
+                <input onChange={changeHandler} name='companyEmail' className="w-5/6 h-10 pl-5 outline outline-2 outline-offset-1  outline-blue-500 focus:outline-4 placeholder:text-black placeholder:text-lg text-lg rounded-lg" type={"text"} placeholder='Company Email Address'
                  {...register("companyEmail", {required:true, pattern:/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}
                 />
               </label>
@@ -310,7 +310,7 @@ export const PostJobs = () => {
 
               <div class="mb-8 font-xl">
               <label>
-                <input onChange={changeHandler}  name='position' type={"text"} className="outline outline-2 outline-offset-1 outline-blue-500 focus:outline-4 placeholder:text-black placeholder:text-lg text-lg rounded-lg placeholder:font-sans" placeholder='Position'
+                <input onChange={changeHandler}  name='position' type={"text"} className="outline w-5/6 h-10 pl-6 outline-2 outline-offset-1 outline-blue-500 focus:outline-4 placeholder:text-black placeholder:text-lg text-lg rounded-lg placeholder:font-sans" placeholder='Position'
                  {...register("position", {required:true})}
                 
                 />
@@ -322,7 +322,7 @@ export const PostJobs = () => {
               
               <div class="mb-8 font-xl">
               <label>
-                <Select onChange={e=>setSelectedOption(e.target.value)}  options={jobtype} className="outline outline-2 outline-offset-1 outline-blue-500 rounded-lg focus:outline-4 text-center w-2/3 placeholder:font-sans"
+                <Select onChange={e=>setSelectedOption(e.target.value)}  options={jobtype} className="outline w-5/6 outline-none text-black placeholder:text-black rounded-lg mx-auto  placeholder:font-sans"
                     // value={setSelectedOption}
                     isClearable={false}
                     value={value}
@@ -334,8 +334,8 @@ export const PostJobs = () => {
               </div>
 
               <div class="mb-8 font-xl">
-              <label>
-                <Select onChange={setSelectedOption} defaultValue={selectedOption} options={primaryfield}  name='primaryField' type={"text"} class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Primary Field'
+              <label className=''>
+                <Select onChange={setSelectedOption} defaultValue={selectedOption} options={primaryfield}  name='primaryField' type={"text"} className=" mx-auto outline:none rounded-lg w-5/6 placeholder:font-sans" placeholder='Primary Field'
                 // {...register("primaryField", {required:true})}
                 />
               </label>
@@ -354,7 +354,7 @@ export const PostJobs = () => {
           inputFieldPosition="bottom"
           autocomplete
           placeholder='Type a tag or search by keywords'
-          className="w-84"
+          className="w-96"
           name='techStack'
           //  {...register("techStack", {required:true})}
         />

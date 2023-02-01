@@ -13,8 +13,7 @@ const jobSchema = new mongoose.Schema({
         require:true
     },
     jobtype:{
-        type:Array,
-        require:true
+        type:String
     },
     primaryField:{
         type:String

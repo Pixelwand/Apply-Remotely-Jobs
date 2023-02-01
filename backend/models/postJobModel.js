@@ -13,35 +13,30 @@ const jobSchema = new mongoose.Schema({
         require:true
     },
     jobtype:{
-        type:String
+        type:Object
     },
     primaryField:{
-        type:String
+        type:Object
     },
     techStack:{
         type:String
     },
     location:{
         type:String,
-        require:true
     },
-    companyLogo:{
-        type:String
-    },
+    // companyLogo:{
+    //     type:File
+    // },
     minSalary:{
-        type:String,
-        require:true
+        type:Object
     },
     maxSalary:{
-        type:String,
+        type:Object,
         require:true
     },
     jobDescription:{
         type:String,
         require:true
-    },
-    benefits:{
-        type:String
     },
     howtoapply:{
         type:String
@@ -55,10 +50,6 @@ const jobSchema = new mongoose.Schema({
     },
     secondEmail:{
         type:String
-    },
-    terms:{
-        type:String,
-        require:true
     }
 
 })

@@ -192,58 +192,57 @@ const KeyCodes = {
 export const PostJobs = () => {
   const [stack, setStack] = useState([]);
   const [location, setLocation] = useState([])
-  const CLIENT_ID = "AWigkJSRzUKSZxY-oEaPGne4V0hJDVY7PNirDVKVmeky4ZtSQpiuUsD3oEx8o2-jS2CtM8kVtBpkmI34"
-  // const [tags, setTags] = React.useState([
+  // const CLIENT_ID = "AWigkJSRzUKSZxY-oEaPGne4V0hJDVY7PNirDVKVmeky4ZtSQpiuUsD3oEx8o2-jS2CtM8kVtBpkmI34"
+  // // const [tags, setTags] = React.useState([
     
-  // ]);
-  const [clientSecret, setClientSecret] = useState("");
-  const [sdkReady, setSdkReady] = useState(false)
+  // // ]);
+  // const [clientSecret, setClientSecret] = useState("");
+  // const [sdkReady, setSdkReady] = useState(false)
 
-  useEffect(() => {
-    const addPaypalScript = async()=>{
-      const{data:clientId} = await axios.get("/api/config/paypal")
-      const script = document.createElement('script')
-      script.type = 'text/javascript'
-      script.src  = `https://www.paypal.com/sdk/js?client-id=${CLIENT_ID}`
-      script.async = true
-      script.onload=()=>{
-        setSdkReady(true)
-      }
-      document.body.appendChild(script);
-    }
+  // useEffect(() => {
+  //   const addPaypalScript = async()=>{
+  //     const{data:clientId} = await axios.get("/api/config/paypal")
+  //     const script = document.createElement('script')
+  //     script.type = 'text/javascript'
+  //     script.src  = `https://www.paypal.com/sdk/js?client-id=${CLIENT_ID}`
+  //     script.async = true
+  //     script.onload=()=>{
+  //       setSdkReady(true)
+  //     }
+  //     document.body.appendChild(script);
+  //   }
   
-    return () => {
+  //   return () => {
       
-    }
-  }, [])
+  //   }
+  // }, [])
   
 
-  useEffect(() => {
-    // Create PaymentIntent as soon as the page loads
-    fetch("/create-payment-intent", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
-    })
-      .then((res) => res.json())
-      .then((data) => setClientSecret(data.clientSecret));
-  }, []);
+  // useEffect(() => {
+  //   // Create PaymentIntent as soon as the page loads
+  //   fetch("/create-payment-intent", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => setClientSecret(data.clientSecret));
+  // }, []);
 
-  const appearance = {
-    theme: 'stripe',
-  };
-  const options = {
-    clientSecret,
-    appearance,
-  };
+  // const appearance = {
+  //   theme: 'stripe',
+  // };
+  // const options = {
+  //   clientSecret,
+  //   appearance,
+  // };
 
   const [value, setValue] = useState('');
   const {register, handleSubmit, control, formState:{errors}} = useForm();
   
 
    
-  const formSubmit = async(data) => {
-    // console.log(data)
+const formSubmit = async(data) => {
       const response = await fetch("http://localhost:8080/user/postjob", {
            method:'POST',
            headers:{

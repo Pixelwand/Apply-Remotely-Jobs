@@ -1,8 +1,9 @@
 import React, {useState,useEffect} from 'react';
 import {useForm, Controller} from 'react-hook-form';
-import Select from 'react-select'
+import Select from 'react-select';
 import axios from 'axios';
-import {WithContext as ReactTags} from 'react-tag-input';
+import TagsInput from 'react-tagsinput';
+import 'react-tagsinput/react-tagsinput.css';
 
 const customStyles = {
   content:{
@@ -164,35 +165,37 @@ const Location = [
   "India"
 ]
 
-const locations = Location.map(location => {
-  return{
-    id:location,
-    text:location
-  }
-})
+// const locations = Location.map(location => {
+//   return{
+//     id:location,
+//     text:location
+//   }
+// })
 
 
 
-const stacks = Stack.map(stack => {
-  return {
-    id: stack,
-    text: stack
-  };
-});
+// const stacks = Stack.map(stack => {
+//   return {
+//     id: stack,
+//     text: stack
+//   };
+// });
 
 const KeyCodes = {
   comma: 188,
   enter: 13
 };
 
-const delimiters = [KeyCodes.comma, KeyCodes.enter];
+// const delimiters = [KeyCodes.comma, KeyCodes.enter];
 
 
 export const PostJobs = () => {
+  const [stack, setStack] = useState([]);
+  const [location, setLocation] = useState([])
   const CLIENT_ID = "AWigkJSRzUKSZxY-oEaPGne4V0hJDVY7PNirDVKVmeky4ZtSQpiuUsD3oEx8o2-jS2CtM8kVtBpkmI34"
-  const [tags, setTags] = React.useState([
+  // const [tags, setTags] = React.useState([
     
-  ]);
+  // ]);
   const [clientSecret, setClientSecret] = useState("");
   const [sdkReady, setSdkReady] = useState(false)
 
@@ -234,29 +237,7 @@ export const PostJobs = () => {
     appearance,
   };
 
-  const handleDelete = i => {
-    setTags(tags.filter((tag, index) => index !== i));
-  };
-
-  const handleAddition = tag => {
-    setTags([...tags, tag]);
-  };
-
-  const handleDrag = (tag, currPos, newPos) => {
-    const newTags = tags.slice();
-
-    newTags.splice(currPos, 1);
-    newTags.splice(newPos, 0, tag);
-
-    // re-render
-    setTags(newTags);
-  };
-
-  const handleTagClick = index => {
-    console.log('The tag at index ' + index + ' was clicked');
-  };
   const [value, setValue] = useState('');
-  const [selectedOption, setSelectedOption] = useState(null);
   const {register, handleSubmit, control, formState:{errors}} = useForm();
   
 
@@ -285,6 +266,8 @@ export const PostJobs = () => {
      const changeHandler = ()=>{
       setValue(value)
     }
+    
+    
     
   return (
     <>
@@ -341,41 +324,28 @@ export const PostJobs = () => {
           options={jobtype} 
         />}
       />
+      <div>
+        <div>
+          Use Tags for Tech Stack
+        </div>
 
-              
-              <div className='my-10 w-full text-xl text-center font-bold border-blue-500'>Tags, Keywords or Stack
-        <ReactTags
-          tags={tags}
-           suggestions={stacks}
-          delimiters={delimiters}
-          handleDelete={handleDelete}
-          handleAddition={handleAddition}
-          handleDrag={handleDrag}
-          handleTagClick={handleTagClick}
-          inputFieldPosition="bottom"
-          autocomplete
-          placeholder='Type a tag or search by keywords'
-          style={customStyles}
-          name='techStack'
-          //  {...register("techStack", {required:true})}
-        />
+       
+
+      <TagsInput 
+      value={stack}
+      onChange={setStack}
+      name="techStack"
+      />
       </div>
-      <div className='my-10 w-full text-xl text-center font-bold'>stricted Job Locations
-        <ReactTags
-          tags={tags}
-           suggestions={locations}
-          delimiters={delimiters}
-          handleDelete={handleDelete}
-          handleAddition={handleAddition}
-          handleDrag={handleDrag}
-          handleTagClick={handleTagClick}
-          inputFieldPosition="bottom"
-          autocomplete
-          placeholder='Type a location to this job is restricted like Worldwide, Asia or USA'
-          name='location'
-            // {...register("location", {required:true})}
-        />
+      <div>
+        <div>Use Tags for restricted job locations</div>
+      <TagsInput 
+      name="location"
+      value={location}
+      onChange={setLocation}
+      />
       </div>
+      
       <div>
         <div className='font-bold text-2xl text-center bg-red-500 text-white py-4'>
           Job Details
@@ -391,16 +361,23 @@ export const PostJobs = () => {
         </div>
         <div className='text-xs text-center px-10'>ANNUAL SALARY OR COMPENSATION IN USD (GROSS, ANNUALIZED, FULL-TIME-EQUIVALENT (FTE) IN USD EQUIVALENT)*</div>
         <div className='flex flex-row gap-8 text-xl justify-center my-10'>
-        <label className=''>
-                <Select onChange={setSelectedOption} defaultValue={selectedOption} options={salary}  class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg  h-10 pl-5 placeholder:font-sans" placeholder='Min Salary'
-                // {...register("minSalary", {required:true})}
-                />
-              </label>
-              <label className=''>
-                <Select onChange={setSelectedOption} defaultValue={selectedOption} options={salary}  class="outline outline-2 outline-offset-1 outline-slate-500 rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Max Salary'
-                // {...register("maxSalary", {required:true})}
-                />
-              </label>
+        <Controller
+        name="minSalary"
+        control={control}
+        render={({ field }) => <Select 
+          {...field} 
+          options={salary} 
+        />}
+      />
+      <Controller
+        name="maxSalary"
+        control={control}
+        render={({ field }) => <Select 
+          {...field} 
+          options={salary} 
+        />}
+      />
+       
         </div>
         <div className='mb-5'>
                 <p className='text-xs px-10'>It's illegal to not share salary range on job posts since 2021. Posts without salary will automatically show an estimate of salary based on similar jobs. Remote job postings are legally required to show a salary compensation range in many U.S. states and countries. Google does NOT index jobs without salary data. If it's a short-term gig, use the annual full-time equivalent. For example, if it's a 2-week project for $2,000, the annual equivalent would be $2,000 / 2 weeks * 52 weeks = $52,000. Please use USD equivalent. We don't have currency built-in yet and we'd like to use this salary data to show salary trends in remote work. Remote OK is a supporter of #OpenSalaries.</p>

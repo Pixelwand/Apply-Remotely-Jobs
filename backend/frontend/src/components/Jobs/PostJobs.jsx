@@ -385,10 +385,10 @@ export const PostJobs = () => {
         <div className='font-bold text-2xl text-center bg-red-500 text-white py-4'>
           Job Details
         </div>
-        <div className='my-10 flex flex-row px-10 text-xl'>
+        <div className='my-10 flex flex-row px-10 text-base gap-5'>
           <div className='basis-1/2 font-bold'>Logo:</div>
           <div className='basis-1/2'>
-          <input type={"file"} placeholder="Upload" className='ml-10' onChange={changeHandler} 
+          <input type={"file"} placeholder="Upload" className='' onChange={changeHandler} 
           name="companyLogo"
            {...register("comapnyLogo", {required:true})}
           />

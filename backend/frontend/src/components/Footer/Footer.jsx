@@ -54,10 +54,10 @@ export default function Footer() {
   </div>
   
 </div>
-<div class="text-center xl:mt-20 w-full">
+<div class="text-center xl:mt-20">
     <button>
-    <input type={"email"} placeholder="Enter your email" class="outline-none border-2 placeholder:text-black text-black font-sans font-semibold border-blue-600 p-3" />
-    <span class="bg-blue-600 text-white font-sans p-3.5 border-2 border-blue-600">Get Started</span>
+    <input type={"email"} placeholder="Enter your email" class="outline-none border-2 placeholder:text-black text-black font-sans font-semibold border-blue-600  p-1.5" />
+    <span class="bg-blue-600 text-white font-sans p-1.5 border-2 border-blue-600">Get Started</span>
     </button>
   </div>
   <div className='text-center mt-5'>All Rights reserved @copyright 2023</div>

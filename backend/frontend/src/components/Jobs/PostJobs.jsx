@@ -272,8 +272,8 @@ const formSubmit = async(data) => {
     <>
     <div className="w-full pb-20">
             <form onSubmit={handleSubmit(formSubmit)}>
-              <div className="text-black pt-3 mb-8 w-full font-sans "><div className='text-2xl font-bold text-center'>Post Remote Jobs <span className='line-through'>399$</span> 39$</div>
-              <div className='text-xl text-white bg-red-500 leading-10 mt-2 text-center'>90% Discount</div>
+              <div className="text-black pt-3 mb-8 w-full font-sans "><div className='text-2xl font-bold text-center'>Post Remote Jobs <span className='line-through'>399$</span> 0$</div>
+              <div className='text-xl text-white bg-red-500 leading-10 mt-2 text-center'>100% Discount</div>
               </div>
               
               <div className="mb-8 font-xl w-full text-center">
@@ -449,7 +449,7 @@ const formSubmit = async(data) => {
                 <label class="font-sans text-sm ml-5">I agree to the <a href="#/" class="text-blue-700 font-semibold">Terms of Service</a> and <a href='#/' class="font-semibold font-sans text-blue-700">Privacy Policy</a></label>
               </div>
               <div class="text-center w-full">
-              <button class="bg-blue-600 hover:bg-blue-800 text-white font-semibold text-xl rounded px-6 py-3" type='submit'>Start Hiring at 39$</button>
+              <button class="bg-blue-600 hover:bg-blue-800 text-white font-semibold text-xl rounded px-6 py-3" type='submit'>Start Hiring at 0$</button>
               </div>
             </form>
           </div>

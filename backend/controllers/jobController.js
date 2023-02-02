@@ -4,7 +4,7 @@ exports.getJobs = async(req, res)=>{
    try{await Jobs.find().then(
    result=>res.status(200).send({
     message:"Jobs data found successfully",
-    list:result
+    listJobs:result
    }))
    
 } catch{

@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from "react"
 
 export const Jobs = () => {
-  const [users, setUsers] = useState([])
+  const [jobs, setJobs] = useState({})
 
-  const fetchData = async () => {
-    const response = await fetch("http://localhost:8080/user/postjob")
-    const data = await response.json()
-    setUsers(data)
-  }
 
   useEffect(() => {
-   fetch(`http:localhost:3000/user/jobs`, {method:'GET'})
+   fetch(`http://localhost:8080/user/jobs`, {method:'GET'})
+   .then(response=>response.json())
+   .then(data=>{
+    console.log(data)
+    setJobs(data.listJobs)
+   })
   }, [])
-
+  
+  const {companyName, companyEmail} = jobs;
   return (
     <>
+    <div>List of all Remote Jobs</div>
+    <div>{companyName}</div>
+    <div>{companyEmail}</div>
     </>
   )
 }

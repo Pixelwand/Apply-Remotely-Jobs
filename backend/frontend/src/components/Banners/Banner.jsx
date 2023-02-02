@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { MegaphoneIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import {
     Alert,
     AlertIcon,
@@ -19,11 +20,15 @@ export const Banner = () => {
     } = useDisclosure({ defaultIsOpen: true })
   
     return isVisible ? (
-      <Alert status='success'>
+        <div className='bg-indigo-600'>
+      <Alert status='success' bg="indigo-600" >
         <AlertIcon />
         <Box>
-          <AlertTitle>Success!</AlertTitle>
+          <AlertTitle>
+          <MegaphoneIcon className="h-6 w-6 text-white" aria-hidden="true" />
+          </AlertTitle>
           <AlertDescription>
+            
             Your application has been received. We will review your application
             and respond within the next 48 hours.
           </AlertDescription>
@@ -36,7 +41,8 @@ export const Banner = () => {
           onClick={onClose}
         />
       </Alert>
-    ) : (
+      </div>
+) : (
       <Button onClick={onOpen}>Show Alert</Button>
     )
   }

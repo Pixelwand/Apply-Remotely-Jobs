@@ -8,17 +8,19 @@ export const Jobs = () => {
    fetch(`http://localhost:8080/user/jobs`, {method:'GET'})
    .then(response=>response.json())
    .then(data=>{
-    console.log(data)
     setJobs(data.listJobs)
    })
   }, [])
   
-  const {companyName, companyEmail} = jobs;
+  console.log("jobs:", jobs)
+  const {companyName, companyEmail, applyUrl, howtoapply, jobDescription, jobtype,  minSalary, maxSalary, position, primaryField, secondEmail, twitterUsername}=jobs;
+  console.log("Company Name", companyName);
   return (
     <>
     <div>List of all Remote Jobs</div>
-    <div>{companyName}</div>
+    <div className="text-blue-600">{companyName}</div>
     <div>{companyEmail}</div>
+    <div>{applyUrl}</div>
     </>
   )
 }

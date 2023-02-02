@@ -8,6 +8,7 @@ const session = require("express-session");
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const postjobRoutes = require('./routes/postJob');
+const jobRoutes = require('./routes/jobRoutes')
 
 const User = require('./models/userModel');
 const Profile = require('./models/googleModel');
@@ -76,7 +77,8 @@ app.use(express.json());
 app.use(cors());
 app.use('/user', userRoutes)
 app.use('/user', postjobRoutes)
-app.use('', googleRoutes)
+app.use('/', googleRoutes)
+app.use('/user', jobRoutes)
 
 app.get('/api/cofig/paypal', (req, res)=>{
   res.send(process.env.PAYPAL_CLIENT_ID)

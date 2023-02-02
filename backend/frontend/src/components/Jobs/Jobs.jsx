@@ -10,19 +10,12 @@ export const Jobs = () => {
   }
 
   useEffect(() => {
-    fetchData()
+   fetch(`http:localhost:3000/user/jobs`, {method:'GET'})
   }, [])
 
   return (
-    <div>
-      {users.length > 0 && (
-        <ul>
-          {users.map(user => (
-            <li key={user.id}>{user.name}</li>
-          ))}
-        </ul>
-      )}
-    </div>
+    <>
+    </>
   )
 }
 

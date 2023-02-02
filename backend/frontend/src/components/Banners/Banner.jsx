@@ -21,16 +21,15 @@ export const Banner = () => {
   
     return isVisible ? (
         <div className='bg-indigo-600'>
-      <Alert status='success' bg="indigo-600" >
+      <Alert status='success' bg="indigo-600">
         <AlertIcon />
         <Box>
           <AlertTitle>
           <MegaphoneIcon className="h-6 w-6 text-white" aria-hidden="true" />
           </AlertTitle>
-          <AlertDescription>
+          <AlertDescription color={"white"}>
             
-            Your application has been received. We will review your application
-            and respond within the next 48 hours.
+            We announced free posting of Remote Jobs
           </AlertDescription>
         </Box>
         <CloseButton
@@ -39,6 +38,7 @@ export const Banner = () => {
           right={-1}
           top={-1}
           onClick={onClose}
+          color="white"
         />
       </Alert>
       </div>

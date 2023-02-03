@@ -13,9 +13,9 @@ export default function Main() {
           <p className="text-center mt-10 mx-4 sm:mx-auto sm: sm:w-4/6 sm:justify-center sm:text-2xl  my-auto text-lg font-normal leading-9">Find 100+ Remote Jobs for more than 20+ category from Entry level to Senior level and work from anywhere.</p>
           <div className="text-center mt-10">
             <span className="mr-5 sm:mr-10">
-             <a href='https://applyremotelyjobs.vercel.app/postjobs' className='bg-green-600 p-4 rounded-xl font-bold font-sans sm:text-2xl'>Post Remote Jobs </a>
+             <a href='https://applyremotelyjobs.co/postjobs' className='bg-green-600 p-4 rounded-xl font-bold font-sans sm:text-2xl'>Post Remote Jobs </a>
             </span>
-            <a href='https://applyremotelyjobs.vercel.app/jobs' className='bg-green-600 p-4 rounded-xl font-bold font-sans sm:text-2xl'>Find Remote Jobs</a>
+            <a href='https://applyremotelyjobs.co/jobs' className='bg-green-600 p-4 rounded-xl font-bold font-sans sm:text-2xl'>Find Remote Jobs</a>
           </div>
           </div>
           <div className="w-full mb-28 xl:flex-row xl:flex">

@@ -9,10 +9,10 @@ import {Login} from '../Authentication/Login';
 
 
 const navigation = [
-  { name: 'Home', href: 'https://applyremotelyjobs.vercel.app/', current: false },
-  { name: 'Jobs', href: 'https://applyremotelyjobs.vercel.app/jobs', current: false },
-  { name: 'Candidates', href: 'https://applyremotelyjobs.vercel.app/candidates', current: false },
-  { name: 'About', href: 'https://applyremotelyjobs.vercel.app/about', current: false }
+  { name: 'Home', href: 'http://applyremotelyjobs.co/', current: false },
+  { name: 'Jobs', href: 'http://applyremotelyjobs.co/jobs', current: false },
+  { name: 'Candidates', href: 'http://applyremotelyjobs.co/candidates', current: false },
+  { name: 'About', href: 'http://applyremotelyjobs.co/about', current: false }
 ]
 
 const customStyles = {
@@ -49,7 +49,7 @@ export default function Header() {
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <a href='https://applyremotelyjobs.vercel.app/' className='text-black font-sans font-extrabold text-2xl ml-5 font-mono sm:text-3xl'>ARJ</a>
+                      <a href='http://applyremotelyjobs.co/' className='text-black font-sans font-extrabold text-2xl ml-5 font-mono sm:text-3xl'>ARJ</a>
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 sm:text-center lg:ml-96  flex items-baseline space-x-4">

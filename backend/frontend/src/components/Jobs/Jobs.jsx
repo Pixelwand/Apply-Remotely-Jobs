@@ -16,7 +16,22 @@ export const Jobs = () => {
     <div>List of all Remote Jobs</div>
     <div>
       {jobData.map(job=>
-        <li key={job.id}>{job.companyName}</li>
+        <div key={job.id}>
+          <div key={job.id}>{job.companyName}</div>
+          <div key={job.id}>{job.companyEmail}</div>
+          <div  key={job.id}>{job.position}</div>
+          <div key={job.id}>{job.jobtype.value}</div>
+          <div key={job.id}>{job.primaryField.value}</div>
+          <div key={job.id}>{job.minSalary.label}</div>
+          <div key={job.id}>{job.maxSalary.label}</div>
+          <div key={job.id}>{job.jobDescription}</div>
+          <div key={job.id}>{job.howtoapply}</div>
+          <div key={job.id}>{job.applyUrl}</div>
+          <div key={job.id}>{job.twitterUsername}</div>
+          <div key={job.id}>{job.secondEmail}</div>
+          <div key={job.id}></div>
+          <div key={job.id}></div>
+        </div>
         )}
     </div>
     </>

@@ -11,30 +11,13 @@ export const Jobs = () => {
   }, [])
   
   console.log("listJob:", jobData)
-  // const {companyName, companyEmail} = jobData
-  // const {companyName, companyEmail, applyUrl, howtoapply, jobDescription, jobtype,  minSalary, maxSalary, position, primaryField, secondEmail, twitterUsername}=jobs;
-  // console.log("Company Name", companyName);
   return (
     <>
     <div>List of all Remote Jobs</div>
-    {/* <div>{`${companyName}`}</div> */}
     <div>
       {jobData.map(job=>
         <li key={job.id}>{job.companyName}</li>
         )}
-    </div>
-    {/* <div>{companyEmail}</div> */}
-    {/* <div>{companyName}</div> */}
-    {/* <div className="text-blue-600">{companyName}</div> */}
-    {/* <div>{companyEmail}</div> */}
-    {/* <div>{applyUrl}</div> */}
-    
-        <div>
-        {/* <ul>
-          {jobData((job) => (
-            <li key={job.id}>{job.companyName}</li>
-          ))}
-        </ul> */}
     </div>
     </>
   )

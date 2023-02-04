@@ -306,6 +306,7 @@ const formSubmit = async(data) => {
                </p>}
               </div>
               
+              <div className='w-2/3 mx-auto mb-5'>
               
               <Controller
               onChange={changeHandler}
@@ -316,6 +317,8 @@ const formSubmit = async(data) => {
           options={primaryfield} 
         />}
       />
+      </div>
+      <div className='w-2/3 mx-auto'>
        <Controller
        onChange={changeHandler}
         name="primaryField"
@@ -325,26 +328,32 @@ const formSubmit = async(data) => {
           options={jobtype} 
         />}
       />
+      </div>
       <div>
-        <div>
+        <div className='text-center mt-7 text-xl font-semibold'>
           Use Tags for Tech Stack
         </div>
 
        
-
+      <div className='mt-3 mb-7'>
       <TagsInput 
       value={stack}
       onChange={setStack}
       name="techStack"
+      className='w-5/6 mx-auto h-12 p-2 rounded-xl outline outline-2 focus:outline-4 outline-blue-600 placeholder:text-black'
       />
       </div>
+      </div>
       <div>
-        <div>Use Tags for restricted job locations</div>
+        <div className='text-center text-xl font-semibold'>Tags for restricted job locations</div>
+      <div className='mb-12 mt-3'>
       <TagsInput 
       name="location"
       value={location}
       onChange={setLocation}
+      className="w-5/6 mx-auto h-12 p-2 rounded-xl outline outline-2 focus:outline-4 outline-blue-600 placeholder:text-black"
       />
+      </div>
       </div>
       
       <div>

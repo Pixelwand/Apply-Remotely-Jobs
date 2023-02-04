@@ -46,7 +46,7 @@ export const Login = () => {
     }
 
     const formSubmit = () => {
-        axios.post("http://localhost:8080/user/login", user)
+        axios.post("https://apply-remotely-jobs.onrender.com/user/login", user)
         .then(res => {
             // alert(res.data.message)
             // setLoginUser(res.data.user)

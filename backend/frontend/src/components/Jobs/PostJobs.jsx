@@ -325,7 +325,7 @@ const formSubmit = async(data) => {
         control={control}
         render={({ field }) => <Select 
           {...field} 
-          options={jobtype} 
+          options={jobtype}
         />}
       />
       </div>
@@ -360,7 +360,7 @@ const formSubmit = async(data) => {
         <div className='font-bold text-2xl text-center bg-red-500 text-white py-4'>
           Job Details
         </div>
-        <div className='my-10 flex flex-row px-10 text-base gap-5'>
+        <div className='my-10 flex flex-row px-10 text-base gap-5 xl:text-center xl:gap-1'>
           <div className='basis-1/2 font-bold'>Logo:</div>
           <div className='basis-1/2'>
           <input type={"file"} placeholder="Upload" className='' onChange={changeHandler} 
@@ -397,13 +397,13 @@ const formSubmit = async(data) => {
       <div class="mb-8 font-2xl font-bold ml-10">Job Description*:</div>
       <div>
               <label>
-                <textarea onChange={changeHandler}  name='JobDescription' type={"textarea"} class="outline outline-2 outline-offset-1 outline-blue-500 focus:outline-4 placeholder:text-black rounded-lg block w-5/6 mx-10 pt-3 h-72 mt-5 pl-5 placeholder:font-sans" placeholder='Mention All the details about job'
+                <textarea onChange={changeHandler}  name='JobDescription' type={"textarea"} class="outline outline-2 outline-offset-1 outline-blue-500 focus:outline-4 placeholder:text-black rounded-lg block w-5/6 mx-10 pt-3 h-72 mt-5 pl-5 placeholder:font-sans xl:mx-auto" placeholder='Mention All the details about job'
                  {...register("jobDescription", {required:true})}
                 />
               </label>
               <div>
                 <div className='font-bold text-xl mt-8 mb-1 ml-10'>Benefits:</div>
-                <div className='grid grid-rows-12 gap-2 grid-col-2 ml-12 mb-12'>
+                <div className='grid grid-rows-12 gap-2 grid-col-2 ml-12 mb-12 xl:grid-rows-6  xl:grid-cols-5'>
                 {Benefits.map((item, index) => (
             <div key={index} className="">
               <input value={item} type="checkbox" name='benefits' className='mr-3' 

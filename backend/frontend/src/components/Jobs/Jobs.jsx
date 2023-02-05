@@ -27,7 +27,11 @@ export const Jobs = () => {
   console.log("listJob:", jobData)
   return (
     <>
-    <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-sans font-bold p-10 text-2xl">List of all Remote Jobs</div>
+    
+    <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-sans font-bold p-10 pt-2 text-2xl">
+      <div className="mb-5"><a href="https://www.applyremotelyjobs.com/" className="text-base leading-9">Apply Remotely Jobs</a>
+      </div>
+      List of all Remote Jobs</div>
     <div >
       {jobData.map(job=>
         <div key={job.id} className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 my-5 p-3">
@@ -47,7 +51,7 @@ export const Jobs = () => {
           <span>-</span>
           <div key={job.id}>{job.maxSalary.value}</div>
           </div>
-          <div>
+          <div className="bg-white px-6 py-2 font-semibold rounded-full">
             <Link to={job.applyUrl} target="_blank">Apply</Link>
           {/* <Link to={`job.applyUrl`}>Apply Now</Link> */}
           {/* <Link to={job => `${job.applyUrl}`} >Apply</Link> */}

@@ -1,12 +1,22 @@
-const {User, validate} = require('../models/userModel');
-const bcrypt = require("bcrypt");
-const joi = require('joi');
+const User = require('../models/userModel');
+// const bcrypt = require("bcrypt");
+// const joi = require('joi');
 
 //User Registration through custom form
 
 exports.createUser = async (req, res)=>{
     try{
-        const {error} = validate(req.body);
+        const user = await User.findOne({email:req.body.email});
+        if(user){
+           return res.status(400).send("User already exists")
+        } else{
+           User.create(req.body);
+            console.log(req.body);
+            res.status(201).send({
+                message:"New User Created Successfully"
+            })
+        }
+        // const {error} = validate(req.body);
         // if(error){
         //     res.status(400).send({message:error})
         // } 
@@ -17,12 +27,12 @@ exports.createUser = async (req, res)=>{
         //     })
         // } 
         // else
-     {await User.create(req.body);
-    console.log(req.body)
+    //  {await User.create(req.body);
+    // console.log(req.body)
 
-    res.status(201).send({
-        message:"New user created successfully"
-    })}
+    // res.status(201).send({
+    //     message:"New user created successfully"
+    // })}
 } catch{
     res.status(501).send({
         message:"Internal server error"

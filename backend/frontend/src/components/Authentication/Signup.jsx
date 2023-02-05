@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 export const Signup =  () =>{
     const {register, handleSubmit, formState:{errors}} = useForm();
     const formSubmit = async(data) => {
-        const response = await fetch("https://apply-remotely-jobs.onrender.com/user/register", {
+        const response = await fetch("http://localhost:8080/user/register", {
              method:'POST',
              headers:{
                'content-Type':'application/json'
@@ -12,7 +12,7 @@ export const Signup =  () =>{
              body:JSON.stringify(data)
        
            }).then((res)=>{
-             console.log(data)
+             console.log("User Created Successfully", data)
            })
          
            return () => {

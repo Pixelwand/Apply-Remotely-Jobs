@@ -43,6 +43,6 @@ export const Banner = () => {
       </Alert>
       </div>
 ) : (
-      <Button onClick={onOpen}>Show Alert</Button>
+      null
     )
   }

@@ -51,21 +51,28 @@ export const Jobs = () => {
   <PopoverContent>
     <PopoverArrow />
     <PopoverCloseButton />
-    <PopoverHeader>Confirmation!</PopoverHeader>
-    <PopoverBody>Are you sure you want to have that milkshake?
+    <PopoverHeader>Details!</PopoverHeader>
+    <PopoverBody>
 
-    <div key={job.id}>{job.companyName}</div>
-          <div key={job.id}>{job.companyEmail}</div>
-          <div  key={job.id}>{job.position}</div>
-          <div key={job.id}>{job.jobtype.value}</div>
-          <div key={job.id}>{job.primaryField.value}</div>
-          <div key={job.id}>{job.minSalary.label}</div>
+    <div key={job.id}>Company Name: {job.companyName}</div>
+          <div key={job.id}>Company Email: {job.companyEmail}</div>
+          <div  key={job.id}>Position: {job.position}</div>
+          <div key={job.id}>Type Of Jobs: {job.jobtype.value}</div>
+          <div key={job.id}>Primary Field: {job.primaryField.value}</div>
+          <div key={job.id}>
+            
+            {job.minSalary.label}</div>
           <div key={job.id}>{job.maxSalary.label}</div>
-          <div key={job.id}>{job.jobDescription}</div>
-          <div key={job.id}>{job.howtoapply}</div>
-          <div key={job.id}>{job.applyUrl}</div>
-          <div key={job.id}>{job.twitterUsername}</div>
-          <div key={job.id}>{job.secondEmail}</div>
+          <div key={job.id}>
+          <div>Description:</div>
+            {job.jobDescription}</div>
+          <div key={job.id}>
+          <div>How To Apply?</div>
+            {job.howtoapply}</div>
+          <div key={job.id}>
+            <div>Twitter Username</div>
+            {job.twitterUsername}
+          </div>
           <a href={job.applyUrl}>Click Here</a>
     </PopoverBody>
   </PopoverContent>

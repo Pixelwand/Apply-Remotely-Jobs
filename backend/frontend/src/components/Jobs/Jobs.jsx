@@ -9,7 +9,8 @@ import {
   PopoverArrow,
   PopoverCloseButton,
   PopoverAnchor,
-  Button
+  Button,
+  Link
 } from '@chakra-ui/react'
 export const Jobs = () => {
   const [jobData, setJobData] = useState([])
@@ -20,6 +21,8 @@ export const Jobs = () => {
    .then((response)=>response.json())
    .then((data)=>setJobData(data))
   }, [])
+
+  
   
   console.log("listJob:", jobData)
   return (
@@ -44,7 +47,13 @@ export const Jobs = () => {
           <span>-</span>
           <div key={job.id}>{job.maxSalary.value}</div>
           </div>
-          <Popover>
+          <div>
+            <Link to={job.applyUrl} target="_blank">Apply</Link>
+          {/* <Link to={`job.applyUrl`}>Apply Now</Link> */}
+          {/* <Link to={job => `${job.applyUrl}`} >Apply</Link> */}
+          {/* <span itemType={job.applyUrl}>AAAA</span> */}
+          </div>
+          {/* <Popover>
   <PopoverTrigger>
     <Button>View</Button>
   </PopoverTrigger>
@@ -76,7 +85,7 @@ export const Jobs = () => {
           <a href={job.applyUrl}>Click Here</a>
     </PopoverBody>
   </PopoverContent>
-</Popover>
+</Popover> */}
 </div>
         </div>
         

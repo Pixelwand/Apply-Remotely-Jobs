@@ -1,6 +1,7 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+// import { Navigate } from 'react-router-dom';
 
 
 
@@ -28,7 +29,18 @@ function classNames(...classes) {
 }
 
 export default function Dashboard() {
+  // const [authenticated, setAuthenticated] = useState(null);
+
+  // useEffect(() => {
+  //   const loggedInUser = localStorage.getItem("authenticated");
+  //   if(loggedInUser){
+  //     setAuthenticated(loggedInUser)
+  //   }
   
+  // }, [])
+  // if(!authenticated){
+  //   return <Navigate replace to="/login" />
+  // } else{
   return (
     <>
       <div className="min-h-full">
@@ -188,3 +200,4 @@ export default function Dashboard() {
     </>
   )
 }
+// }

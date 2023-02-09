@@ -1,40 +1,69 @@
 import React, {useState} from 'react';
 // import axios from "axios"
-import { useNavigate } from "react-router-dom"
+// import { useNavigate } from "react-router-dom"
 import { useForm } from 'react-hook-form';
+import PropTypes from 'prop-types';
 
 
+ 
 
-export const Login = () => {
+export default function Login({setToken}){
     const {register, handleSubmit, formState:{errors}} = useForm();
+    // const [authenticated, setAuthenticated] = useState(localStorage.getItem("authenticated") || false);
+    
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+    // const [value, setValue] = useState("");
 
-    const [value, setValue] = useState("");
-
-    const changeHandler = ()=>{
-        setValue(value)
-    }
+    // const changeHandler = ()=>{
+    //     setValue(value)
+    // }
     
     // const navigate = useNavigate();
 
-    const formSubmit = async (data) => {
+//     const formSubmit = async (credentials) => {
       
-   const response = await fetch("http://localhost:8080/user/login", {
-      method:'POST',
-      headers:{
-        'content-Type':'application/json'
-      },
-      body:JSON.stringify(data),
+//    const token = await fetch("http://localhost:8080/user/login", {
+//       method:'POST',
+//       headers:{
+//         'content-Type':'application/json'
+//       },
+//       body:JSON.stringify(credentials),
 
-    } ).then((res)=>{
-      console.log("logged in successfully", data);
-    })
-    return () => {
-      response.json()
-      //  navigate.push("/dashboard")
+//     } ).then(data=>data.json()
+// //       setAuthenticated(true)
+// //         localStorage.setItem("authenticated", true);
+//     )
+//     // const token = await loginUser({
+//     //   email,
+//     //   password
+//     // });
+//     setToken(token);
+//     }
+async function loginUser(credentials) {
+  return fetch('http://localhost:8080/user/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(credentials)
+  })
+    .then(data => data.json())
+ }
+
+
+    const formSubmit = async(e) => {
+      if (e && e.preventDefault) { // add?
+        e.preventDefault();
+        e.persist();
     }
+      // e.preventDefault();
+      const token = await loginUser({
+        email,
+        password
+      });
+      setToken(token);
     }
-
-
      
     
 
@@ -67,7 +96,7 @@ export const Login = () => {
       <fieldset  class="text-center font-semibold text-base mb-8">Login with email</fieldset>
       <div class="mb-8">
               <label>
-                <input onChange={changeHandler} name='email' class="outline outline-2 outline-offset-1 outline-blue-400 focus:outline-4 placeholder:text-black rounded-lg w-72 h-10 pl-5 placeholder:font-sans"  type={"email"} placeholder='Email'
+                <input onChange={e=>setEmail(e.target.value)} name='email' class="outline outline-2 outline-offset-1 outline-blue-400 focus:outline-4 placeholder:text-black rounded-lg w-72 h-10 pl-5 placeholder:font-sans"  type={"email"} placeholder='Email'
                 {...register("email",{required:true})}
                 />
               </label>
@@ -75,7 +104,7 @@ export const Login = () => {
               </div>
               <div class="mb-8">
               <label>
-                <input onChange={changeHandler} name='password'  class="outline outline-2 outline-offset-1 outline-blue-400 focus:outline-4 placeholder:text-black rounded-lg w-72 h-10 pl-5 placeholder:font-sans" type={"password"} placeholder='Enter Your Password'
+                <input onChange={e=>setPassword(e.target.value)} name='password'  class="outline outline-2 outline-offset-1 outline-blue-400 focus:outline-4 placeholder:text-black rounded-lg w-72 h-10 pl-5 placeholder:font-sans" type={"password"} placeholder='Enter Your Password'
                 {...register("password", {required:true})}
                 />
               </label>
@@ -89,4 +118,8 @@ export const Login = () => {
 
     </>
   )
+}
+
+Login.propTypes = {
+  setToken: PropTypes.func.isRequired
 }

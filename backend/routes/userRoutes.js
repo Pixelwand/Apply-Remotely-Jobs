@@ -9,7 +9,7 @@ const app = express.Router();
 
 
 app.post('/register', urlEncodedParser, userRegister.createUser);
-app.post('/login', userLogin.findUser);
+app.post('/login',urlEncodedParser, userLogin.findUser);
 // app.get('/', (req, res)=>{
 //     res.status(200).json("User found Successfully")
 // })

@@ -23,7 +23,7 @@ export const Login = () => {
       headers:{
         'content-Type':'application/json'
       },
-      body:JSON.stringify(),
+      body:JSON.stringify(data),
 
     } ).then((res)=>{
       console.log("logged in successfully", data);

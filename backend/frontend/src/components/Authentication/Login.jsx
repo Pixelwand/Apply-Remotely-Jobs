@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 // import { useNavigate } from "react-router-dom"
 import { useForm } from 'react-hook-form';
 import PropTypes from 'prop-types';
+// import useToken from '../../useToken';
 
 
  
@@ -52,11 +53,11 @@ async function loginUser(credentials) {
  }
 
 
-    const formSubmit = async(e) => {
-      if (e && e.preventDefault) { // add?
-        e.preventDefault();
-        e.persist();
-    }
+    const formSubmit = async() => {
+    //   if (e && e.preventDefault) { // add?
+    //     e.preventDefault();
+    //     e.persist();
+    // }
       // e.preventDefault();
       const token = await loginUser({
         email,

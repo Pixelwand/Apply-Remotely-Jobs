@@ -54,11 +54,7 @@ async function loginUser(credentials) {
 
 
     const formSubmit = async() => {
-    //   if (e && e.preventDefault) { // add?
-    //     e.preventDefault();
-    //     e.persist();
-    // }
-      // e.preventDefault();
+
       const token = await loginUser({
         email,
         password

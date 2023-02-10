@@ -22,25 +22,27 @@ export default function Login({setToken}){
     
     // const navigate = useNavigate();
 
-//     const formSubmit = async (credentials) => {
+    const formSubmit = async (data) => {
       
-//    const token = await fetch("http://localhost:8080/user/login", {
-//       method:'POST',
-//       headers:{
-//         'content-Type':'application/json'
-//       },
-//       body:JSON.stringify(credentials),
+    await fetch("http://localhost:8080/user/login", {
+      method:'POST',
+      headers:{
+        'content-Type':'application/json'
+      },
+      body:JSON.stringify(data),
 
-//     } ).then(data=>data.json()
-// //       setAuthenticated(true)
-// //         localStorage.setItem("authenticated", true);
-//     )
-//     // const token = await loginUser({
-//     //   email,
-//     //   password
-//     // });
-//     setToken(token);
-//     }
+    } ).then((res)=>{
+      console.log("logged in successfully", data)
+    }
+//       setAuthenticated(true)
+//         localStorage.setItem("authenticated", true);
+    )
+    // const token = await loginUser({
+    //   email,
+    //   password
+    // });
+    // setToken(token);
+    }
 async function loginUser(credentials) {
   return fetch('http://localhost:8080/user/login', {
     method: 'POST',
@@ -53,14 +55,15 @@ async function loginUser(credentials) {
  }
 
 
-    const formSubmit = async() => {
+    // const formSubmit = async() => {
 
-      const token = await loginUser({
-        email,
-        password
-      });
-      setToken(token);
-    }
+    //   const token = await loginUser({
+    //     email,
+    //     password
+    //   });
+    //   // setToken(token);
+    //   // console.log(token)
+    // }
      
     
 
@@ -93,7 +96,7 @@ async function loginUser(credentials) {
       <fieldset  class="text-center font-semibold text-base mb-8">Login with email</fieldset>
       <div class="mb-8">
               <label>
-                <input onChange={e=>setEmail(e.target.value)} name='email' class="outline outline-2 outline-offset-1 outline-blue-400 focus:outline-4 placeholder:text-black rounded-lg w-72 h-10 pl-5 placeholder:font-sans"  type={"email"} placeholder='Email'
+                <input onChange={(e)=>setEmail(e.target.value)} name='email' class="outline outline-2 outline-offset-1 outline-blue-400 focus:outline-4 placeholder:text-black rounded-lg w-72 h-10 pl-5 placeholder:font-sans"  type={"email"} placeholder='Email'
                 {...register("email",{required:true})}
                 />
               </label>
@@ -101,7 +104,7 @@ async function loginUser(credentials) {
               </div>
               <div class="mb-8">
               <label>
-                <input onChange={e=>setPassword(e.target.value)} name='password'  class="outline outline-2 outline-offset-1 outline-blue-400 focus:outline-4 placeholder:text-black rounded-lg w-72 h-10 pl-5 placeholder:font-sans" type={"password"} placeholder='Enter Your Password'
+                <input onChange={(e)=>setPassword(e.target.value)} name='password'  class="outline outline-2 outline-offset-1 outline-blue-400 focus:outline-4 placeholder:text-black rounded-lg w-72 h-10 pl-5 placeholder:font-sans" type={"password"} placeholder='Enter Your Password'
                 {...register("password", {required:true})}
                 />
               </label>

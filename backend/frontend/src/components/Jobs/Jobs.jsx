@@ -17,7 +17,7 @@ export const Jobs = () => {
 
 
   useEffect(() => {
- fetch(`https://apply-remotely-jobs.onrender.com/user/jobs`, {method:'GET'})
+ fetch(`https://apply-remote-jobs.onrender.com/user/jobs`, {method:'GET'})
    .then((response)=>response.json())
    .then((data)=>setJobData(data))
   }, [])

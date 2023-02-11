@@ -22,27 +22,27 @@ export default function Login({setToken}){
     
     // const navigate = useNavigate();
 
-    const formSubmit = async (data) => {
+//     const formSubmit = async (data) => {
       
-    await fetch("http://localhost:8080/user/login", {
-      method:'POST',
-      headers:{
-        'content-Type':'application/json'
-      },
-      body:JSON.stringify(data),
+//     await fetch("http://localhost:8080/user/login", {
+//       method:'POST',
+//       headers:{
+//         'content-Type':'application/json'
+//       },
+//       body:JSON.stringify(data),
 
-    } ).then((res)=>{
-      console.log("logged in successfully", data)
-    }
-//       setAuthenticated(true)
-//         localStorage.setItem("authenticated", true);
-    )
-    // const token = await loginUser({
-    //   email,
-    //   password
-    // });
-    // setToken(token);
-    }
+//     } ).then((res)=>{
+//       console.log("logged in successfully", data)
+//     }
+// //       setAuthenticated(true)
+// //         localStorage.setItem("authenticated", true);
+//     )
+//     // const token = await loginUser({
+//     //   email,
+//     //   password
+//     // });
+//     // setToken(token);
+//     }
 async function loginUser(credentials) {
   return fetch('http://localhost:8080/user/login', {
     method: 'POST',
@@ -55,15 +55,15 @@ async function loginUser(credentials) {
  }
 
 
-    // const formSubmit = async() => {
+    const formSubmit = async() => {
 
-    //   const token = await loginUser({
-    //     email,
-    //     password
-    //   });
-    //   // setToken(token);
-    //   // console.log(token)
-    // }
+      const token = await loginUser({
+        email,
+        password
+      });
+      setToken(token);
+      console.log(token)
+    }
      
     
 

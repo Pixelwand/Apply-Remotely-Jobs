@@ -4,21 +4,24 @@ const User = require('../models/userModel');
 
 exports.findUser = async (req, res) => {
     try{
+        const token = {email:req.body.email, password:req.body.password}
         // if (error)
 		// 	return res.status(400).send({ message: error.details[0].message });
-       const user  = await User.findOne({email:req.body.email});
+       const user  = await User.findOne(token);
     //    const validPassword = await bcrypt.compare(req.body.password, password);
     //    const password = await User.findOne({password:req.body.password});
        if (user){
         if(user.password === req.body.password){
             res.status(200).send({
-                message:"User logged in successfully"
+                message:"User logged in successfully",
+                token:({email:req.body.email, password:req.body.password})
             })
-        } else{
-            res.status(400).send({
-                message:"Incorrect email or password"
-            })
-        }
+        } 
+        // else{
+        //     res.status(400).send({
+        //         message:"Incorrect email or password"
+        //     })
+        // }
         
        }
        else{

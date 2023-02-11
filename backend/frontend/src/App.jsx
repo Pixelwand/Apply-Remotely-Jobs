@@ -9,7 +9,7 @@ import Login from './components/Authentication/Login';
 import { PostJobs } from './components/Jobs/PostJobs';
 import useToken from './useToken';
 
-export default function App(){
+function App(){
   const {token, setToken} = useToken();
   console.log(token, setToken)
 
@@ -32,4 +32,5 @@ export default function App(){
   </>
   )
 }
+export default App;
 

@@ -29,18 +29,6 @@ function classNames(...classes) {
 }
 
 export default function Dashboard() {
-  // const [authenticated, setAuthenticated] = useState(null);
-
-  // useEffect(() => {
-  //   const loggedInUser = localStorage.getItem("authenticated");
-  //   if(loggedInUser){
-  //     setAuthenticated(loggedInUser)
-  //   }
-  
-  // }, [])
-  // if(!authenticated){
-  //   return <Navigate replace to="/login" />
-  // } else{
   return (
     <>
       <div className="min-h-full">

@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 import {Tabs, TabList, TabPanels, TabPanel, Box, Button, useTab, useMultiStyleConfig} from '@chakra-ui/react'
 import PropTypes  from 'prop-types';
 import Login from '../Authentication/Login';
+import Profile from '../Profile/Profile';
 
 export default function Dashboard (){
   const CustomTab = React.forwardRef((props, ref) => {
@@ -23,18 +24,27 @@ export default function Dashboard (){
   })
   return (
     <>
+    <div className=''>
         <Tabs>
-      <TabList>
-        <CustomTab>One</CustomTab>
-        <CustomTab>Two</CustomTab>
-        <CustomTab>Three</CustomTab>
+      <TabList className='text-3xl mx-auto items-center'>
+        <CustomTab>Dashboard</CustomTab>
+        <CustomTab>Profile</CustomTab>
+        <CustomTab>Projects</CustomTab>
       </TabList>
       <TabPanels>
-        <TabPanel>1</TabPanel>
-        <TabPanel>2</TabPanel>
-        <TabPanel>3</TabPanel>
+        <TabPanel>
+          <div>Dashboard</div>
+        </TabPanel>
+        <TabPanel>
+          <div>Profile</div>
+          <Profile/>
+        </TabPanel>
+        <TabPanel>
+          <div>Projects</div>
+        </TabPanel>
       </TabPanels>
     </Tabs>
+    </div>
     </>
   )
 }

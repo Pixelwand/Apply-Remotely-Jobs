@@ -1,117 +1,52 @@
-// import { useState, useEffect } from 'react'
-// import { supabase } from '../Supabase/supabaseClient'
-// import Avatar from '../Avatar/Avatar';
+import { Modal, useDisclosure, Button, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, Input, FormControl, FormLabel, ModalFooter } from "@chakra-ui/react";
+import React, {useRef} from "react";
 
 
-// const Account = ({ session }) => {
-//   const [loading, setLoading] = useState(true)
-//   const [username, setUsername] = useState(null)
-//   const [website, setWebsite] = useState(null)
-//   const [avatar_url, setAvatarUrl] = useState(null)
+function Profile() {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+  
+    const initialRef = React.useRef(null)
+    const finalRef = React.useRef(null)
+  
+    return (
+      <>
+        <Button onClick={onOpen}>Edit Profile</Button>
+        <Button ml={4} ref={finalRef}>
+          I'll receive focus on close
+        </Button>
+  
+        <Modal
+          initialFocusRef={initialRef}
+          finalFocusRef={finalRef}
+          isOpen={isOpen}
+          onClose={onClose}
+        >
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>Profile Details</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody pb={6}>
+              <FormControl>
+                <FormLabel>First name</FormLabel>
+                <Input ref={initialRef} placeholder='First name' />
+              </FormControl>
+  
+              <FormControl mt={4}>
+                <FormLabel>Last name</FormLabel>
+                <Input placeholder='Last name' />
+              </FormControl>
+            </ModalBody>
+  
+            <ModalFooter>
+              <Button colorScheme='blue' mr={3}>
+                Save
+              </Button>
+              <Button onClick={onClose}>Cancel</Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+      </>
+    )
+  }
 
-//   useEffect(() => {
-//     getProfile()
-//   }, [session])
-
-//   const getProfile = async () => {
-//     try {
-//       setLoading(true)
-//       const { user } = session;
-
-//       let { data, error, status } = await supabase
-//         .from('profiles')
-//         .select(`username, website, avatar_url`)
-//         .eq('id', user.id)
-//         .single()
-
-//       if (error && status !== 406) {
-//         throw error
-//       }
-
-//       if (data) {
-//         setUsername(data.username)
-//         setWebsite(data.website)
-//         setAvatarUrl(data.avatar_url)
-//       }
-//     } catch (error) {
-//       alert(error.message)
-//     } finally {
-//       setLoading(false)
-//     }
-//   }
-
-//   const updateProfile = async (e) => {
-//     e.preventDefault()
-
-//     try {
-//       setLoading(true)
-//       const { user } = session
-
-//       const updates = {
-//         id: user.id,
-//         username,
-//         website,
-//         avatar_url,
-//         updated_at: new Date(),
-//       }
-
-//       let { error } = await supabase.from('profiles').upsert(updates)
-
-//       if (error) {
-//         throw error
-//       }
-//     } catch (error) {
-//       alert(error.message)
-//     } finally {
-//       setLoading(false)
-//     }
-//   }
-
-//   return (
-//     <div aria-live="polite">
-//       {loading ? (
-//         'Saving ...'
-//       ) : (
-//         <form onSubmit={updateProfile} className="form-widget">
-//             <Avatar
-//       url={avatar_url}
-//       size={150}
-//       onUpload={(url) => {
-//         setAvatarUrl(url)
-//         updateProfile({ username, website, avatar_url: url })
-//       }}
-//     />
-//           <div>Email: {session.user.email}</div>
-//           <div>
-//             <label htmlFor="username">Name</label>
-//             <input
-//               id="username"
-//               type="text"
-//               value={username || ''}
-//               onChange={(e) => setUsername(e.target.value)}
-//             />
-//           </div>
-//           <div>
-//             <label htmlFor="website">Website</label>
-//             <input
-//               id="website"
-//               type="url"
-//               value={website || ''}
-//               onChange={(e) => setWebsite(e.target.value)}
-//             />
-//           </div>
-//           <div>
-//             <button className="button primary block" disabled={loading}>
-//               Update profile
-//             </button>
-//           </div>
-//         </form>
-//       )}
-//       <button type="button" className="button block" onClick={() => supabase.auth.signOut()}>
-//         Sign Out
-//       </button>
-//     </div>
-//   )
-// }
-
-// export default Account;
+  export default Profile;

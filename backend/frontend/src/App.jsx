@@ -22,11 +22,7 @@ import useToken from './useToken';
 
 function App(){
   const {token, setToken} = useToken();
-  // console.log(token, setToken)
-
-  // const [token, setToken] = useState()
-  // const token = getToken()
-
+  
   if(!token){
     return <Login setToken={setToken}/>
   }

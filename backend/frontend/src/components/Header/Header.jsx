@@ -6,6 +6,7 @@ import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import {Signup} from '../Authentication/Signup';
 import Login from '../Authentication/Login';
+import PropTypes from 'prop-types';
 
 
 const navigation = [
@@ -28,7 +29,7 @@ const customStyles = {
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
-export default function Header() {
+export default function Header({setToken}) {
   
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -39,6 +40,8 @@ export default function Header() {
   function closeModal(){
     setIsModalOpen(false)
   }
+
+
   return (
     <>
       <div className="min-h-full sm:h-24 sm:pt-5 sm:text-3xl">
@@ -146,4 +149,9 @@ export default function Header() {
       </div>
     </>
   )
+}
+
+
+Login.propTypes = {
+  setToken: PropTypes.func.isRequired
 }

@@ -1,10 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 // import axios from "axios"
 // import { useNavigate } from "react-router-dom"
 import { useForm } from 'react-hook-form';
 import PropTypes from 'prop-types';
-// import useToken from '../../useToken';
+import useToken from '../../useToken';
 
+
+
+ 
 
  
 
@@ -14,6 +17,29 @@ export default function Login({setToken}){
     
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+
+    const credentials = {email, password}
+
+    async function loginUser(credentials) {
+      console.log(credentials)
+      return fetch('http://localhost:8080/user/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(credentials)
+      })
+        .then(data => data.json())
+     }
+    // const [user, setUser] = useState();
+
+    // useEffect(() => {
+    //   const loggedInUser = localStorage.getItem("user");
+    //   if (loggedInUser) {
+    //     const foundUser = JSON.parse(loggedInUser);
+    //     setUser(foundUser);
+    //   }
+    // }, []);
     // const [value, setValue] = useState("");
 
     // const changeHandler = ()=>{
@@ -22,48 +48,58 @@ export default function Login({setToken}){
     
     // const navigate = useNavigate();
 
-//     const formSubmit = async (data) => {
-      
-//     await fetch("http://localhost:8080/user/login", {
-//       method:'POST',
-//       headers:{
-//         'content-Type':'application/json'
-//       },
-//       body:JSON.stringify(data),
+  //   const formSubmit = async (data) => {
+  //     const {email, password} = data
+  //     console.log(email, password)
+  //   await fetch("http://localhost:8080/user/login", {
+  //     method:'POST',
+  //     headers:{
+  //       'content-Type':'application/json'
+  //     },
+  //     body:JSON.stringify(data),
 
-//     } ).then((res)=>{
-//       console.log("logged in successfully", data)
-//     }
-// //       setAuthenticated(true)
-// //         localStorage.setItem("authenticated", true);
-//     )
+  //   } ).then(res=>res.json())
+  //     // localStorage.setItem("user", data)
+  //     setToken(data)
+  // }
+
+  const formSubmit = async() => {
+
+    // e.preventDefault();
+    const token = await loginUser({
+      email,
+      password
+    });
+    console.log(token)
+    setToken(token);
+  }
 //     // const token = await loginUser({
 //     //   email,
 //     //   password
 //     // });
 //     // setToken(token);
 //     }
-async function loginUser(credentials) {
-  return fetch('http://localhost:8080/user/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(credentials)
-  })
-    .then(data => data.json())
- }
+// async function loginUser(credentials) {
+//   return fetch('http://localhost:8080/user/login', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(credentials)
+//   })
+//     .then(data => data.json())
+//  }
 
 
-    const formSubmit = async() => {
+//     const formSubmit = async() => {
 
-      const token = await loginUser({
-        email,
-        password
-      });
-      setToken(token);
-      console.log(token)
-    }
+//       const token = await loginUser({
+//         email,
+//         password
+//       });
+//       setToken(token);
+//       console.log(token)
+//     }
      
     
 
@@ -92,12 +128,12 @@ async function loginUser(credentials) {
   return (
     <>
     <div class="p-2 pb-2">
-    <form onSubmit={handleSubmit(formSubmit)}>
+    <form onSubmit={formSubmit}>
       <fieldset  class="text-center font-semibold text-base mb-8">Login with email</fieldset>
       <div class="mb-8">
               <label>
                 <input onChange={(e)=>setEmail(e.target.value)} name='email' class="outline outline-2 outline-offset-1 outline-blue-400 focus:outline-4 placeholder:text-black rounded-lg w-72 h-10 pl-5 placeholder:font-sans"  type={"email"} placeholder='Email'
-                {...register("email",{required:true})}
+                // {...register("email",{required:true})}
                 />
               </label>
               {/* {errors.email && <p>Please user correct email</p>} */}
@@ -105,7 +141,7 @@ async function loginUser(credentials) {
               <div class="mb-8">
               <label>
                 <input onChange={(e)=>setPassword(e.target.value)} name='password'  class="outline outline-2 outline-offset-1 outline-blue-400 focus:outline-4 placeholder:text-black rounded-lg w-72 h-10 pl-5 placeholder:font-sans" type={"password"} placeholder='Enter Your Password'
-                {...register("password", {required:true})}
+                // {...register("password", {required:true})}
                 />
               </label>
               {/* {errors.password && <p>Please use correct password!</p>} */}
@@ -119,6 +155,7 @@ async function loginUser(credentials) {
     </>
   )
 }
+
 
 Login.propTypes = {
   setToken: PropTypes.func.isRequired

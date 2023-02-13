@@ -12,10 +12,7 @@ exports.findUser = async (req, res) => {
     //    const password = await User.findOne({password:req.body.password});
        if (user){
         if(user.password === req.body.password){
-            res.status(200).send({
-                message:"User logged in successfully",
-                token:({email:req.body.email, password:req.body.password})
-            })
+            res.status(200).send()
         } 
         // else{
         //     res.status(400).send({

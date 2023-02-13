@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 // import { useNavigate } from "react-router-dom"
 import { useForm } from 'react-hook-form';
 import PropTypes from 'prop-types';
-import useToken from '../../useToken';
+// import useToken from '../../useToken';
 
 
 
@@ -18,7 +18,7 @@ export default function Login({setToken}){
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
-    const credentials = {email, password}
+    // const credentials = {email, password}
 
     async function loginUser(credentials) {
       console.log(credentials)
@@ -63,9 +63,9 @@ export default function Login({setToken}){
   //     setToken(data)
   // }
 
-  const formSubmit = async() => {
+  const formSubmit = async e => {
 
-    // e.preventDefault();
+    e.preventDefault();
     const token = await loginUser({
       email,
       password

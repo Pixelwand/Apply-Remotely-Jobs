@@ -27,13 +27,13 @@ function Profile() {
             <ModalCloseButton />
             <ModalBody pb={6}>
               <FormControl>
-                <FormLabel>First name</FormLabel>
-                <Input ref={initialRef} placeholder='First name' />
+                <FormLabel>Title</FormLabel>
+                <Input ref={initialRef} placeholder='eg. Frontend Developer' />
               </FormControl>
   
               <FormControl mt={4}>
-                <FormLabel>Last name</FormLabel>
-                <Input placeholder='Last name' />
+                <FormLabel>Portfolio</FormLabel>
+                <Input placeholder='eg. website link' />
               </FormControl>
             </ModalBody>
   

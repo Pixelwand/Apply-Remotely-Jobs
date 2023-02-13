@@ -459,6 +459,7 @@ const formSubmit = async(data) => {
               </div>
               <div class="text-center w-full">
               <button class="bg-blue-600 hover:bg-blue-800 text-white font-semibold text-xl rounded px-6 py-3" type='submit'>Start Hiring at 0$</button>
+              
               </div>
             </form>
           </div>

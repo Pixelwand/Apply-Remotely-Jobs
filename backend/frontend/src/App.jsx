@@ -8,6 +8,7 @@ import About from './components/About/About';
 import Login from './components/Authentication/Login';
 import { PostJobs } from './components/Jobs/PostJobs';
 import useToken from './useToken';
+import CheckoutForm from './components/Paypal/Checkout'
 
 
 // function setToken(userToken) {
@@ -37,6 +38,7 @@ function App(){
     <Route path='/dashboard' element={<Dashboard />} />
     <Route path="/postjobs" element={<PostJobs />} />
     <Route path="/login" element={<Login />} />
+    <Route exact path='checkout/' index element={<CheckoutForm />} />
   </Routes>
   </BrowserRouter>
   </>

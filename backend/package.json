@@ -28,6 +28,7 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.8.2",
     "mongoose-findorcreate": "^3.0.0",
+    "node-fetch": "^3.3.0",
     "nodemon": "^2.0.20",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",

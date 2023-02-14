@@ -9,7 +9,6 @@ const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const postjobRoutes = require('./routes/postJob');
 const jobRoutes = require('./routes/jobRoutes');
-const paypal = require('./routes/paypal')
 
 const User = require('./models/userModel');
 const Profile = require('./models/googleModel');
@@ -81,24 +80,6 @@ app.use('/user', postjobRoutes)
 app.use('/', googleRoutes)
 app.use('/user', jobRoutes);
 
-app.post("/api/orders", async (req, res) => {
-  try {
-    const order = await paypal.createOrder();
-    res.json(order);
-  } catch (err) {
-    res.status(500).send(err.message);
-  }
-});
-
-app.post("/api/orders/:orderID/capture", async (req, res) => {
-  const { orderID } = req.params;
-  try {
-    const captureData = await paypal.capturePayment(orderID);
-    res.json(captureData);
-  } catch (err) {
-    res.status(500).send(err.message);
-  }
-});
 
 
 app.listen(port, (req, res)=>{

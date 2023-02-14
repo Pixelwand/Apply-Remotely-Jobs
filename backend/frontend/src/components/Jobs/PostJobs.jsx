@@ -1,7 +1,8 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import {useForm, Controller} from 'react-hook-form';
 import Select from 'react-select';
-import axios from 'axios';
+// import axios from 'axios';
 import TagsInput from 'react-tagsinput';
 import 'react-tagsinput/react-tagsinput.css';
 
@@ -190,6 +191,7 @@ const KeyCodes = {
 
 
 export const PostJobs = () => {
+  const navigate = useNavigate();
   const [stack, setStack] = useState([]);
   const [location, setLocation] = useState([])
   // const CLIENT_ID = "AWigkJSRzUKSZxY-oEaPGne4V0hJDVY7PNirDVKVmeky4ZtSQpiuUsD3oEx8o2-jS2CtM8kVtBpkmI34"
@@ -243,7 +245,7 @@ export const PostJobs = () => {
 
    
 const formSubmit = async(data) => {
-      const response = await fetch("https://apply-remotely-jobs.onrender.com/user/postjob", {
+      const response = await fetch("http://localhost:8080/user/postjob", {
            method:'POST',
            headers:{
              'content-Type':'application/json'
@@ -253,11 +255,12 @@ const formSubmit = async(data) => {
          }).then((res)=>{
            console.log(data)
          })
-       
-         return () => {
-          
-           response.json()
-         }
+         navigate('/checkout')
+        //  return () => {
+        //   navigate('/checkout')
+        //    response.json()
+        //  }
+        //  navigate('/Checkout')
        }
      
     

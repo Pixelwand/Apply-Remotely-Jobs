@@ -38,7 +38,7 @@ function App(){
     <Route path='/dashboard' element={<Dashboard />} />
     <Route path="/postjobs" element={<PostJobs />} />
     <Route path="/login" element={<Login />} />
-    <Route exact path='checkout/' index element={<CheckoutForm />} />
+    <Route exact path='/checkout' index element={<CheckoutForm />} />
   </Routes>
   </BrowserRouter>
   </>

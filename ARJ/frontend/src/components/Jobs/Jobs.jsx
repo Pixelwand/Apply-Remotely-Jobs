@@ -1,19 +1,6 @@
 import React, { useEffect, useState } from "react";
-import {Link} from 'react-router-dom';
-import Button from '@chakra-ui/react'
-// import {
-//   Popover,
-//   PopoverTrigger,
-//   PopoverContent,
-//   PopoverHeader,
-//   PopoverBody,
-//   PopoverFooter,
-//   PopoverArrow,
-//   PopoverCloseButton,
-//   PopoverAnchor,
-//   Button,
-//   Link
-// } from '@chakra-ui/react'
+import {AiFillTwitterCircle} from 'react-icons/ai';
+
 export const Jobs = () => {
   const [jobData, setJobData] = useState([])
 
@@ -55,46 +42,13 @@ export const Jobs = () => {
           </div>
           <div className="bg-white px-6 py-2 font-semibold rounded-full" key={job.id}>
             <a href={job.applyUrl}>Apply</a>
-            {/* <div ur>A</div> */}
-            {/* <button component={Link} to={job.applyUrl}>Apply</button> */}
-            {/* <Link to={job.applyUrl} relative="path">{job.applyUrl}</Link> */}
-          {/* <Link to={`job.applyUrl`}>Apply Now</Link> */}
-          {/* <Link to={job => `${job.applyUrl}`} >Apply</Link> */}
-          {/* <span itemType={job.applyUrl}>AAAA</span> */}
-          </div>
-          {/* <Popover>
-  <PopoverTrigger>
-    <Button>View</Button>
-  </PopoverTrigger>
-  <PopoverContent>
-    <PopoverArrow />
-    <PopoverCloseButton />
-    <PopoverHeader>Details!</PopoverHeader>
-    <PopoverBody>
-
-    <div key={job.id}>Company Name: {job.companyName}</div>
-          <div key={job.id}>Company Email: {job.companyEmail}</div>
-          <div  key={job.id}>Position: {job.position}</div>
-          <div key={job.id}>Type Of Jobs: {job.jobtype.value}</div>
-          <div key={job.id}>Primary Field: {job.primaryField.value}</div>
-          <div key={job.id}>
             
-            {job.minSalary.label}</div>
-          <div key={job.id}>{job.maxSalary.label}</div>
-          <div key={job.id}>
-          <div>Description:</div>
-            {job.jobDescription}</div>
-          <div key={job.id}>
-          <div>How To Apply?</div>
-            {job.howtoapply}</div>
-          <div key={job.id}>
-            <div>Twitter Username</div>
-            {job.twitterUsername}
           </div>
-          <a href={job.applyUrl}>Click Here</a>
-    </PopoverBody>
-  </PopoverContent>
-</Popover> */}
+          <div>
+            <a href={`https://www.twitter.com/${job.twitterUsername}`}>
+              <AiFillTwitterCircle className="text-white text-2xl"/>
+            </a>
+            </div>
 </div>
         </div>
         

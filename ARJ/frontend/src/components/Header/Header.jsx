@@ -7,6 +7,9 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import {Signup} from '../Authentication/Signup';
 import Login from '../Authentication/Login';
 import PropTypes from 'prop-types';
+import useToken from '../../useToken';
+
+
 
 
 const navigation = [
@@ -29,7 +32,8 @@ const customStyles = {
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
-export default function Header({token, setToken}) {
+ function Header() {
+  const {token, setToken} = useToken();
   
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -40,7 +44,7 @@ export default function Header({token, setToken}) {
   function closeModal(){
     setIsModalOpen(false)
   }
-
+  
 
   return (
     <>
@@ -72,7 +76,7 @@ export default function Header({token, setToken}) {
                             {item.name}
                           </a>
                         ))}
-                        {(token!==null)?
+                        {token?
                         <div  className="text-white bg-blue-700 hover:bg-blue-800 sm:text-xl sm:relative sm:left-10 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><a href='https://www.applyremotelyjobs.co/dashboard'>Dashboard</a></div>:
                         <button type="button" onClick={openModal} className="text-white bg-blue-700 hover:bg-blue-800 sm:text-xl sm:relative sm:left-10 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Get started</button>
                         }
@@ -82,7 +86,7 @@ export default function Header({token, setToken}) {
                   
                   <div className="mr-2 flex md:hidden">
                     {/* Mobile menu button */}
-                    {(token!==null)?<div className='bg-blue-700 hover:bg-blue-800 my-auto px-5 py-2 text-white font-medium rounded-lg text-base mr-6  dark:hover:bg-blue-700 dark:focus:ring-blue-800'><a href='https://www.applyremotelyjobs.co/dashboard'>Dashboard</a></div>:
+                    {token?<div className='bg-blue-700 hover:bg-blue-800 my-auto px-5 py-2 text-white font-medium rounded-lg text-base mr-6  dark:hover:bg-blue-700 dark:focus:ring-blue-800'><a href='https://www.applyremotelyjobs.co/dashboard'>Dashboard</a></div>:
                         <button type="button" onClick={openModal} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Get started</button>
                     }
                     <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-blue-800 font-bolder hover:text-blue focus:outline-none  ">
@@ -135,7 +139,7 @@ export default function Header({token, setToken}) {
       <Signup />
     </Tab.Panel>
     <Tab.Panel className="xl:text-center">
-      <Login />
+      <Login setToken={setToken}/>
     </Tab.Panel>
     </Tab.Panels>
   </Tab.Group>
@@ -159,3 +163,5 @@ export default function Header({token, setToken}) {
 Login.propTypes = {
   setToken: PropTypes.func.isRequired
 }
+
+export default Header

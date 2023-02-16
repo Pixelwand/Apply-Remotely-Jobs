@@ -7,7 +7,6 @@ import Candidates from './components/Candidates/Candidates';
 import About from './components/About/About';
 import Login from './components/Authentication/Login';
 import { PostJobs } from './components/Jobs/PostJobs';
-import useToken from './useToken';
 import CheckoutForm from './components/Paypal/Checkout'
 
 
@@ -22,16 +21,16 @@ import CheckoutForm from './components/Paypal/Checkout'
 // // }
 
 function App(){
-  const {token, setToken} = useToken();
   
-  if(!token){
-    return <Login setToken={setToken}/>
-  }
+  
+  // if(!token){
+  //   return <Login setToken={setToken}/>
+  // }
   return (
   <>
   <BrowserRouter>
   <Routes>
-    <Route path='/' element={<Homepage />} />
+    <Route path='/' element={<Homepage/>} />
     <Route path='/jobs' element={<Jobs />} />
     <Route path='/candidates' element={<Candidates />} />
     <Route path='/about' element={<About />} />

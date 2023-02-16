@@ -19,7 +19,7 @@ export default function Login({setToken}){
 
     async function loginUser(credentials) {
       console.log(credentials)
-      return fetch('https://apply-remote-jobs.onrender.com/user/login', {
+      return fetch('http://localhost:8080/user/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from "react";
 import {AiFillTwitterCircle} from 'react-icons/ai';
+import useToken from "../../useToken";
+import Login from "../Authentication/Login";
 
 export const Jobs = () => {
+  const {token, setToken} = useToken();
   const [jobData, setJobData] = useState([])
 
 
   useEffect(() => {
- fetch(`https://apply-remote-jobs.onrender.com/user/jobs`, {method:'GET'})
+ fetch(`http://localhost:8080/user/jobs`, {method:'GET'})
    .then((response)=>response.json())
    .then((data)=>setJobData(data))
+   console.log("this is token data", token)
   }, [])
 
-  
+  if(!token){
+    return <Login setToken={setToken} />
+  }
   
   console.log("listJob:", jobData)
   return (
@@ -53,7 +59,6 @@ export const Jobs = () => {
         </div>
         
         )}
-        {/* <a href="https://www.kriyax.com">appp</a> */}
     </div>
     </>
   )

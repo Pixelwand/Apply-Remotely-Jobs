@@ -39,7 +39,7 @@ mongoose.connect(DB, {
 // mongoose.set("useCreateIndex", true);
 
 
-//google authentication
+//google authentication 
 
   passport.use(Profile.createStrategy());
 passport.serializeUser(function(user, done) {

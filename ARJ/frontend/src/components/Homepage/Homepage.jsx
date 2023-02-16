@@ -1,5 +1,5 @@
 import { Header, Work, Resources, Footer, Details, Main, Content } from '../index';
-import {Banner} from '../Banners/Banner'
+import {Banner} from '../Banners/Banner';
 
 export const Homepage = () =>{
     return(

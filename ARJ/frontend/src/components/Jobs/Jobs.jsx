@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from "react"
-import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverFooter,
-  PopoverArrow,
-  PopoverCloseButton,
-  PopoverAnchor,
-  Button,
-  Link
-} from '@chakra-ui/react'
+import React, { useEffect, useState } from "react";
+import {Link} from 'react-router-dom';
+import Button from '@chakra-ui/react'
+// import {
+//   Popover,
+//   PopoverTrigger,
+//   PopoverContent,
+//   PopoverHeader,
+//   PopoverBody,
+//   PopoverFooter,
+//   PopoverArrow,
+//   PopoverCloseButton,
+//   PopoverAnchor,
+//   Button,
+//   Link
+// } from '@chakra-ui/react'
 export const Jobs = () => {
   const [jobData, setJobData] = useState([])
 
@@ -51,8 +53,11 @@ export const Jobs = () => {
           <span>-</span>
           <div key={job.id}>{job.maxSalary.value}</div>
           </div>
-          <div className="bg-white px-6 py-2 font-semibold rounded-full">
-            <Link to={job.applyUrl} target="_blank">Apply</Link>
+          <div className="bg-white px-6 py-2 font-semibold rounded-full" key={job.id}>
+            <a href={job.applyUrl}>Apply</a>
+            {/* <div ur>A</div> */}
+            {/* <button component={Link} to={job.applyUrl}>Apply</button> */}
+            {/* <Link to={job.applyUrl} relative="path">{job.applyUrl}</Link> */}
           {/* <Link to={`job.applyUrl`}>Apply Now</Link> */}
           {/* <Link to={job => `${job.applyUrl}`} >Apply</Link> */}
           {/* <span itemType={job.applyUrl}>AAAA</span> */}
@@ -94,6 +99,7 @@ export const Jobs = () => {
         </div>
         
         )}
+        {/* <a href="https://www.kriyax.com">appp</a> */}
     </div>
     </>
   )

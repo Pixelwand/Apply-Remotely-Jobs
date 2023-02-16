@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { useForm } from 'react-hook-form';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -10,6 +11,7 @@ import PropTypes from 'prop-types';
 
 export default function Login({setToken}){
     const {register, handleSubmit, formState:{errors}} = useForm();
+    const navigate = useNavigate();
     // const [authenticated, setAuthenticated] = useState(localStorage.getItem("authenticated") || false);
     
     const [email, setEmail] = useState();
@@ -25,8 +27,13 @@ export default function Login({setToken}){
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(credentials)
-      })
+        
+      }
+      
+      )
+      
         .then(data => data.json())
+        .then(navigate('/dashboard'))
      }
     
 

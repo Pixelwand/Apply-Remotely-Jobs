@@ -2,10 +2,16 @@ import React, { useEffect, useState } from "react";
 import {AiFillTwitterCircle} from 'react-icons/ai';
 import useToken from "../../useToken";
 import Login from "../Authentication/Login";
+import {motion, AnimatePresence} from 'framer-motion'
 
 export const Jobs = () => {
   const {token, setToken} = useToken();
   const [jobData, setJobData] = useState([])
+  const [selectedId, setSelectedId] = useState(null);
+  const items = [
+    "name",
+
+  ]
 
 
   useEffect(() => {
@@ -57,9 +63,9 @@ export const Jobs = () => {
             </div>
 </div>
         </div>
-        
         )}
     </div>
+    
     </>
   )
 }

@@ -4,11 +4,6 @@ import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
 
-
- 
-
- 
-
 export default function Login({setToken}){
     const {register, handleSubmit, formState:{errors}} = useForm();
     const navigate = useNavigate();

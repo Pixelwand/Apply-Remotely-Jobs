@@ -5,6 +5,8 @@ import Login from '../Authentication/Login';
 import Profile from '../Profile/Profile';
 
 export default function Dashboard (){
+
+  
   const CustomTab = React.forwardRef((props, ref) => {
     // 1. Reuse the `useTab` hook
     const tabProps = useTab({ ...props, ref })
@@ -12,6 +14,8 @@ export default function Dashboard (){
 
     // 2. Hook into the Tabs `size`, `variant`, props
     const styles = useMultiStyleConfig('Tabs', tabProps)
+
+    
 
     return (
       <Button __css={styles.tab} {...tabProps}>
@@ -25,7 +29,10 @@ export default function Dashboard (){
   return (
     <>
     <div className=''>
-        <Tabs>
+      <div className='bg-blue-600 h-12 text-white font-sans font-bold text-2xl pt-2 pl-5 w-full'>
+      <a href='/'>ARJ</a>
+      </div>
+        <Tabs className=''>
       <TabList className='text-3xl mx-auto items-center'>
         <CustomTab>Dashboard</CustomTab>
         <CustomTab>Profile</CustomTab>

@@ -16,7 +16,7 @@ export const Signup =  () =>{
            }).then((res)=>{
              console.log("User Created Successfully", data)
            }).then(
-            navigate('/')
+            navigate('/dashboard')
            )
          
            return () => {

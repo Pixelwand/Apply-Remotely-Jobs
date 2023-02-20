@@ -11,8 +11,8 @@ function Profile() {
     return (
       <>
         <Button onClick={onOpen}>Edit Profile</Button>
-        <Button ml={4} ref={finalRef}>
-          I'll receive focus on close
+        <Button ml={4} ref={finalRef} >
+          Logout
         </Button>
   
         <Modal

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+// import {useNavigate} from 'react-router-dom';
 import {useForm, Controller} from 'react-hook-form';
 import Select from 'react-select';
 // import axios from 'axios';
@@ -191,54 +191,10 @@ const KeyCodes = {
 
 
 export const PostJobs = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [stack, setStack] = useState([]);
   const [location, setLocation] = useState([])
-  // const CLIENT_ID = "AWigkJSRzUKSZxY-oEaPGne4V0hJDVY7PNirDVKVmeky4ZtSQpiuUsD3oEx8o2-jS2CtM8kVtBpkmI34"
-  // // const [tags, setTags] = React.useState([
-    
-  // // ]);
-  // const [clientSecret, setClientSecret] = useState("");
-  // const [sdkReady, setSdkReady] = useState(false)
-
-  // useEffect(() => {
-  //   const addPaypalScript = async()=>{
-  //     const{data:clientId} = await axios.get("/api/config/paypal")
-  //     const script = document.createElement('script')
-  //     script.type = 'text/javascript'
-  //     script.src  = `https://www.paypal.com/sdk/js?client-id=${CLIENT_ID}`
-  //     script.async = true
-  //     script.onload=()=>{
-  //       setSdkReady(true)
-  //     }
-  //     document.body.appendChild(script);
-  //   }
   
-  //   return () => {
-      
-  //   }
-  // }, [])
-  
-
-  // useEffect(() => {
-  //   // Create PaymentIntent as soon as the page loads
-  //   fetch("/create-payment-intent", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => setClientSecret(data.clientSecret));
-  // }, []);
-
-  // const appearance = {
-  //   theme: 'stripe',
-  // };
-  // const options = {
-  //   clientSecret,
-  //   appearance,
-  // };
-
   const [value, setValue] = useState('');
   const {register, handleSubmit, control, formState:{errors}} = useForm();
   
@@ -255,12 +211,7 @@ const formSubmit = async(data) => {
          }).then((res)=>{
            console.log(data)
          })
-         navigate('/checkout')
-        //  return () => {
-        //   navigate('/checkout')
-        //    response.json()
-        //  }
-        //  navigate('/Checkout')
+        //  navigate('/checkout')
        }
      
     

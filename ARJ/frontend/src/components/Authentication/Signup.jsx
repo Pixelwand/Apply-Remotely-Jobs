@@ -1,7 +1,9 @@
 import {useForm} from 'react-hook-form';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const Signup =  () =>{
+     const navigate = useNavigate();
     const {register, handleSubmit, formState:{errors}} = useForm();
     const formSubmit = async(data) => {
         const response = await fetch("http://localhost:8080/user/register", {
@@ -13,7 +15,9 @@ export const Signup =  () =>{
        
            }).then((res)=>{
              console.log("User Created Successfully", data)
-           })
+           }).then(
+            navigate('/')
+           )
          
            return () => {
              response.json()

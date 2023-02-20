@@ -6,14 +6,15 @@ const User = require('../models/userModel');
 
 exports.createUser = async (req, res)=>{
     try{
-        const user = await User.findOne({email:req.body.email});
+        const token = {email:req.body.email}
+        const user = await User.findOne(token);
         if(user){
            return res.status(400).send("User already exists")
         } else{
            User.create(req.body);
             console.log(req.body);
             res.status(201).send({
-                message:"New User Created Successfully"
+                token:user
             })
         }
         // const {error} = validate(req.body);

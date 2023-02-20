@@ -1,6 +1,7 @@
 import React from 'react';
 import {PostJobs} from '../Jobs/PostJobs';
 import { ProfileMain } from '../../Assets';
+import { easeOut, motion } from 'framer-motion';
 
 export default function Main() {
   return (
@@ -31,7 +32,16 @@ export default function Main() {
       </div>
       <div>
         </div>
+        
       </div>
+      <motion.div className="w-1/6 h-1/6 rounded-full bg-red-600"
+      animate={{x:300}} 
+      transition={{ease:easeOut, duration:1}}
+      whileHover={{scale:1.3}}
+      whileTap={{scale:0.5}}
+      drag="x"
+      dragConstraints={{left:-100, right:100}}
+      >Hello World</motion.div>
     </>
   )
 }

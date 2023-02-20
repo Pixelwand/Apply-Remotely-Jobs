@@ -64,7 +64,11 @@ export const Jobs = () => {
 </div>
         </div>
         )}
+        
     </div>
+    <motion.div className="w-1/6 h-1/6 rounded-full"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }} />
     
     </>
   )

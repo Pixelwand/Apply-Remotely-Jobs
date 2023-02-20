@@ -21,9 +21,9 @@ export const Jobs = () => {
    console.log("this is token data", token)
   }, [])
 
-  if(!token){
-    return <Login setToken={setToken} />
-  }
+  // if(!token){
+  //   return <Login setToken={setToken} />
+  // }
   
   console.log("listJob:", jobData)
   return (

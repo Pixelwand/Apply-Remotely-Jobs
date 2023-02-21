@@ -21,8 +21,8 @@ const jobSchema = new mongoose.Schema({
     techStack:{
         type:String
     },
-    location:{
-        type:String,
+    locations:{
+        type:Object,
     },
     // companyLogo:{
     //     type:File

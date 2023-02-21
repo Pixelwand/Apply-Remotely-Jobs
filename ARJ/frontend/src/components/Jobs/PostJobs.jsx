@@ -156,14 +156,15 @@ const Stack = [
 'PHP'
 ]
 
-const Location = [
-  "Worldwide",
-  "USA",
-  "UK",
-  "Europe",
-  "Australia",
-  "Asia",
-  "India"
+const locations = [
+   {value:"Worldwide", label:"Worldwide"},
+   {value:"USA", label:"USA"},
+   {value:"UK", label:"UK"},
+   {value:"Japan", label:"Japan"},
+   {value:"Europe", label:"Europe"},
+   {value:"Australia", label:"Australia"},
+   {value:"Asia", label:"Asia"},
+   {value:"India", label:"India"},
 ]
 
 // const locations = Location.map(location => {
@@ -259,14 +260,29 @@ const formSubmit = async(data) => {
                {/* not a sentence like "Looking for PM / Biz Dev / Manager". We know your job is important but please DO NOT WRITE IN FULL CAPS. If posting multiple roles, please create multiple job posts. A job post is limited to a single job. We only allow real jobs, absolutely no MLM-type courses "learn how to work online" please. */}
                </p>}
               </div>
+              <div className='w-2/3 mx-auto mb-5'>
+              
+              <Controller
+              onChange={changeHandler}
+        name="location"
+        control={control}
+        render={({ field }) => <Select 
+        placeholder="Job Locations"
+          {...field} 
+          options={locations} 
+          
+        />}
+      />
+      </div>
               
               <div className='w-2/3 mx-auto mb-5'>
               
               <Controller
               onChange={changeHandler}
-        name="jobtype"
+        name="primaryField"
         control={control}
         render={({ field }) => <Select 
+        placeholder="Primary Field"
           {...field} 
           options={primaryfield} 
         />}
@@ -275,9 +291,10 @@ const formSubmit = async(data) => {
       <div className='w-2/3 mx-auto'>
        <Controller
        onChange={changeHandler}
-        name="primaryField"
+        name="jobType"
         control={control}
         render={({ field }) => <Select 
+        placeholder="Job Type"
           {...field} 
           options={jobtype}
         />}

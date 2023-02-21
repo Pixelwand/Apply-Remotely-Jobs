@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-// import {useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import {useForm, Controller} from 'react-hook-form';
 import Select from 'react-select';
 // import axios from 'axios';
@@ -23,7 +23,9 @@ const jobtype = [
 
 
 const primaryfield = [
+  {value:"Full Stack Developer", label:"Full Stack Developer"},
   {value:"Software Development", label:"Software Development"},
+  {value:"Designer", label:"Designer"},
   {value:"Customer Support", label:"Customer Support"},
    {value:"Sales", label:"Sales"},
    {value:"Marketing", label:"Marketing"},
@@ -32,6 +34,7 @@ const primaryfield = [
    {value:"Backend", label:"Backend"},
    {value:"Legal", label:"Legal"},
    {value:"Testing", label:"Testing"},
+   {value:"Developer Advocate", label:"Developer Advocate"},
    {value:"Quality Assurance", label:"Quality Assurance"}
 ]
 
@@ -76,6 +79,7 @@ const salary = [
 ]
 
 const Benefits = [
+  "Fully Remote",
 "Distributed work",
 "Async",
 "401(k)",
@@ -192,9 +196,9 @@ const KeyCodes = {
 
 
 export const PostJobs = () => {
-  // const navigate = useNavigate();
-  const [stack, setStack] = useState([]);
-  const [location, setLocation] = useState([])
+  const navigate = useNavigate();
+  // const [stack, setStack] = useState([]);
+  // const [location, setLocation] = useState([])
   
   const [value, setValue] = useState('');
   const {register, handleSubmit, control, formState:{errors}} = useForm();
@@ -212,7 +216,7 @@ const formSubmit = async(data) => {
          }).then((res)=>{
            console.log(data)
          })
-        //  navigate('/checkout')
+          navigate('/')
        }
      
     
@@ -264,7 +268,7 @@ const formSubmit = async(data) => {
               
               <Controller
               onChange={changeHandler}
-        name="location"
+        name="locations"
         control={control}
         render={({ field }) => <Select 
         placeholder="Job Locations"
@@ -291,7 +295,7 @@ const formSubmit = async(data) => {
       <div className='w-2/3 mx-auto'>
        <Controller
        onChange={changeHandler}
-        name="jobType"
+        name="jobtype"
         control={control}
         render={({ field }) => <Select 
         placeholder="Job Type"
@@ -300,7 +304,7 @@ const formSubmit = async(data) => {
         />}
       />
       </div>
-      <div>
+      {/* <div>
         <div className='text-center mt-7 text-xl font-semibold'>
           Use Tags for Tech Stack
         </div>
@@ -314,8 +318,8 @@ const formSubmit = async(data) => {
       className='w-5/6 mx-auto h-12 p-2 rounded-xl outline outline-2 focus:outline-4 outline-blue-600 placeholder:text-black'
       />
       </div>
-      </div>
-      <div>
+      </div> */}
+      {/* <div>
         <div className='text-center text-xl font-semibold'>Tags for restricted job locations</div>
       <div className='mb-12 mt-3'>
       <TagsInput 
@@ -326,7 +330,7 @@ const formSubmit = async(data) => {
       />
       </div>
       </div>
-      
+       */}
       <div>
         <div className='font-bold text-2xl text-center bg-red-500 text-white py-4'>
           Job Details

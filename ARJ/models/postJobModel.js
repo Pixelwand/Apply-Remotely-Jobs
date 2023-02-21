@@ -24,9 +24,9 @@ const jobSchema = new mongoose.Schema({
     locations:{
         type:Object,
     },
-    // companyLogo:{
-    //     type:File
-    // },
+    companyLogo:{
+    type:String
+    },
     minSalary:{
         type:Object
     },

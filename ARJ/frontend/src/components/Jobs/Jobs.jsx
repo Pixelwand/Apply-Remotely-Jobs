@@ -3,11 +3,13 @@ import {AiFillTwitterCircle} from 'react-icons/ai';
 import useToken from "../../useToken";
 import Login from "../Authentication/Login";
 import {motion, AnimatePresence} from 'framer-motion'
+import { useNavigate } from "react-router-dom";
 
 export const Jobs = () => {
   const {token, setToken} = useToken();
   const [jobData, setJobData] = useState([])
   const [selectedId, setSelectedId] = useState(null);
+  const navigate = useNavigate('/');
   const items = [
     "name",
 
@@ -40,10 +42,14 @@ export const Jobs = () => {
          <div className="basis-1/2">
           <div  key={job.id} className="font-bold font-sans text-2xl leading-10">{job.position}</div>
           <div key={job.id} className="font-semibold text-xl leadin-16 font-sans">{job.companyName}</div>
+          {/* <div key={job.id}>{job.locations.value}</div> */}
           </div>
           <div className="basis-1/2 align-middle flex flex-col gap-5">
-          <div key={job.id} className="font-sans font-normal text-xl leading-16">{job.jobtype.value}</div>
+          {/* <div key={job.id} className="font-sans font-normal text-xl leading-16">{job.locations.value}</div> */}
+          {/* <div >{job.primaryField.value}</div> */}
           <div key={job.id}>{job.primaryField.value}</div>
+          <div key={job.id}>{job.jobtype.value}</div>
+          <div key={job.id}>{job.locations.value}</div>
           </div>
           </div>
           <div className="flex flex-row gap-28 mt-5">
@@ -53,7 +59,7 @@ export const Jobs = () => {
           <div key={job.id}>{job.maxSalary.value}</div>
           </div>
           <div className="bg-white px-6 py-2 font-semibold rounded-full" key={job.id}>
-            <a href={job.applyUrl}>Apply</a>
+            <a href={job.applyUrl} target="_blank" >Apply</a>
             
           </div>
           <div>
@@ -66,10 +72,6 @@ export const Jobs = () => {
         )}
         
     </div>
-    <motion.div className="w-1/6 h-1/6 rounded-full"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }} />
-    
     </>
   )
 }

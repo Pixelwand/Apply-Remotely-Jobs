@@ -35,6 +35,7 @@ const primaryfield = [
    {value:"Legal", label:"Legal"},
    {value:"Testing", label:"Testing"},
    {value:"Developer Advocate", label:"Developer Advocate"},
+   {value:"General", label:"General"},
    {value:"Quality Assurance", label:"Quality Assurance"}
 ]
 

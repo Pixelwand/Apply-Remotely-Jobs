@@ -32,7 +32,7 @@ export const Jobs = () => {
     <>
     
     <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-sans font-bold p-10 pt-2 text-2xl">
-      <div className="mb-5"><a href="https://www.applyremotelyjobs.co/" className="text-base leading-9">Apply Remotely Jobs</a>
+      <div className="mb-5"><a href="/" className="text-base leading-9">Apply Remotely Jobs</a>
       </div>
       List of all Remote Jobs</div>
     <div >

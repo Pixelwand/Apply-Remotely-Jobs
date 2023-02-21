@@ -138,7 +138,7 @@ export const PostJobs = () => {
 
    
 const formSubmit = async(data) => {
-      const response = await fetch("https://www.applyremotelyjobs.co/user/postjob", {
+      const response = await fetch("https://apply-remote-jobs.onrender.com/user/postjob", {
            method:'POST',
            headers:{
              'content-Type':'application/json'

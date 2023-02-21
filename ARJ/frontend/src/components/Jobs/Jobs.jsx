@@ -17,7 +17,7 @@ export const Jobs = () => {
 
 
   useEffect(() => {
- fetch(`http://localhost:8080/user/jobs`, {method:'GET'})
+ fetch(`https://www.applyremotelyjobs.co/user/jobs`, {method:'GET'})
    .then((response)=>response.json())
    .then((data)=>setJobData(data))
    console.log("this is token data", token)

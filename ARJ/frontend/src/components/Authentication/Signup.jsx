@@ -6,7 +6,7 @@ export const Signup =  () =>{
      const navigate = useNavigate();
     const {register, handleSubmit, formState:{errors}} = useForm();
     const formSubmit = async(data) => {
-        const response = await fetch("http://localhost:8080/user/register", {
+        const response = await fetch("https://www.applyremotelyjobs.co/user/register", {
              method:'POST',
              headers:{
                'content-Type':'application/json'

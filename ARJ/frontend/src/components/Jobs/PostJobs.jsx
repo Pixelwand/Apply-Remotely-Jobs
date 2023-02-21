@@ -107,59 +107,6 @@ const Benefits = [
 
 ]
 
-const Stack = [
-"Engineers",
-"Developers",
-'Engineer',
-'Executive',
-'Senior',
-'Developer',
-'Finance',
-'Sys Admin',
-'Javascript',
-'Backend',
-'Golang', 
-'Cloud', 
-'Medical',
-'Frontend', 
-'Full Stack',
-'Ops',
-'Design',
-'React', 
-'InfoSec', 
-'Markeing', 
-'Mobile', 
-'Content Writing', 
-'SaaS', 
-'Recruiter', 
-'Full Time', 
-'API', 
-'Sales', 
-'Ruby',
-'Education',
-'Devops',
-'Stats',
-'Python',
-'Node',
-'Non Tech',
-'Video',
-'Travel',
-'Quality Assurance',
-'E-commerce',
-'Teaching',
-'Linux',
-'Java',
-'Crypt',
-'Junior',
-'Git',
-'Legal',
-'Android',
-'Accounting',
-'Admin',
-'Microsoft',
-'Excel',
-'PHP'
-]
 
 const locations = [
    {value:"Worldwide", label:"Worldwide"},
@@ -172,34 +119,18 @@ const locations = [
    {value:"India", label:"India"},
 ]
 
-// const locations = Location.map(location => {
-//   return{
-//     id:location,
-//     text:location
-//   }
-// })
 
 
 
-// const stacks = Stack.map(stack => {
-//   return {
-//     id: stack,
-//     text: stack
-//   };
-// });
 
-const KeyCodes = {
-  comma: 188,
-  enter: 13
-};
 
-// const delimiters = [KeyCodes.comma, KeyCodes.enter];
+
+
 
 
 export const PostJobs = () => {
   const navigate = useNavigate();
-  // const [stack, setStack] = useState([]);
-  // const [location, setLocation] = useState([])
+ 
   
   const [value, setValue] = useState('');
   const {register, handleSubmit, control, formState:{errors}} = useForm();
@@ -207,7 +138,7 @@ export const PostJobs = () => {
 
    
 const formSubmit = async(data) => {
-      const response = await fetch("http://localhost:8080/user/postjob", {
+      const response = await fetch("https://www.applyremotelyjobs.co/user/postjob", {
            method:'POST',
            headers:{
              'content-Type':'application/json'
@@ -305,33 +236,7 @@ const formSubmit = async(data) => {
         />}
       />
       </div>
-      {/* <div>
-        <div className='text-center mt-7 text-xl font-semibold'>
-          Use Tags for Tech Stack
-        </div>
-
-       
-      <div className='mt-3 mb-7'>
-      <TagsInput 
-      value={stack}
-      onChange={setStack}
-      name="techStack"
-      className='w-5/6 mx-auto h-12 p-2 rounded-xl outline outline-2 focus:outline-4 outline-blue-600 placeholder:text-black'
-      />
-      </div>
-      </div> */}
-      {/* <div>
-        <div className='text-center text-xl font-semibold'>Tags for restricted job locations</div>
-      <div className='mb-12 mt-3'>
-      <TagsInput 
-      name="location"
-      value={location}
-      onChange={setLocation}
-      className="w-5/6 mx-auto h-12 p-2 rounded-xl outline outline-2 focus:outline-4 outline-blue-600 placeholder:text-black"
-      />
-      </div>
-      </div>
-       */}
+      
       <div>
         <div className='font-bold text-2xl text-center bg-red-500 text-white py-4'>
           Job Details

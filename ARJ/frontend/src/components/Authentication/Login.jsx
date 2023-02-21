@@ -16,7 +16,7 @@ export default function Login({setToken}){
 
     async function loginUser(credentials) {
       console.log(credentials)
-      return fetch('http://localhost:8080/user/login', {
+      return fetch('https://www.applyremotelyjobs.co/user/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

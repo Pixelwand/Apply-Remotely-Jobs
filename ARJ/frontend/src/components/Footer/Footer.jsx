@@ -55,20 +55,7 @@ export default function Footer() {
   
 </div>
 {/* Email subscription form */}
-<div>
-    <form action="https://applyremotelyjobs.us21.list-manage.com/subscribe/post?u=90be940d1f54a864e2fd1754e&amp;id=934bbcd766&amp;f_id=00ebf8e1f0" method="post" target="_blank" novalidate>
-        <div >
-<div>
-	<input type="email"  name="EMAIL" className='bg-blue-600 ml-10 h-20 w-60 text-white placeholder:text-white' required />
-</div>
-        <div>
-            <div>
-                <input type="submit" value="Subscribe" name="subscribe" class="button" />
-            </div>
-        </div>
-    </div>
-</form>
-</div>
+
   <div className='text-center mt-5'>All Rights reserved @copyright 2023</div>
     </div>
    

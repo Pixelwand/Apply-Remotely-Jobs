@@ -1,9 +1,8 @@
-import { json } from 'body-parser';
-import React, {useEffect} from 'react';
+import React from 'react';
 
 export const Newsletter = () => {
 const handleSubmit = async() =>{
-    const response = await fetch("", {
+    const response = await fetch("http://localhost:8080/user/subscribe", {
         method:'POST',
         headers:{
             'content-Type':"application/json"
@@ -18,7 +17,7 @@ const handleSubmit = async() =>{
    <>
    <div>
     <form onSubmit={handleSubmit}>
-        <input type="email" onChange={(e)=>e.target.value} />
+        <input type="email" onChange={(e)=>e.target.email} className="bg-blue-600 text-white"/>
         <input type="submit" />
     </form>
    </div>

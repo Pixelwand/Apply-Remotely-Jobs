@@ -2,6 +2,7 @@ import React from 'react';
 import {SiDiscord} from 'react-icons/si';
 import {FaTwitter} from 'react-icons/fa';
 import {FiMail} from 'react-icons/fi';
+import { Newsletter } from '../../Newsletter/Newsletter';
 
 export default function Footer() {
   return (
@@ -55,7 +56,7 @@ export default function Footer() {
   
 </div>
 {/* Email subscription form */}
-
+<Newsletter />
   <div className='text-center mt-5'>All Rights reserved @copyright 2023</div>
     </div>
    

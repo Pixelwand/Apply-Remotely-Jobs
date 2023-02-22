@@ -44,55 +44,59 @@ export default function Details() {
     <>
     <div className="mt-10">
     <div className="font-bold text-3xl text-center px-10">Trusted and loved by world's best team</div>
-    <div className="flex text-center font-bold text-slate-700 flex-col xl:flex-row xl:gap-20 justify-center mt-24 gap-12">
+    <div className="flex text-center font-bold text-slate-700 flex-col xl:flex-row xl:gap-1 justify-center mt-24 gap-5">
     <motion.div 
     whileHover={{scale:1.2}}
     whileTap={{scale:1.1}}
+    className="h-60 w-60 mx-auto border-t-fuchsia-50  border-2 rounded-xl"
     >
-      <div className="text-3xl">Applicants</div>
+      <div className="text-2xl mb-5 py-3 rounded-t-xl bg-blue-600 text-white">Applicants</div>
     <div className="basis-1/2">
-    <motion.span className="my-2 font-bold text-3xl">{percentRounded}</motion.span>
-    <motion.span className="my-2 font-bold text-3xl">%</motion.span>
+    <motion.span className="my-2 font-bold text-2xl">{percentRounded}</motion.span>
+    <motion.span className="my-2 font-bold text-2xl">%</motion.span>
     <div className="my-2 font-semibold text-xl">Accuracy Rate</div>
-    <div className="text-slate-600 font-sans">In getting qualified applicants</div>
+    <div className="text-slate-600 font-sans mt-5">In getting qualified applicants</div>
     </div>
     </motion.div>
     <motion.div 
     whileHover={{scale:1.2}}
     whileTap={{scale:1.1}}
+    className="h-60 w-60 mx-auto  border-t-fuchsia-50  border-2 rounded-xl"
     >
-      <div className='text-3xl'>Candidates</div>
+      <div className='text-2xl mb-5 text-white py-3 rounded-t-xl bg-blue-600'>Candidates</div>
       <div className="basis-1/2">
-    <motion.span className="my-2 font-bold text-3xl">{rounded}</motion.span>
-    <motion.span className="my-2 font-bold text-3xl">+</motion.span>
+    <motion.span className="my-2 font-bold text-2xl ">{rounded}</motion.span>
+    <motion.span className="my-2 font-bold text-2xl">+</motion.span>
     <div className="my-2 font-semibold text-xl">Qualified candidates</div>
-    <div className="text-slate-600 font-sans">choose best candidates</div>
+    <div className="text-slate-600 font-sans mt-5">choose best candidates</div>
     </div>
     </motion.div>
     <motion.div
     whileHover={{scale:1.2}}
     whileTap={{scale:1.1}}
+    className="h-60 w-60 mx-auto border-t-fuchsia-50 border-2 rounded-xl"
     >
-      <div className='text-3xl'>Hiring Rate</div>
+      <div className='text-2xl mb-5 text-white py-3 rounded-t-xl bg-blue-600'>Hiring Rate</div>
       <div class="basis-1/2">
-    <motion.span class="my-2 font-bold text-3xl">{hiringRounded}
+    <motion.span class="my-2 font-bold text-2xl">{hiringRounded}
     
     </motion.span>
-    <motion.span class="my-2 font-bold text-3xl">%</motion.span>
+    <motion.span class="my-2 font-bold text-2xl">%</motion.span>
     <div class="my-2 font-semibold text-xl">Of hiring rate on time</div>
-    <div class="text-slate-600 font-sans">within three weeks</div>
+    <div class="text-slate-600 font-sans mt-5">within three weeks</div>
     </div>
     </motion.div>
     <motion.div
     whileHover={{scale:1.2}}
     whileTap={{scale:1.1}}
+    className="h-60 w-60 mx-auto border-t-fuchsia-50 border-2 rounded-xl"
     >
-      <div className='text-3xl'>Remote Jobs</div>
+      <div className='text-2xl mb-5  text-white py-3 rounded-t-xl bg-blue-600'>Remote Jobs</div>
       <div class="basis-1/2">
-    <motion.span class="my-2 font-bold text-3xl">#</motion.span>
-    <motion.span class="my-2 font-bold text-3xl">{positionRounded}</motion.span>
+    <motion.span class="my-2 font-bold text-2xl">#</motion.span>
+    <motion.span class="my-2 font-bold text-2xl">{positionRounded}</motion.span>
     <div class="my-2 font-semibold text-xl">for finding Remote Jobs</div>
-    <div class="font-sans text-slate-600 ">around the world</div>
+    <div class="font-sans text-slate-600 mt-5">around the world</div>
     
     </div>
     </motion.div>

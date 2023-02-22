@@ -54,12 +54,21 @@ export default function Footer() {
   </div>
   
 </div>
-<div class="text-center xl:mt-20">
-    <button>
-    <input type={"email"} placeholder="Enter your email" class="outline-none border-2 placeholder:text-black text-black font-sans font-semibold border-blue-600  p-1.5" />
-    <span class="bg-blue-600 text-white font-sans p-1.5 border-2 border-blue-600">Get Started</span>
-    </button>
-  </div>
+{/* Email subscription form */}
+<div>
+    <form action="https://applyremotelyjobs.us21.list-manage.com/subscribe/post?u=90be940d1f54a864e2fd1754e&amp;id=934bbcd766&amp;f_id=00ebf8e1f0" method="post" target="_blank" novalidate>
+        <div >
+<div>
+	<input type="email"  name="EMAIL" className='bg-blue-600 ml-10 h-20 w-60 text-white placeholder:text-white' required />
+</div>
+        <div>
+            <div>
+                <input type="submit" value="Subscribe" name="subscribe" class="button" />
+            </div>
+        </div>
+    </div>
+</form>
+</div>
   <div className='text-center mt-5'>All Rights reserved @copyright 2023</div>
     </div>
    

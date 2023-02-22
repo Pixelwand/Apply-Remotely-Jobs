@@ -1,8 +1,45 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {ImArrowUpLeft2} from 'react-icons/im';
-import {RiRocketFill} from 'react-icons/ri'
+import {RiRocketFill} from 'react-icons/ri';
+import {motion, useMotionValue, useTransform, animate} from 'framer-motion';
 
 export default function Details() {
+  
+  const count = useMotionValue(0);
+  const percentCount = useMotionValue(0);
+  const hiringCount = useMotionValue(0);
+  const positionCount = useMotionValue(100);
+
+  const percentRounded = useTransform(percentCount, Math.round);
+  const hiringRounded = useTransform(hiringCount, Math.round);
+  const rounded  = useTransform(count, Math.round);
+  const positionRounded = useTransform(positionCount, Math.round);
+
+  useEffect(() => {
+    const percentAnimation = animate(percentCount, 99, {duration:10})
+  
+    return percentAnimation.stop
+  }, [])
+  
+  useEffect(() => {
+    const hiringAnimation = animate(hiringCount, 70, {duration:10})
+  
+    return hiringAnimation.stop;
+  }, [])
+  
+
+  useEffect(() => {
+    const animation = animate(count, 1000, {duration:10});
+  
+    return animation.stop
+  }, [])
+  
+  useEffect(()=>{
+    const positionAnimation = animate(positionCount, 1, {duration:10})
+    
+    return positionAnimation.stop;
+  }, [])
+
   return (
     <>
     <div class="mt-10">
@@ -11,7 +48,7 @@ export default function Details() {
     <div class="">
       <div class="text-3xl">Applicants</div>
     <div class="basis-1/2">
-    <div class="my-2 font-bold text-3xl">99.95%</div>
+    <motion.div class="my-2 font-bold text-3xl">{percentRounded}</motion.div>
     <div class="my-2 font-semibold text-xl">Accuracy Rate</div>
     <div class="text-slate-600 font-sans">In getting qualified applicants</div>
     </div>
@@ -19,7 +56,7 @@ export default function Details() {
     <div class="">
       <div className='text-3xl'>Candidates</div>
       <div className="basis-1/2">
-    <div className="my-2 font-bold text-3xl">5,000+</div>
+    <motion.div className="my-2 font-bold text-3xl">{rounded}</motion.div>
     <div className="my-2 font-semibold text-xl">Qualified candidates</div>
     <div className="text-slate-600 font-sans">choose best candidates</div>
     </div>
@@ -27,15 +64,15 @@ export default function Details() {
     <div class="">
       <div className='text-3xl'>Hiring Rate</div>
       <div class="basis-1/2">
-    <div class="my-2 font-bold text-3xl">99.96%</div>
-    <div class="my-2 font-semibold text-xl">Of hiring reate on time</div>
+    <motion.div class="my-2 font-bold text-3xl">{hiringRounded}</motion.div>
+    <div class="my-2 font-semibold text-xl">Of hiring rate on time</div>
     <div class="text-slate-600 font-sans">within three weeks</div>
     </div>
     </div>
     <div class="">
       <div className='text-3xl'>Remote Jobs</div>
       <div class="basis-1/2">
-    <div class="my-2 font-bold text-3xl">#1</div>
+    <motion.div class="my-2 font-bold text-3xl">{positionRounded}</motion.div>
     <div class="my-2 font-semibold text-xl">for finding Remote Jobs</div>
     <div class="font-sans text-slate-600 ">around the world</div>
     </div>

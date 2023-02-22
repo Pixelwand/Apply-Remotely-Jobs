@@ -8,6 +8,7 @@ import {Signup} from '../Authentication/Signup';
 import Login from '../Authentication/Login';
 import PropTypes from 'prop-types';
 import useToken from '../../useToken';
+import { motion } from 'framer-motion';
 
 
 
@@ -48,7 +49,7 @@ function classNames(...classes) {
 
   return (
     <>
-      <div className="min-h-full sm:h-24 sm:pt-5 sm:text-3xl">
+      <motion.div className="min-h-full sm:h-24 sm:pt-5 sm:text-3xl">
         <Disclosure as="nav" className="bg-white text-blue">
           {({ open }) => (
             <>
@@ -154,7 +155,7 @@ function classNames(...classes) {
         </form>
 
         </Modal>
-      </div>
+      </motion.div>
     </>
   )
 }

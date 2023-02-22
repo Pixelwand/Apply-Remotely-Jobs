@@ -22,12 +22,12 @@ export const Banner = () => {
     return isVisible ? (
         <div className='bg-indigo-600'>
       <Alert status='success' bg="indigo-600">
-        <AlertIcon />
+       
         <Box>
           <AlertTitle>
           <MegaphoneIcon className="h-6 w-6 text-white" aria-hidden="true" />
           </AlertTitle>
-          <AlertDescription color={"white"}>
+          <AlertDescription color={"white"} className="ml-10">
             
             We announced free posting of Remote Jobs
           </AlertDescription>
@@ -35,7 +35,6 @@ export const Banner = () => {
         <CloseButton
           alignSelf='flex-start'
           position='relative'
-          right={-1}
           top={-1}
           onClick={onClose}
           color="white"

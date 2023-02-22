@@ -42,48 +42,67 @@ export default function Details() {
 
   return (
     <>
-    <div class="mt-10">
-    <div class="font-bold text-3xl text-center">Trusted and loved by world's best team</div>
-    <div class="flex text-center font-bold text-slate-700 flex-col xl:flex-row xl:gap-20 justify-center mt-24 gap-12">
-    <div class="">
-      <div class="text-3xl">Applicants</div>
-    <div class="basis-1/2">
-    <motion.div class="my-2 font-bold text-3xl">{percentRounded}</motion.div>
-    <div class="my-2 font-semibold text-xl">Accuracy Rate</div>
-    <div class="text-slate-600 font-sans">In getting qualified applicants</div>
+    <div className="mt-10">
+    <div className="font-bold text-3xl text-center px-10">Trusted and loved by world's best team</div>
+    <div className="flex text-center font-bold text-slate-700 flex-col xl:flex-row xl:gap-20 justify-center mt-24 gap-12">
+    <motion.div 
+    whileHover={{scale:1.2}}
+    whileTap={{scale:1.1}}
+    >
+      <div className="text-3xl">Applicants</div>
+    <div className="basis-1/2">
+    <motion.span className="my-2 font-bold text-3xl">{percentRounded}</motion.span>
+    <motion.span className="my-2 font-bold text-3xl">%</motion.span>
+    <div className="my-2 font-semibold text-xl">Accuracy Rate</div>
+    <div className="text-slate-600 font-sans">In getting qualified applicants</div>
     </div>
-    </div>
-    <div class="">
+    </motion.div>
+    <motion.div 
+    whileHover={{scale:1.2}}
+    whileTap={{scale:1.1}}
+    >
       <div className='text-3xl'>Candidates</div>
       <div className="basis-1/2">
-    <motion.div className="my-2 font-bold text-3xl">{rounded}</motion.div>
+    <motion.span className="my-2 font-bold text-3xl">{rounded}</motion.span>
+    <motion.span className="my-2 font-bold text-3xl">+</motion.span>
     <div className="my-2 font-semibold text-xl">Qualified candidates</div>
     <div className="text-slate-600 font-sans">choose best candidates</div>
     </div>
-    </div>
-    <div class="">
+    </motion.div>
+    <motion.div
+    whileHover={{scale:1.2}}
+    whileTap={{scale:1.1}}
+    >
       <div className='text-3xl'>Hiring Rate</div>
       <div class="basis-1/2">
-    <motion.div class="my-2 font-bold text-3xl">{hiringRounded}</motion.div>
+    <motion.span class="my-2 font-bold text-3xl">{hiringRounded}
+    
+    </motion.span>
+    <motion.span class="my-2 font-bold text-3xl">%</motion.span>
     <div class="my-2 font-semibold text-xl">Of hiring rate on time</div>
     <div class="text-slate-600 font-sans">within three weeks</div>
     </div>
-    </div>
-    <div class="">
+    </motion.div>
+    <motion.div
+    whileHover={{scale:1.2}}
+    whileTap={{scale:1.1}}
+    >
       <div className='text-3xl'>Remote Jobs</div>
       <div class="basis-1/2">
-    <motion.div class="my-2 font-bold text-3xl">{positionRounded}</motion.div>
+    <motion.span class="my-2 font-bold text-3xl">#</motion.span>
+    <motion.span class="my-2 font-bold text-3xl">{positionRounded}</motion.span>
     <div class="my-2 font-semibold text-xl">for finding Remote Jobs</div>
     <div class="font-sans text-slate-600 ">around the world</div>
+    
     </div>
-    </div>
+    </motion.div>
     
     
     
     
     </div>
     <div class="text-center">
-    <div class="text-3xl font-semibold text-center px-4 mb-10 font-sans mt-12 xl:mt-28">Are Remote Jobs secure? By Kunal Kushwaha</div>
+    <div class="text-3xl font-semibold text-center px-6 mb-10 font-sans mt-12 xl:mt-28">Are Remote Jobs secure? By Kunal Kushwaha</div>
     <div className='xl:flex-row xl:flex xl:mt-20'>
     <div className='xl:basis-1/2'>
 <iframe className='w-5/6 h-60 mx-auto sm:h-96' src="https://www.youtube.com/embed/asg9lBbxLHA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

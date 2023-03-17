@@ -50,7 +50,8 @@ const jobSchema = new mongoose.Schema({
     },
     secondEmail:{
         type:String
-    }
+    },
+    source : { data: Buffer, contentType: String }
 
 })
 

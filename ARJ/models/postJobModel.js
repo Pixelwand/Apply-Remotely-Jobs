@@ -92,8 +92,7 @@ const jobSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-
-  ohterAuthorNumber: {
+  otherAuthorNumber: {
     type: Number,
     require: true,
   },
@@ -105,8 +104,7 @@ const jobSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-
-   abstractFile: {
+  abstractFile: {
     type: String,
     require: true,
   },

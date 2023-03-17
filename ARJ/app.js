@@ -10,6 +10,7 @@ const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const postjobRoutes = require('./routes/postJob');
 const jobRoutes = require('./routes/jobRoutes');
 const newsLetterRouts = require('./routes/newsLetter')
+const deleteRoutes = require('./routes/delete')
 
 const User = require('./models/userModel');
 const Profile = require('./models/googleModel');
@@ -81,6 +82,7 @@ app.use('/user', postjobRoutes)
 app.use('/', googleRoutes)
 app.use('/user', jobRoutes);
 app.use('/user', newsLetterRouts)
+app.use("/user", deleteRoutes);
 
 
 app.listen(port, (req, res)=>{

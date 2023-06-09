@@ -1,26 +1,19 @@
 import React, { useEffect, useState } from "react";
 import {AiFillTwitterCircle} from 'react-icons/ai';
-import useToken from "../../useToken";
-import Login from "../Authentication/Login";
-import {motion, AnimatePresence} from 'framer-motion'
-import { useNavigate } from "react-router-dom";
+// import useToken from "../../useToken";
+// import { useNavigate } from "react-router-dom";
 
 export const Jobs = () => {
-  const {token, setToken} = useToken();
+  // const {token, setToken} = useToken();
   const [jobData, setJobData] = useState([])
-  const [selectedId, setSelectedId] = useState(null);
-  const navigate = useNavigate('/');
-  const items = [
-    "name",
-
-  ]
-
+  // const [selectedId, setSelectedId] = useState(null);
+  // const navigate = useNavigate('/');
 
   useEffect(() => {
- fetch(`https://apply-remote-jobs.onrender.com/user/jobs`, {method:'GET'})
-   .then((response)=>response.json())
-   .then((data)=>setJobData(data))
-   console.log("this is token data", token)
+ fetch(`https://apply-remote-jobs.onrender.com/user/jobs`, { method: "GET" })
+   .then((response) => response.json())
+   .then((data) => setJobData(data));
+  //  console.log("this is token data", token)
   }, [])
 
   // if(!token){
@@ -59,7 +52,7 @@ export const Jobs = () => {
           <div key={job.id}>{job.maxSalary.value}</div>
           </div>
           <div className="bg-white px-6 py-2 font-semibold rounded-full" key={job.id}>
-            <a href={job.applyUrl} target="_blank" >Apply</a>
+            <a href={job.applyUrl} target="_blank" rel="noreferrer" >Apply</a>
             
           </div>
           <div>

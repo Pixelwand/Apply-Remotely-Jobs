@@ -3,33 +3,30 @@ import { useState} from 'react';
 import {Tab} from '@headlessui/react'
 import Modal from 'react-modal'
 import { Disclosure } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline';
 import {Signup} from '../Authentication/Signup';
 import Login from '../Authentication/Login';
 import PropTypes from 'prop-types';
 import useToken from '../../useToken';
 import { motion } from 'framer-motion';
 
-
-
-
 const navigation = [
-  { name: 'Home', href: 'http://applyremotelyjobs.co/', current: false },
-  { name: 'Jobs', href: 'http://applyremotelyjobs.co/jobs', current: false },
-  { name: 'Candidates', href: 'http://applyremotelyjobs.co/candidates', current: false },
-  { name: 'About', href: 'http://applyremotelyjobs.co/about', current: false }
+  { name: 'Home', href: '/', current: false },
+  { name: 'Jobs', href: '/jobs', current: false },
+  { name: 'Candidates', href: '/candidates', current: false },
+  { name: 'About', href: '/about', current: false }
 ]
 
-const customStyles = {
-  content: {
-    top: '45%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-}
+// const customStyles = {
+//   content: {
+//     top: '45%',
+//     left: '50%',
+//     right: 'auto',
+//     bottom: 'auto',
+//     marginRight: '-50%',
+//     transform: 'translate(-50%, -50%)',
+//   },
+// }
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -57,7 +54,7 @@ function classNames(...classes) {
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <a href='http://applyremotelyjobs.co/' className='text-black font-sans font-extrabold text-2xl ml-5 font-mono sm:text-3xl'>ARJ</a>
+                      <a href='http://applyremotelyjobs.co/' className='text-black font-extrabold text-2xl ml-5 font-mono sm:text-3xl'>ARJ</a>
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 sm:text-center lg:ml-96  flex items-baseline space-x-4">
@@ -88,7 +85,7 @@ function classNames(...classes) {
                   <div className="mr-2 flex md:hidden">
                     {/* Mobile menu button */}
                     {token?<div className='bg-blue-700 hover:bg-blue-800 my-auto px-5 py-2 text-white font-medium rounded-lg text-base mr-6  dark:hover:bg-blue-700 dark:focus:ring-blue-800'><a href='https://www.applyremotelyjobs.co/dashboard'>Dashboard</a></div>:
-                        <button type="button" onClick={openModal} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Get started</button>
+                        <button type="button" onClick={openModal} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Get started</button>
                     }
                     <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-blue-800 font-bolder hover:text-blue focus:outline-none  ">
                       <span className="sr-only">Open main menu</span>
@@ -145,7 +142,7 @@ function classNames(...classes) {
     </Tab.Panels>
   </Tab.Group>
   <div className='text-center font-medium text-black mb-2 text-xl'>Or</div>
-  <form className='' p-10 action="http://localhost:8080/auth/google">
+  <form action="http://localhost:8080/auth/google">
           <button type="submit" className="flex flex-row gap-5 mx-auto bg-white text-blue-600 shadow-2xl border-2 border-blue-400 px-4 py-3 rounded-3xl font-bold">
             <span className="google-button__icon">
               <svg viewBox="0 0 366 372" className="h-7 w-7" xmlns="http://www.w3.org/2000/svg"><path d="M125.9 10.2c40.2-13.9 85.3-13.6 125.3 1.1 22.2 8.2 42.5 21 59.9 37.1-5.8 6.3-12.1 12.2-18.1 18.3l-34.2 34.2c-11.3-10.8-25.1-19-40.1-23.6-17.6-5.3-36.6-6.1-54.6-2.2-21 4.5-40.5 15.5-55.6 30.9-12.2 12.3-21.4 27.5-27 43.9-20.3-15.8-40.6-31.5-61-47.3 21.5-43 60.1-76.9 105.4-92.4z" id="Shape" fill="#EA4335"/><path d="M20.6 102.4c20.3 15.8 40.6 31.5 61 47.3-8 23.3-8 49.2 0 72.4-20.3 15.8-40.6 31.6-60.9 47.3C1.9 232.7-3.8 189.6 4.4 149.2c3.3-16.2 8.7-32 16.2-46.8z" id="Shape" fill="#FBBC05"/><path d="M361.7 151.1c5.8 32.7 4.5 66.8-4.7 98.8-8.5 29.3-24.6 56.5-47.1 77.2l-59.1-45.9c19.5-13.1 33.3-34.3 37.2-57.5H186.6c.1-24.2.1-48.4.1-72.6h175z" id="Shape" fill="#4285F4"/><path d="M81.4 222.2c7.8 22.9 22.8 43.2 42.6 57.1 12.4 8.7 26.6 14.9 41.4 17.9 14.6 3 29.7 2.6 44.4.1 14.6-2.6 28.7-7.9 41-16.2l59.1 45.9c-21.3 19.7-48 33.1-76.2 39.6-31.2 7.1-64.2 7.3-95.2-1-24.6-6.5-47.7-18.2-67.6-34.1-20.9-16.6-38.3-38-50.4-62 20.3-15.7 40.6-31.5 60.9-47.3z" fill="#34A853"/></svg>

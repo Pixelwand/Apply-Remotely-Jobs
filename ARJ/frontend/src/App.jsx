@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { Homepage } from './components/Homepage/Homepage';
 import Dashboard from './components/Dashboard/Dashboard';
@@ -7,7 +7,6 @@ import Candidates from './components/Candidates/Candidates';
 import About from './components/About/About';
 import Login from './components/Authentication/Login';
 import { PostJobs } from './components/Jobs/PostJobs';
-import CheckoutForm from './components/Paypal/Checkout'
 
 
 // function setToken(userToken) {
@@ -18,7 +17,7 @@ import CheckoutForm from './components/Paypal/Checkout'
 //   const tokenString = sessionStorage.getItem('token');
 //   const userToken = JSON.parse(tokenString);
 //   return userToken?.token
-// // }
+// }
 
 function App(){
   
@@ -37,7 +36,6 @@ function App(){
     <Route path='/dashboard' element={<Dashboard />} />
     <Route path="/postjobs" element={<PostJobs />} />
     <Route path="/login" element={<Login />} />
-    <Route exact path='/checkout' index element={<CheckoutForm />} />
   </Routes>
   </BrowserRouter>
   </>

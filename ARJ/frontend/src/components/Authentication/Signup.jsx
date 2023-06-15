@@ -13,7 +13,7 @@ export const Signup =  () =>{
              },
              body:JSON.stringify(data)
        
-           }).then((res)=>{
+           }).then(()=>{
              console.log("User Created Successfully", data)
            }).then(
             navigate('/dashboard')
@@ -32,52 +32,53 @@ export const Signup =  () =>{
     
     return(
         <>
-        <div class="px-4 pb-2">
+        <div className="px-4 pb-2">
             <form onSubmit={handleSubmit(formSubmit)}>
-              <fieldset class="text-center font-semibold text-base mb-8 font-sans">Sign up with your email<hr class="mt-3 font-" /></fieldset>
+              <fieldset className="text-center font-semibold text-base mb-8 font-sans">Sign up with your email<hr className="mt-3 font-" /></fieldset>
               
-              <div class="mb-8 font-xl">
+              <div className="mb-8 font-xl">
               <label>
-                <input onChange={changeHandler}  name='name' type={"text"} class="outline outline-2 outline-offset-1 focus:outline-4 outline-blue-400 placeholder:text-black placeholder:text-base rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Enter Your Name'
+                <input onChange={changeHandler}  name='name' type={"text"} className="outline outline-2 outline-offset-1 focus:outline-4 outline-blue-400 placeholder:text-black placeholder:text-base rounded-lg w-72 h-10 pl-5 placeholder:font-sans" placeholder='Enter Your Name'
                 {...register("name", {required:true})}
                 
                 />
               </label>
-              {errors.name && <p class="text-red-600 font-normal">please check your Full Name!</p>}
+              {errors.name && <p className="text-red-600 font-normal">please check your Full Name!</p>}
               </div>
               
-              <div class="mb-8">
+              <div className="mb-8">
               <label>
-                <input onChange={changeHandler} name='email' class="w-72  h-10 pl-5 outline outline-2 outline-offset-1 focus:outline-4 outline-blue-400 placeholder:text-black rounded-lg" type={"email"} placeholder='Email'
+                <input onChange={changeHandler} name='email' className="w-72  h-10 pl-5 outline outline-2 outline-offset-1 focus:outline-4 outline-blue-400 placeholder:text-black rounded-lg" type={"email"} placeholder='Email'
+                // eslint-disable-next-line no-useless-escape
                 {...register("email", {required:true, pattern:/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/})}
                 />
               </label>
-              {errors.email && <p class="text-red-600 font-normal">Please check your Email!</p>}
+              {errors.email && <p className="text-red-600 font-normal">Please check your Email!</p>}
               </div>
-              <div class="mb-8 ">
+              <div className="mb-8 ">
               <label>
-                <input name='number' onChange={changeHandler} class="w-72  h-10 pl-5 outline outline-2 outline-offset-1 outline-blue-400 placeholder:text-black focus:outline-4 rounded-lg" placeholder='Phone Number'
+                <input name='number' onChange={changeHandler} className="w-72  h-10 pl-5 outline outline-2 outline-offset-1 outline-blue-400 placeholder:text-black focus:outline-4 rounded-lg" placeholder='Phone Number'
                 {...register("number", {required:true, minLength:10, maxLength:10})}
                 ></input>
               </label>
-              {errors.number && <p class="text-red-600 font-normal">Please check your phone number!</p>}
+              {errors.number && <p className="text-red-600 font-normal">Please check your phone number!</p>}
               </div>
-              <div class="mb-5">
+              <div className="mb-5">
                 <label>
-                  <input name='password' onChange={changeHandler} class="w-72 focus:outline-4  h-10 pl-5 outline outline-2 outline-offset-1 outline-blue-400 placeholder:text-black rounded-lg" type={"password"} placeholder="Create New Password"
+                  <input name='password' onChange={changeHandler} className="w-72 focus:outline-4  h-10 pl-5 outline outline-2 outline-offset-1 outline-blue-400 placeholder:text-black rounded-lg" type={"password"} placeholder="Create New Password"
                   {...register("password", {required:true, pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/})}
                   />
                 </label>
-                {errors.password && <p class="text-red-600 font-normal">Please check your password!</p>}
+                {errors.password && <p className="text-red-600 font-normal">Please check your password!</p>}
               </div>
-              <div class="mb-5">
+              <div className="mb-5">
                 <input type={"checkbox"} 
                 {...register("checkbox", {required:true})}
                 />
-                <label class="font-sans text-sm ml-5">I agree to the <a href="#/" class="text-blue-700 font-semibold">Terms of Service</a> and <a href='#/' class="font-semibold font-sans text-blue-700">Privacy Policy</a></label>
+                <label className="font-sans text-sm ml-5">I agree to the <a href="#/" className="text-blue-700 font-semibold">Terms of Service</a> and <a href='#/' className="font-semibold font-sans text-blue-700">Privacy Policy</a></label>
               </div>
-              <div class="text-center">
-              <button class="bg-blue-600 hover:bg-blue-800 text-white font-semibold text-xl rounded-3xl w-5/6 px-6 py-3" type='submit'>Create account</button>
+              <div className="text-center">
+              <button className="bg-blue-600 hover:bg-blue-800 text-white font-semibold text-xl rounded-3xl w-5/6 px-6 py-3" type='submit'>Create account</button>
               </div>
             </form>
           </div>

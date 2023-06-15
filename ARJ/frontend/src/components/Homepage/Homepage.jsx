@@ -1,11 +1,10 @@
 import { Header, Work, Resources, Footer, Details, Main, Content } from '../index';
-import {Banner} from '../Banners/Banner';
-
+// import {Banner} from '../Banners/Banner';
+import React from 'react';
 export const Homepage = () =>{
     return(
         <>
         <Header />
-            <Banner />
   <Main />
   <Details />
   <Work />

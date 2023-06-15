@@ -17,16 +17,6 @@ const navigation = [
   { name: 'About', href: '/about', current: false }
 ]
 
-// const customStyles = {
-//   content: {
-//     top: '45%',
-//     left: '50%',
-//     right: 'auto',
-//     bottom: 'auto',
-//     marginRight: '-50%',
-//     transform: 'translate(-50%, -50%)',
-//   },
-// }
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -46,7 +36,7 @@ function classNames(...classes) {
 
   return (
     <>
-      <motion.div className="min-h-full sm:h-24 sm:pt-5 sm:text-3xl">
+      <motion.div className="sm:h-24 sm:text-3xl w-full z-10 fixed p-0">
         <Disclosure as="nav" className="bg-white text-blue">
           {({ open }) => (
             <>
@@ -54,7 +44,7 @@ function classNames(...classes) {
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <a href='http://applyremotelyjobs.co/' className='text-black font-extrabold text-2xl ml-5 font-mono sm:text-3xl'>ARJ</a>
+                      <a href='/' className='text-black font-extrabold text-2xl ml-5 font-mono sm:text-3xl'>ARJ</a>
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 sm:text-center lg:ml-96  flex items-baseline space-x-4">
@@ -75,7 +65,7 @@ function classNames(...classes) {
                           </a>
                         ))}
                         {token?
-                        <div  className="text-white bg-blue-700 hover:bg-blue-800 sm:text-xl sm:relative sm:left-10 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><a href='https://www.applyremotelyjobs.co/dashboard'>Dashboard</a></div>:
+                        <div  className="text-white bg-blue-700 hover:bg-blue-800 sm:text-xl sm:relative sm:left-10 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><a href='/dashboard'>Dashboard</a></div>:
                         <button type="button" onClick={openModal} className="text-white bg-blue-700 hover:bg-blue-800 sm:text-xl sm:relative sm:left-10 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 mr-6 py-2.5 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Get started</button>
                         }
                         </div>
@@ -124,7 +114,7 @@ function classNames(...classes) {
         isOpen={isModalOpen}
         onRequestClose={closeModal}
         // style={customStyles}
-        className="w-11/12 xl:w-1/3 h-84 mx-auto mt-5 rounded-xl shadow-xl bg-white z-2 p-5"
+        className="w-11/12 xl:w-1/3 h-auto mx-auto mt-5 rounded-xl shadow-xl bg-white p-5 z-100 "
         >
           <button onClick={closeModal} className="float-right relative left-4 bottom-4"><XMarkIcon className="block h-6 w-6 bg-white text-blue-800 text-end" aria-hidden="true" /></button>
           <Tab.Group>

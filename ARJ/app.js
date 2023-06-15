@@ -12,6 +12,8 @@ const jobRoutes = require('./routes/jobRoutes');
 const newsLetterRouts = require('./routes/newsLetter')
 const deleteRoutes = require('./routes/delete')
 
+//importing profile routes
+const candidateProfile = require('./routes/candidateRoutes')
 const User = require('./models/userModel');
 const Profile = require('./models/googleModel');
 
@@ -74,7 +76,7 @@ app.use(session({
   app.use(passport.initialize());
   app.use(passport.session());
 
-app.use(express.static("public"))
+app.use(express.static("public"));
 app.use(express.json());
 app.use(cors());
 app.use('/user', userRoutes)
@@ -83,6 +85,8 @@ app.use('/', googleRoutes)
 app.use('/user', jobRoutes);
 app.use('/user', newsLetterRouts)
 app.use("/user", deleteRoutes);
+
+app.use('/candidate', candidateProfile)
 
 
 app.listen(port, (req, res)=>{

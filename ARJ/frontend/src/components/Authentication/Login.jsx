@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
-import { useForm } from 'react-hook-form';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
 
 export default function Login({setToken}){
-    const {register, handleSubmit, formState:{errors}} = useForm();
     const navigate = useNavigate();
     // const [authenticated, setAuthenticated] = useState(localStorage.getItem("authenticated") || false);
     
@@ -46,27 +44,27 @@ export default function Login({setToken}){
 
   return (
     <>
-    <div class="p-2 pb-2">
+    <div className="p-2 pb-2">
     <form onSubmit={formSubmit}>
-      <fieldset  class="text-center font-semibold text-base mb-8">Login with email</fieldset>
-      <div class="mb-8">
+      <fieldset  className="text-center font-semibold text-base mb-8">Login with email</fieldset>
+      <div className="mb-8">
               <label>
-                <input onChange={(e)=>setEmail(e.target.value)}  name='email' class="outline outline-2 outline-offset-1 outline-blue-400 focus:outline-4 placeholder:text-black rounded-lg w-72 h-10 pl-5 placeholder:font-sans"  type={"email"} placeholder='Email'
+                <input onChange={(e)=>setEmail(e.target.value)}  name='email' className="outline outline-2 outline-offset-1 outline-blue-400 focus:outline-4 placeholder:text-black rounded-lg w-72 h-10 pl-5 placeholder:font-sans"  type={"email"} placeholder='Email'
                 // {...register("email",{required:true})}
                 />
               </label>
               {/* {errors.email && <p>Please user correct email</p>} */}
               </div>
-              <div class="mb-8">
+              <div className="mb-8">
               <label>
-                <input onChange={(e)=>setPassword(e.target.value)} name='password'  class="outline outline-2 outline-offset-1 outline-blue-400 focus:outline-4 placeholder:text-black rounded-lg w-72 h-10 pl-5 placeholder:font-sans" type={"password"} placeholder='Enter Your Password'
+                <input onChange={(e)=>setPassword(e.target.value)} name='password'  className="outline outline-2 outline-offset-1 outline-blue-400 focus:outline-4 placeholder:text-black rounded-lg w-72 h-10 pl-5 placeholder:font-sans" type={"password"} placeholder='Enter Your Password'
                 // {...register("password", {required:true})}
                 />
               </label>
               {/* {errors.password && <p>Please use correct password!</p>} */}
               </div>
-              <div class="text-center">
-              <button class="bg-blue-600 hover:bg-blue-800 text-white font-semibold text-xl px-6 py-3 w-5/6 rounded-3xl" type='submit'>Login</button>
+              <div className="text-center">
+              <button className="bg-blue-600 hover:bg-blue-800 text-white font-semibold text-xl px-6 py-3 w-5/6 rounded-3xl" type='submit'>Login</button>
               </div>
     </form>
     </div>

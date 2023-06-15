@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { Homepage } from './components/Homepage/Homepage';
-import Dashboard from './components/Dashboard/Dashboard';
+import {Dashboard} from './components/Dashboard/Dashboard';
 import {Jobs} from './components/Jobs/Jobs';
 import Candidates from './components/Candidates/Candidates';
 import About from './components/About/About';

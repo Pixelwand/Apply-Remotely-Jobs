@@ -8,7 +8,7 @@ const handleSubmit = async() =>{
             'content-Type':"application/json"
         },
         body:JSON.stringify()
-    }).then((res)=>{
+    }).then(()=>{
         console.log("User subscribed successfully")
     })
     

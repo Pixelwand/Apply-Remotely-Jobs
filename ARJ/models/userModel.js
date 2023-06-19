@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 //require('dotenv').config({path:'config.env'})
 // const GoogleStrategy = require("passport-google-oauth20").Strategy;
 // const findOrCreate = require("mongoose-findorcreate");
@@ -9,24 +9,23 @@ const mongoose = require('mongoose');
 // const passwordComplexity = require("joi-password-complexity");
 
 const userSchema = new mongoose.Schema({
-    name:{
-        type:String,
-        require:true
-
-    },
-    email:{
-        type:String,
-        require:true
-    },
-    number:{
-        type:Number,
-        require:true
-    },
-    password:{
-        type:String,
-        require:true
-            }
-})
+  name: {
+    type: String,
+    require: true,
+  },
+  email: {
+    type: String,
+    require: true,
+  },
+  number: {
+    type: Number,
+    require: true,
+  },
+  password: {
+    type: String,
+    require: true,
+  },
+});
 
 // userSchema.plugin(passportLocalMongoose);
 // userSchema.plugin(findOrCreate);
@@ -37,7 +36,6 @@ const userSchema = new mongoose.Schema({
 // 	});
 // 	return token;
 // };
-
 
 const User = mongoose.model("User", userSchema);
 

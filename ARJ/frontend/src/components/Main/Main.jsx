@@ -1,10 +1,8 @@
-import React from 'react';
+import React from "react";
 // import {PostJobs} from '../Jobs/PostJobs';
-import { ProfileMain } from '../../Assets';
+import { ProfileMain } from "../../Assets";
 
 export default function Main() {
-  
-  
   return (
     <>
       <div className=" mb-8 flex w-full">
@@ -24,7 +22,8 @@ export default function Main() {
                   href="/postjobs"
                   className="bg-green-600 p-4 rounded-xl font-bold font-sans sm:text-2xl"
                 >
-                  Post <span className='hidden sm:inline-flex'>Remote</span> Jobs{" "}
+                  Post <span className="hidden sm:inline-flex">Remote</span>{" "}
+                  Jobs{" "}
                 </a>
               </span>
               <a

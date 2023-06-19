@@ -1,11 +1,10 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const emailSchema = new mongoose.Schema({
-    email:{
-        type:String
-    }
-})
-
+  email: {
+    type: String,
+  },
+});
 
 const email = mongoose.model("emailList", emailSchema);
 

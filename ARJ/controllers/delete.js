@@ -1,4 +1,4 @@
-const Jobpost = require('../models/postJobModel')
+const Jobpost = require("../models/postJobModel");
 
 exports.deleteUser = async function run() {
   try {
@@ -12,5 +12,5 @@ exports.deleteUser = async function run() {
     }
   } catch {
     console.log("Internal error");
-  } 
+  }
 };

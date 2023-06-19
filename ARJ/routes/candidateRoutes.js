@@ -1,13 +1,17 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const candidateController = require('../controllers/candidateController')
+const express = require("express");
+const bodyParser = require("body-parser");
+const candidateController = require("../controllers/candidateController");
 
-const urlEncodedParser = bodyParser.urlencoded({extended:false})
+const urlEncodedParser = bodyParser.urlencoded({ extended: false });
 
 const app = express.Router();
 
 //routes for adding candidate information
-app.post('/create', urlEncodedParser, candidateController.createCandidateProfile);
+app.post(
+  "/create",
+  urlEncodedParser,
+  candidateController.createCandidateProfile
+);
 
 //routes for getting candidate information
 app.get("/fetch", urlEncodedParser);
@@ -19,6 +23,4 @@ app.patch("/update", urlEncodedParser);
 
 app.post("/delete", urlEncodedParser);
 
-
-
-module.exports = app
+module.exports = app;

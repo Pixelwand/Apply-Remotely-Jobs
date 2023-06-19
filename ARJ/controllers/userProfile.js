@@ -1,4 +1,1 @@
-
-exports.createProfile = async(req, res)=>{
-    
-}
+exports.createProfile = async (req, res) => {};

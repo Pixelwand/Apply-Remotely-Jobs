@@ -22,11 +22,11 @@
 //     const options = useMemo(() =>countryList().getValues(), []);
 
 //     const [isModalOpen, setIsModalOpen] = useState(false);
-  
+
 //     function openModal(){
 //       setIsModalOpen(true)
 //     }
-  
+
 //     function closeModal(){
 //       setIsModalOpen(false)
 //     }

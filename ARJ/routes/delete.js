@@ -1,5 +1,5 @@
 const express = require("express");
-const deleteController = require('../controllers/delete')
+const deleteController = require("../controllers/delete");
 
 const app = express.Router();
 

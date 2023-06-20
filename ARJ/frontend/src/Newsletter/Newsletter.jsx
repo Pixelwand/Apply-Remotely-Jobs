@@ -2,7 +2,7 @@ import React from "react";
 
 export const Newsletter = () => {
   const handleSubmit = async () => {
-    const response = await fetch("http://localhost:8080/user/subscribe", {
+    await fetch("https://apply-remote-jobs.onrender.com/user/subscribe", {
       method: "POST",
       headers: {
         "content-Type": "application/json",
@@ -14,14 +14,19 @@ export const Newsletter = () => {
   };
   return (
     <>
-      <div>
+      <div className="">
         <form onSubmit={handleSubmit}>
+          <div className="lg:flex lg:flex-row lg:gap-20 lg:justify-center">
           <input
             type="email"
             onChange={(e) => e.target.email}
-            className="bg-blue-600 text-white"
+            placeholder="Enter your email"
+            className="bg-[#0A142F] border-2 border-[#FBBF24] rounded-md px-5 py-2 space-x-24 outline-none"
           />
-          <input type="submit" />
+          <button type="submit" className="bg-[#FBBF24] text-black px-5 py-2 rounded-md ml-5">
+            Subscribe
+            </button>
+            </div>
         </form>
       </div>
     </>

@@ -1,70 +1,92 @@
 import React from "react";
-import { SiDiscord } from "react-icons/si";
-import { FaTwitter } from "react-icons/fa";
-import { FiMail } from "react-icons/fi";
-// import { Newsletter } from '../../Newsletter/Newsletter';
+// import clsx from 'clsx';
+import { Link } from "react-router-dom";
+// import { SiDiscord } from "react-icons/si";
+// import { FaTwitter } from "react-icons/fa";
+// import { FiMail } from "react-icons/fi";
+import { Newsletter } from '../../Newsletter/Newsletter';
+
+const button = [
+  { name: "Get Jobs", href: "/jobs" },
+  { name: "Post Jobs", href: "/postjobs" },
+]
+
+const items = [
+  {
+    Navigation: [
+      { name: 'Jobs', href: '/jobs', },
+      { name: 'Home', href: '/' },
+      { name: 'About', href: '/about' },
+      { name: 'Candidates', href: '/candidates' },
+    ],
+  },
+{
+  Services: [
+    { name: "Terms", href: "/terms" },
+    { name: 'Offers', href: '/offers', },
+    { name: "Privacy", href: "/privacy" },
+    { name: 'Service', href: '/services', },
+  ]
+  },
+  {
+    Connect: [
+      { name: "Email", href: "mailto:applyremotelyjobs@gmail.com" },
+      { name: "twitter", href: "https://twitter.com/applyremotely" },
+      { name: "Contact us", href: "/contact" },
+  ]
+}
+]
 
 export default function Footer() {
   return (
     <>
-      <div className=" mt-20 pb-20  flex-col bg-black text-white pt-1">
-        <div className="flex flex-row mx-auto gap-10 px-4 mt-10 mb-12 xl:justify-center">
-          <div className="basis-1/4 ">
-            <label className="mb-24 font-sans text-lg font-semibold">
-              Socials
-            </label>
-            <ul className="space-y-3.5 mt-4 pl-3">
-              <li>
-                <a href="https://www.twitter.com/applyremotely">
-                  <FaTwitter classNameName="text-3xl text-white" />
-                </a>
-              </li>
-              <li>
-                <a href="https://discord.gg/w5wj5yD8">
-                  <SiDiscord classNameName="text-3xl text-white" />
-                </a>
-              </li>
-              <li>
-                <a href="mailto:applyremotelyjobs@gmail.com">
-                  <FiMail classNameName="text-3xl text-white" />
-                </a>
-              </li>
-            </ul>
+      <footer className="flex-col bg-[#0A142F] text-white pt-10 pb-10 mt-10">
+        <section className="text-center">
+          <Newsletter />
+          <h3 className="w-4/6 ml-16 font-semibold font-sans mb-8 whitespace-normal my-6 text-center text-xl lg:w-full lg:ml-9">
+            Overcome Ignorance and apply for Remote Jobs
+          </h3>
+          <div className="my-6 lg:flex lg:flex-row lg:gap-32 lg:justify-center">
+            {button.map((item, index) => (
+              <Link
+                key={index}
+                to={item.href}
+                className="text-white outline-white-4 outline text-xl hover:border-4 hover:border-blue-800 hover:bg-white hover:text-[#0A142F] px-5 py-2 rounded-md mr-5 mt-5"
+              >
+                {item.name}
+              </Link>
+            ))}
           </div>
-          <div className="basis-1/4 bg-blue">
-            <label className="font-sans text-lg font-semibold">Pages</label>
-            <ul className="space-y-3.5 mt-4">
-              <li>
-                <a href="/">Home</a>
-              </li>
-              <li>
-                <a href="/about">About</a>
-              </li>
-              <li>
-                <a href="/contact">Contact us</a>
-              </li>
-            </ul>
+          <div className="flex flex-row mx-6 gap-6 lg:gap-80 lg:justify-center">
+            {items.map((item, index) => {
+              return (
+                <div key={index} className="flex flex-col mr-5 mt-5">
+                  <h3 className="text-xl font-bold border-b-4 border-blue-600 pb-1.5">
+                    {Object.keys(item)}
+                  </h3>
+                  <ul className="mt-5">
+                    {Object.values(item).map((value) => {
+                      return value.map((item, index) => (
+                        <li key={index} className="mt-2">
+                          <Link
+                            to={item.href}
+                            className="flex hover:border-b-4 hover:border-blue-800 hover:after:left-0 hover:after:right-auto"
+                          >
+                            {item.name}
+                          </Link>
+                        </li>
+                      ));
+                    })}
+                  </ul>
+                </div>
+              );
+            })}
           </div>
-          <div className="basis-1/4 ">
-            <label className="font-sans text-lg font-semibold">Overview</label>
-            <ul className="space-y-3.5 mt-4">
-              <li>
-                <a href="/">Terms</a>
-              </li>
-              <li>
-                <a href="/">Privacy</a>
-              </li>
-              <li>
-                <a href="/">Copyright</a>
-              </li>
-            </ul>
-          </div>
+        </section>
+        <div className="text-center mt-12">
+          All Rights reserved Apply Remotely Jobs @copyright 2023
         </div>
-        {/* Email subscription form */}
-        <div className="text-center mt-5">
-          All Rights reserved @copyright 2023
-        </div>
-      </div>
+      </footer>
     </>
   );
 }

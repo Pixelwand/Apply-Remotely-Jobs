@@ -1,4 +1,4 @@
-import { Resone, Restwo, Resthree } from "../../Assets";
+import { Resone, Restwo, Resthree } from "../../assets";
 import React from "react";
 
 export default function Resources() {

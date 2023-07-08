@@ -1,37 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Newsletter } from '../../Newsletter/Newsletter';
+import { Newsletter } from "../../Newsletter/Newsletter";
 
 const button = [
   { name: "Get Jobs", href: "/jobs" },
   { name: "Post Jobs", href: "/postjobs" },
-]
+];
 
 const items = [
   {
     Navigation: [
-      { name: 'Jobs', href: '/jobs', },
-      { name: 'Home', href: '/' },
-      { name: 'About', href: '/about' },
-      { name: 'Candidates', href: '/candidates' },
+      { name: "Jobs", href: "/jobs" },
+      { name: "Home", href: "/" },
+      { name: "About", href: "/about" },
+      { name: "Candidates", href: "/candidates" },
     ],
   },
-{
-  Services: [
-    { name: "Terms", href: "/terms" },
-    { name: 'Offers', href: '/offers', },
-    { name: "Privacy", href: "/privacy" },
-    { name: 'Service', href: '/services', },
-  ]
+  {
+    Services: [
+      { name: "Terms", href: "/terms" },
+      { name: "Offers", href: "/offers" },
+      { name: "Privacy", href: "/privacy" },
+      { name: "Service", href: "/services" },
+    ],
   },
   {
     Connect: [
       { name: "Email", href: "mailto:applyremotelyjobs@gmail.com" },
       { name: "twitter", href: "https://twitter.com/applyremotely" },
       { name: "Contact us", href: "/contact" },
-  ]
-}
-]
+    ],
+  },
+];
 
 export default function Footer() {
   return (

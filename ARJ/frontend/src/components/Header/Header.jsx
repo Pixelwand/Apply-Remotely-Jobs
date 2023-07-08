@@ -35,8 +35,8 @@ function Header() {
 
   return (
     <>
-      <motion.div className="sm:h-24 sm:text-3xl w-full z-10 fixed p-0">
-        <Disclosure as="nav" className="bg-white text-blue">
+      <motion.div className="sm:h-24 sm:text-3xl w-full z-10 fixed p-0 ">
+        <Disclosure as="nav" className="bg-black text-white">
           {({ open }) => (
             <>
               <div className="mx-auto max-w-7xl sm:w-full px-4  ">
@@ -45,7 +45,7 @@ function Header() {
                     <div className="flex-shrink-0">
                       <a
                         href="/"
-                        className="text-black font-extrabold text-2xl ml-5 font-mono sm:text-3xl"
+                        className="text-white font-extrabold text-2xl ml-5 font-mono sm:text-3xl"
                       >
                         ARJ
                       </a>
@@ -59,7 +59,7 @@ function Header() {
                             className={classNames(
                               item.current
                                 ? "bg-gray-900 text-white"
-                                : "text-black hover:bg-gray-900 hover:text-white",
+                                : "text-white hover:bg-gray-900 hover:text-white",
                               "px-3 py-2 rounded-md text-sm font-medium sm:text-xl sm:ml-5"
                             )}
                             aria-current={item.current ? "page" : undefined}

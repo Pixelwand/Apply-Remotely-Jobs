@@ -1,5 +1,5 @@
 import React from "react";
-import { Workone, Worktwo, Workthree } from "../../Assets";
+import { Workone, Worktwo, Workthree } from "../../assets";
 export default function Work() {
   return (
     <>

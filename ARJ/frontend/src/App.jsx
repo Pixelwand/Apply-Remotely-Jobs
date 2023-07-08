@@ -7,6 +7,7 @@ import Candidates from "./components/Candidates/Candidates";
 import About from "./components/About/About";
 import Login from "./components/Authentication/Login";
 import { PostJobs } from "./components/Jobs/PostJobs";
+import { Blog } from "./pages/blog/page";
 
 // function setToken(userToken) {
 //   sessionStorage.setItem('token', JSON.stringify(userToken));
@@ -33,6 +34,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/postjobs" element={<PostJobs />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </BrowserRouter>
     </>

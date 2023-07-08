@@ -1,14 +1,14 @@
-import Resone from "../Assets/Resone.jpg";
-import Restwo from "../Assets/Restwo.jpg";
-import Resthree from "../Assets/Resthree.jpg";
-import Workone from "../Assets/Workone.jpg";
-import Worktwo from "../Assets/Worktwo.jpg";
-import Workthree from "../Assets/Workthree.jpg";
-import Profileone from "../Assets/Profileone.jpg";
-import Profiletwo from "../Assets/Profiletwo.jpg";
-import Profilethree from "../Assets/Profilethree.jpg";
-import ProfileMain from "../Assets/ProfileMain.jpg";
-import checkout from "../Assets/checkout.jpg";
+import Resone from "./Resone.jpg";
+import Restwo from "./Restwo.jpg";
+import Resthree from "./Resthree.jpg";
+import Workone from "./Workone.jpg";
+import Worktwo from "./Worktwo.jpg";
+import Workthree from "./Workthree.jpg";
+import Profileone from "./Profileone.jpg";
+import Profiletwo from "./Profiletwo.jpg";
+import Profilethree from "./Profilethree.jpg";
+import ProfileMain from "./ProfileMain.jpg";
+import checkout from "./checkout.jpg";
 export {
   Resone,
   Restwo,

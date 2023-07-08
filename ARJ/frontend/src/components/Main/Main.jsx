@@ -1,6 +1,6 @@
 import React from "react";
 // import {PostJobs} from '../Jobs/PostJobs';
-import { ProfileMain } from "../../assets";
+import { ProfileMain } from "../../assets/index";
 
 export default function Main() {
   return (
